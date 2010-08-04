@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :recipes
+
   map.resources :beer_styles
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,48 @@
+<h1>Editing recipe</h1>
+
+<% form_for(@recipe) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :mash_type %><br />
+    <%= f.text_field :mash_type %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :batch_size %><br />
+    <%= f.text_field :batch_size %>
+  </p>
+  <p>
+    <%= f.label :original_gravity %><br />
+    <%= f.text_field :original_gravity %>
+  </p>
+  <p>
+    <%= f.label :final_gravity %><br />
+    <%= f.text_field :final_gravity %>
+  </p>
+  <p>
+    <%= f.label :bitterness %><br />
+    <%= f.text_field :bitterness %>
+  </p>
+  <p>
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </p>
+  <p>
+    <%= f.label :procedure %><br />
+    <%= f.text_area :procedure %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @recipe %> |
+<%= link_to 'Back', recipes_path %>

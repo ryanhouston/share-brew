@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  mash_type: 
+  description: MyText
+  batch_size: MyString
+  original_gravity: MyString
+  final_gravity: MyString
+  bitterness: MyString
+  color: MyString
+  procedure: MyText
+
+two:
+  name: MyString
+  mash_type: 
+  description: MyText
+  batch_size: MyString
+  original_gravity: MyString
+  final_gravity: MyString
+  bitterness: MyString
+  color: MyString
+  procedure: MyText

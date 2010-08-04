@@ -1,0 +1,22 @@
+<h1>Listing beer_styles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% for beer_style in @beer_styles %>
+  <tr>
+    <td><%=h beer_style.name %></td>
+    <td><pre><%=h beer_style.description %></pre></td>
+    <td><%= link_to 'Show', beer_style %></td>
+    <td><%= link_to 'Edit', edit_beer_style_path(beer_style) %></td>
+    <td><%= link_to 'Destroy', beer_style, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New beer_style', new_beer_style_path %>

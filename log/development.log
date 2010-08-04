@@ -1,0 +1,10 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE DATABASE `share_brew_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-08-04 15:56:39) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering index/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]

@@ -1435,3 +1435,404 @@ Processing IndexController#index (for 127.0.0.1 at 2010-08-04 16:32:31) [GET]
 Rendering template within layouts/application
 Rendering index/index
 Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-08-04 16:38:52) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering index/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BeerStylesController#index (for 127.0.0.1 at 2010-08-04 16:38:56) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mBeerStyle Load (0.1ms)[0m   [0mSELECT * FROM `beer_styles` [0m
+Rendering template within layouts/application
+Rendering beer_styles/index
+  [4;36;1mBeerStyle Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `beer_styles`[0m
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/beer_styles]
+
+
+Processing BeerStylesController#index (for 127.0.0.1 at 2010-08-04 16:39:54) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mBeerStyle Load (0.1ms)[0m   [0mSELECT * FROM `beer_styles` [0m
+Rendering template within layouts/application
+Rendering beer_styles/index
+  [4;36;1mBeerStyle Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `beer_styles`[0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/beer_styles]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+/!\ FAILSAFE /!\  2010-08-04 16:47:41 -0400
+  Status: 500 Internal Server Error
+  uninitialized constant MysqlCompat::MysqlRes
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:9:in `define_all_hashes_method!'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:68:in `mysql_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+/!\ FAILSAFE /!\  2010-08-04 16:47:47 -0400
+  Status: 500 Internal Server Error
+  uninitialized constant MysqlCompat::MysqlRes
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:9:in `define_all_hashes_method!'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:68:in `mysql_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+/!\ FAILSAFE /!\  2010-08-04 16:47:52 -0400
+  Status: 500 Internal Server Error
+  uninitialized constant MysqlCompat::MysqlRes
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:9:in `define_all_hashes_method!'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:68:in `mysql_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+/!\ FAILSAFE /!\  2010-08-04 16:48:36 -0400
+  Status: 500 Internal Server Error
+  uninitialized constant MysqlCompat::MysqlRes
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:9:in `define_all_hashes_method!'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:68:in `mysql_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+/!\ FAILSAFE /!\  2010-08-04 16:49:32 -0400
+  Status: 500 Internal Server Error
+  uninitialized constant MysqlCompat::MysqlRes
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:9:in `define_all_hashes_method!'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:68:in `mysql_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+/!\ FAILSAFE /!\  2010-08-04 16:49:34 -0400
+  Status: 500 Internal Server Error
+  uninitialized constant MysqlCompat::MysqlRes
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:9:in `define_all_hashes_method!'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/mysql_adapter.rb:68:in `mysql_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /usr/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `block in call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+    /home/ryanh/.gem/ruby/1.9.1/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-08-04 16:49:55) [GET]
+Rendering template within layouts/application
+Rendering index/index
+Completed in 58ms (View: 57, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BeerStylesController#index (for 127.0.0.1 at 2010-08-04 16:50:02) [GET]
+  [4;36;1mBeerStyle Load (0.2ms)[0m   [0;1mSELECT * FROM `beer_styles` [0m
+Rendering template within layouts/application
+Rendering beer_styles/index
+  [4;35;1mBeerStyle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `beer_styles`[0m
+Completed in 48ms (View: 13, DB: 1) | 200 OK [http://localhost/beer_styles]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BeerStylesController#show (for 127.0.0.1 at 2010-08-04 16:50:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBeerStyle Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `beer_styles`[0m
+  [4;35;1mBeerStyle Load (0.1ms)[0m   [0mSELECT * FROM `beer_styles` WHERE (`beer_styles`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering beer_styles/show
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/beer_styles/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BeerStylesController#show (for 127.0.0.1 at 2010-08-04 16:50:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mBeerStyle Columns (9.3ms)[0m   [0;1mSHOW FIELDS FROM `beer_styles`[0m
+  [4;35;1mBeerStyle Load (0.1ms)[0m   [0mSELECT * FROM `beer_styles` WHERE (`beer_styles`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering beer_styles/show
+Completed in 18ms (View: 4, DB: 10) | 200 OK [http://localhost/beer_styles/1]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BeerStylesController#index (for 127.0.0.1 at 2010-08-04 16:52:29) [GET]
+  [4;36;1mBeerStyle Load (0.1ms)[0m   [0;1mSELECT * FROM `beer_styles` [0m
+Rendering template within layouts/application
+Rendering beer_styles/index
+  [4;35;1mBeerStyle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `beer_styles`[0m
+Completed in 32ms (View: 28, DB: 1) | 200 OK [http://localhost/beer_styles]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-08-04 16:55:14) [GET]
+Rendering template within layouts/application
+Rendering index/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-08-04 16:55:21) [GET]
+Rendering template within layouts/application
+Rendering index/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /home/ryanh/.gem/ruby/1.9.1/gems/actionpack-2.3.8/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BeerStylesController#index (for 127.0.0.1 at 2010-08-04 16:55:30) [GET]
+  [4;36;1mBeerStyle Load (0.3ms)[0m   [0;1mSELECT * FROM `beer_styles` [0m
+Rendering template within layouts/application
+Rendering beer_styles/index
+  [4;35;1mBeerStyle Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `beer_styles`[0m
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/beer_styles]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BeerStylesController#index (for 127.0.0.1 at 2010-08-04 16:56:59) [GET]
+  [4;36;1mBeerStyle Load (0.1ms)[0m   [0;1mSELECT * FROM `beer_styles` [0m
+Rendering template within layouts/application
+Rendering beer_styles/index
+  [4;35;1mBeerStyle Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `beer_styles`[0m
+Completed in 33ms (View: 28, DB: 1) | 200 OK [http://localhost/beer_styles]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BeerStylesController#new (for 127.0.0.1 at 2010-08-04 16:57:06) [GET]
+  [4;36;1mBeerStyle Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `beer_styles`[0m
+Rendering template within layouts/application
+Rendering beer_styles/new
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/beer_styles/new]

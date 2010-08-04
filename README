@@ -1,0 +1,20 @@
+= ShareBrew =
+Started by Ryan Houston on August 4, 2010
+
+== Overview ==
+ShareBrew aims to provide a space for beer homebrewers to store and share
+ their recipes. Brewers will have the ability to record details for each
+ batch they brew. This will allow for reflection on the brewing process
+ and changes to a recipe from batch to batch which will result in better
+ tasting beer and a deeper understanding of how changes in recipe and
+ brewing process effect the end product.
+
+== Current Status ==
+This project is a work in progress.
+
+== Installation / Setup ==
+1) cp config/database.yml.sample config/database.yml
+2) Edit config/database.yml with your mysql username and password
+3) Run 'rake db:setup'
+4) Run 'script/server' to start the development rails server on port 3000
+5) Point your browser to http://localhost:3000

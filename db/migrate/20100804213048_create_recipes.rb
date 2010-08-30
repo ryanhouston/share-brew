@@ -10,6 +10,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.string :bitterness
       t.string :color
       t.text :procedure
+      t.references :beer_style
 
       t.timestamps
     end

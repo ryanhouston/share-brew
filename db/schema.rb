@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20100804213048) do
     t.string   "bitterness"
     t.string   "color"
     t.text     "procedure"
+    t.integer  "beer_style_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

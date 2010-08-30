@@ -47,6 +47,8 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.xml
   def create
+    @beer_style = BeerStyle.find(params[:recipe][:beer_style]);
+    params[:recipe][:beer_style] = @beer_style;
     @recipe = Recipe.new(params[:recipe])
 
     respond_to do |format|

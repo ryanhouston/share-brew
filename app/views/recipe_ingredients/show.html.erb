@@ -1,0 +1,18 @@
+<p>
+  <b>Recipe:</b>
+  <%=h @recipe_ingredient.recipe %>
+</p>
+
+<p>
+  <b>Ingredient:</b>
+  <%=h @recipe_ingredient.ingredient %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @recipe_ingredient.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_recipe_ingredient_path(@recipe_ingredient) %> |
+<%= link_to 'Back', recipe_ingredients_path %>

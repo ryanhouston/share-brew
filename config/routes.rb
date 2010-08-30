@@ -1,5 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :recipes
+
+  map.resources :ingredients
+
+  map.resources :recipes do |recipes|
+    recipes.resources :recipe_ingredients
+  end
 
   map.resources :beer_styles
 

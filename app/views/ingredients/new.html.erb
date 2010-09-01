@@ -1,23 +1,5 @@
 <h1>New ingredient</h1>
 
-<%= form_for(@ingredient) do |f| %>
-  <%= render 'shared/form_errors', :target => @ingredient %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :type %><br />
-    <%= f.select(:type, [['Malt', :malt], ['Hops', :hops], ['Yeast', :yeast], ['Other', :other]]) %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+<%= render :partial => 'ingredient_form' %>
 
 <%= link_to 'Back', ingredients_path %>

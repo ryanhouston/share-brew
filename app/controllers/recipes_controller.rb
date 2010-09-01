@@ -65,6 +65,9 @@ class RecipesController < ApplicationController
   # PUT /recipes/1
   # PUT /recipes/1.xml
   def update
+    @recipe = Recipe.find(params[:id])
+    params[:recipe][:beer_style] = BeerStyle.find(params[:recipe][:beer_style]);
+
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
         format.html { redirect_to(@recipe, :notice => 'Recipe was successfully updated.') }
@@ -79,6 +82,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.xml
   def destroy
+    @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
     respond_to do |format|

@@ -1,5 +1,5 @@
 <%= form_for(@recipe) do |f| %>
-  <%= f.error_messages %>
+  <%= render 'shared/form_errors', :target => @recipe %>
 
   <p>
     <%= f.label :name %><br />
@@ -46,5 +46,4 @@
     <%= f.submit 'Save' %>
   </p>
 <% end %>
-<%= link_to 'Add Ingredient to Recipe', new_recipe_recipe_ingredient_path(@recipe) %>
 

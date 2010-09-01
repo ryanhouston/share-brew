@@ -1,4 +1,10 @@
 ShareBrew::Application.routes.draw do
+  resources :ingredients
+  resources :beer_styles
+  resources :recipes do
+    resources :resource_ingredients
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,11 +18,6 @@ ShareBrew::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :ingredients
-  resources :beer_styles
-  resources :recipes do
-    resources :resource_ingredients
-  end
 
   # Sample resource route with options:
   #   resources :products do

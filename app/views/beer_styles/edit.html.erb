@@ -1,7 +1,7 @@
 <h1>Editing beer_style</h1>
 
 <%= form_for(@beer_style) do |f| %>
-  <%= f.error_messages %>
+  <%= render 'shared/form_errors', :target => @beer_style %>
 
   <p>
     <%= f.label :name %><br />

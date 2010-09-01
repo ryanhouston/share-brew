@@ -1,0 +1,19 @@
+<%= form_for(@ingredient) do |f| %>
+  <%= render 'shared/form_errors', :target => @ingredient %>
+
+  <p>
+    <%= f.label :ingredient_type %><br />
+    <%= f.select(:ingredient_type, [['Malt', :malt], ['Hops', :hops], ['Yeast', :yeast], ['Other', :other]]) %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

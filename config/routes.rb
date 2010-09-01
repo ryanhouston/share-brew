@@ -2,7 +2,7 @@ ShareBrew::Application.routes.draw do
   resources :ingredients
   resources :beer_styles
   resources :recipes do
-    resources :resource_ingredients
+    resources :recipe_ingredients
   end
 
   # The priority is based upon order of creation:

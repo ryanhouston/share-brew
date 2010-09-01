@@ -1,7 +1,7 @@
 <h1>New ingredient</h1>
 
 <%= form_for(@ingredient) do |f| %>
-  <%= f.error_messages %>
+  <%= render 'shared/form_errors', :target => @ingredient %>
 
   <p>
     <%= f.label :name %><br />
@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :type %><br />
-    <%= f.text_field :type %>
+    <%= f.select(:type, [['Malt', :malt], ['Hops', :hops], ['Yeast', :yeast], ['Other', :other]]) %>
   </p>
   <p>
     <%= f.submit 'Create' %>

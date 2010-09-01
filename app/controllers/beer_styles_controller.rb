@@ -13,7 +13,7 @@ class BeerStylesController < ApplicationController
   # GET /beer_styles
   # GET /beer_styles.xml
   def index
-    @beer_styles = BeerStyle.find(:all)
+    @beer_styles = BeerStyle.all
 
     respond_to do |format|
       format.html # index.html.erb

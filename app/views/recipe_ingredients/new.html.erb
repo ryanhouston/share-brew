@@ -1,8 +1,8 @@
 <h1>New recipe_ingredient</h1>
 
-<% form_for(@recipe) do |recipe_form| %>
+<%= form_for(@recipe) do |recipe_form| %>
   <%= recipe_form.error_messages %>
-  <% recipe_form.fields_for :recipe_ingredients do |ri_form| %>
+  <%= recipe_form.fields_for :recipe_ingredients do |ri_form| %>
 
   <p>
     <%= ri_form.label :recipe %><br />

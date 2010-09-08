@@ -1,0 +1,6 @@
+%h1 Editing recipe_ingredient
+
+= render :partial => 'ri_form'
+= link_to 'Show', [@recipe_ingredient.recipe, @recipe_ingredient]
+|
+= link_to 'Back', recipe_recipe_ingredients_path(@recipe_ingredient.recipe)

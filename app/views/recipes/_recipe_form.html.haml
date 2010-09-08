@@ -1,0 +1,47 @@
+= form_for(@recipe) do |f|
+  = render 'shared/form_errors', :target => @recipe
+
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :beer_style
+    %br
+    = f.collection_select(:beer_style, BeerStyle.all, :id, :name)
+    %br
+    = link_to 'Add new style', new_beer_style_path
+  %p
+    = f.label :mash_type
+    %br
+    = f.select(:mash_type, [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.label :batch_size
+    %br
+    = f.text_field :batch_size
+  %p
+    = f.label :original_gravity
+    %br
+    = f.text_field :original_gravity
+  %p
+    = f.label :final_gravity
+    %br
+    = f.text_field :final_gravity
+  %p
+    = f.label :bitterness
+    %br
+    = f.text_field :bitterness
+  %p
+    = f.label :color
+    %br
+    = f.text_field :color
+  %p
+    = f.label :procedure
+    %br
+    = f.text_area :procedure
+  %p
+    = f.submit 'Save'

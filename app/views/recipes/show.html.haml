@@ -1,0 +1,52 @@
+%p
+  %b Name
+  =h @recipe.name
+
+
+%p
+  %b Style
+  =h @recipe.beer_style.name
+
+
+%p
+  %b Mash type
+  =h @recipe.mash_type
+
+
+%p
+  %b Description
+  =h @recipe.description
+
+
+%p
+  %b Batch size
+  =h @recipe.batch_size
+
+
+%p
+  %b Expected OG
+  =h @recipe.original_gravity
+
+
+%p
+  %b Expected FG
+  =h @recipe.final_gravity
+
+
+%p
+  %b Bitterness
+  =h @recipe.bitterness
+
+
+%p
+  %b Color
+  =h @recipe.color
+
+
+%p
+  %b Procedure
+  =h @recipe.procedure
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+|
+= link_to 'Back', recipes_path

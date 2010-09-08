@@ -1,0 +1,16 @@
+= form_for(@beer_style) do |f|
+  = render 'shared/form_errors', :target => @beer_style
+
+  .form-element
+    = f.label :name
+    %br
+    = f.text_field :name
+
+  .form-element
+    = f.label :description
+    %br
+    = f.text_area :description
+
+  %br
+  .form-element
+    = f.submit "Save"

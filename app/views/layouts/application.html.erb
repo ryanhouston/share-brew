@@ -1,14 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ShareBrew</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ShareBrew</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+
 <body>
-
-<%= yield %>
-
+<div id="container">
+	<div id="header">
+    	<h1><a href="/">ShareBrew</a></h1>
+        <h2>open source brewering</h2>
+        <div class="clear"></div>
+    </div>
+    <div id="nav">
+    	<ul>
+        	<li><a href="index.html">Home</a></li>
+          <li><%= link_to 'My Recipes', recipes_path %></li>
+          <li><%= link_to 'Beer Styles', beer_styles_path %></li>
+        </ul>
+    </div>
+    <div id="body">
+		  <div id="content">
+        <%= yield %>
+      </div>                    
+        <div class="sidebar">
+            <ul>	
+               <li>
+                    <h4><span>Navigate</span></h4>
+                    <ul class="blocklist">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <h4>About</h4>
+                    <ul>
+                        <li>
+                        	<p style="margin: 0;">Aenean nec massa a tortor auctor sodales sed a dolor. Duis vitae lorem sem. Proin at velit vel arcu pretium luctus.</p>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+                	<h4>Search</h4>
+                    <ul>
+                    	<li>
+                            <form method="get" class="searchform" action="http://wpdemo.justfreetemplates.com/" >
+                                <p>
+                                    <input type="text" size="22" value="" name="s" class="s" />
+                                    <input type="submit" class="searchsubmit formbutton" value="Search" />
+                                </p>
+                            </form>	
+						</li>
+					</ul>
+                </li>                
+            </ul> 
+        </div>
+    	<div class="clear"></div>
+    </div>
+</div>
+<div id="footer">
+    <div class="footer-content">
+    	<div class="footer-width">
+         </div>
+    </div>
+</div>
 </body>
 </html>

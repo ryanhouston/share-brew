@@ -1,51 +1,42 @@
-%p
-  %b Name
-  =h @recipe.name
+%h2= h @recipe.name
 
+.right.gravity-block
+  %p
+    %b Expected OG
+    =h @recipe.original_gravity
 
+  %p
+    %b Expected FG
+    =h @recipe.final_gravity
 %p
   %b Style
   =h @recipe.beer_style.name
-
-
 %p
   %b Mash type
   =h @recipe.mash_type
-
-
-%p
-  %b Description
-  =h @recipe.description
-
-
 %p
   %b Batch size
   =h @recipe.batch_size
+%p
+  .text-block-label Description
+  = @recipe.description
 
+- unless @recipe.bitterness.empty?
+  %p
+    %b Bitterness
+    =h @recipe.bitterness
+
+- unless @recipe.color.empty?
+  %p
+    %b Color
+    %p=h @recipe.color
 
 %p
-  %b Expected OG
-  =h @recipe.original_gravity
+  .text-block-label Procedure
+  %pre= @recipe.procedure
 
-
-%p
-  %b Expected FG
-  =h @recipe.final_gravity
-
-
-%p
-  %b Bitterness
-  =h @recipe.bitterness
-
-
-%p
-  %b Color
-  =h @recipe.color
-
-
-%p
-  %b Procedure
-  =h @recipe.procedure
+%h3 Ingredients
+= render 'ingredients_list', :ingredients => @recipe.recipe_ingredients
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 |

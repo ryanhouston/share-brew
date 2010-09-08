@@ -1,0 +1,5 @@
+%ul.ingredients-list
+  - ingredients.each do |recipe_ingredient|
+    %li.ingredient
+      %span.quantity= recipe_ingredient.quantity
+      %span.name= recipe_ingredient.ingredient.name

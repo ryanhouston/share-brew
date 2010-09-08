@@ -9,16 +9,16 @@
 
 <% @recipe_ingredients.each do |recipe_ingredient| %>
   <tr>
-    <td><%=h recipe_ingredient.recipe %></td>
-    <td><%=h recipe_ingredient.ingredient %></td>
+    <td><%=h recipe_ingredient.recipe.name %></td>
+    <td><%=h recipe_ingredient.ingredient.name %></td>
     <td><%=h recipe_ingredient.quantity %></td>
-    <td><%= link_to 'Show', recipe_ingredient %></td>
-    <td><%= link_to 'Edit', edit_recipe_ingredient_path(recipe_ingredient) %></td>
-    <td><%= link_to 'Destroy', recipe_ingredient, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', recipe_recipe_ingredient_path(recipe_ingredient.recipe, recipe_ingredient) %></td>
+    <td><%= link_to 'Edit', edit_recipe_recipe_ingredient_path(recipe_ingredient.recipe, recipe_ingredient) %></td>
+    <td><%= link_to 'Destroy', [recipe_ingredient.recipe, recipe_ingredient], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New recipe_ingredient', new_recipe_ingredient_path %>
+<%= link_to 'New recipe_ingredient', new_recipe_recipe_ingredient_path(@recipe) %>

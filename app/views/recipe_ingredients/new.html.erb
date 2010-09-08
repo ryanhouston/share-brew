@@ -1,22 +1,4 @@
 <h1>New recipe_ingredient</h1>
 
-<%= form_for(@recipe) do |recipe_form| %>
-
-  <%= recipe_form.fields_for :recipe_ingredient do |ri_form| %>
-  <p>
-    <%= ri_form.label :ingredient %><br />
-    <%= ri_form.collection_select(:ingredient, Ingredient.all, :id, :name) %> <br />
-
-    Don't see what you're looking for? <%= link_to 'Add Ingredient', new_ingredient_path %>
-  </p>
-  <p>
-    <%= ri_form.label :quantity %><br />
-    <%= ri_form.text_field :quantity %>
-  </p>
-  <p>
-  </p>
-  <% end %>
-  <%= recipe_form.submit 'Create' %>
-<% end %>
-
+<%= render :partial => 'ri_form' %>
 <%= link_to 'Back', recipe_recipe_ingredients_path(@recipe) %>

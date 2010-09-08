@@ -1,24 +1,5 @@
 <h1>Editing recipe_ingredient</h1>
 
-<%= form_for(@recipe_ingredient) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :recipe %><br />
-    <%= f.text_field :recipe %>
-  </p>
-  <p>
-    <%= f.label :ingredient %><br />
-    <%= f.text_field :ingredient %>
-  </p>
-  <p>
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @recipe_ingredient %> |
-<%= link_to 'Back', recipe_ingredients_path %>
+<%= render :partial => 'ri_form' %>
+<%= link_to 'Show', [@recipe_ingredient.recipe, @recipe_ingredient] %> |
+<%= link_to 'Back', recipe_recipe_ingredients_path(@recipe_ingredient.recipe) %>

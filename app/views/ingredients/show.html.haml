@@ -1,0 +1,15 @@
+%p
+  %b Name:
+  =h @ingredient.name
+
+%p
+  %b Description:
+  =h @ingredient.description
+
+%p
+  %b Type:
+  =h @ingredient.ingredient_type
+
+= link_to 'Edit', edit_ingredient_path(@ingredient)
+|
+= link_to 'Back', ingredients_path

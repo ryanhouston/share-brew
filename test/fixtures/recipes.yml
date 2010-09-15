@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  mash_type: 
+  mash_type: grain
   description: MyText
   batch_size: MyString
   original_gravity: MyString
@@ -13,7 +13,7 @@ one:
 
 two:
   name: MyString
-  mash_type: 
+  mash_type: partial
   description: MyText
   batch_size: MyString
   original_gravity: MyString

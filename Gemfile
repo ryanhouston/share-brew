@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
-gem 'haml'
-
+gem 'haml', '>= 3.0.18'
+gem 'shoulda'
+gem 'factory_girl'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

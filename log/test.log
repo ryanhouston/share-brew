@@ -1,0 +1,944 @@
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  Processing by BeerStylesController#create as HTML
+  Parameters: {"beer_style"=>{}}
+Rendered shared/_form_errors.html.haml (4.6ms)
+Rendered beer_styles/_beer_style_form.html.haml (10.1ms)
+Rendered beer_styles/new.html.haml within layouts/application (51.6ms)
+Completed 200 OK in 65ms (Views: 55.6ms | ActiveRecord: 1.9ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#destroy as HTML
+  Parameters: {"id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962)[0m
+Redirected to http://test.host/beer_styles
+Completed 302 Found in 8ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#edit as HTML
+  Parameters: {"id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (3.3ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.9ms)
+  Processing by BeerStylesController#index as HTML
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles"[0m
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (2.7ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#show as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+  [1m[35mBeerStyle Load (0.3ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#update as HTML
+  Parameters: {"beer_style"=>{}, "id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/beer_styles/980190962
+Completed 302 Found in 3ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Completed   in 7ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Completed   in 3ms
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (4.9ms)
+Completed   in 10ms
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipe_ingredients"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipe_ingredients"
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipeIngredient Load (0.3ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 1ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "recipes" WHERE ("recipes"."id" = 980190962)
+Redirected to http://test.host/recipes
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (12.7ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 3.3ms)
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.4ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (7.3ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+Completed   in 7ms
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#update as HTML
+  Parameters: {"recipe"=>{}, "id"=>"980190962"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Completed   in 2ms
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  Processing by BeerStylesController#create as HTML
+  Parameters: {"beer_style"=>{}}
+Rendered shared/_form_errors.html.haml (30.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (35.7ms)
+Rendered beer_styles/new.html.haml within layouts/application (46.5ms)
+Completed 200 OK in 60ms (Views: 50.3ms | ActiveRecord: 1.8ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#destroy as HTML
+  Parameters: {"id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962)[0m
+Redirected to http://test.host/beer_styles
+Completed 302 Found in 8ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#edit as HTML
+  Parameters: {"id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (3.5ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.9ms)
+  Processing by BeerStylesController#index as HTML
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles"[0m
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (2.5ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#show as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#update as HTML
+  Parameters: {"beer_style"=>{}, "id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/beer_styles/980190962
+Completed 302 Found in 2ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Completed   in 8ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Completed   in 3ms
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (4.3ms)
+Completed   in 10ms
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipe_ingredients"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipe_ingredients"
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipeIngredient Load (0.3ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipeIngredient Load (0.3ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 0ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  [1m[36mRecipe Load (2.7ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "recipes" WHERE ("recipes"."id" = 980190962)
+Redirected to http://test.host/recipes
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (12.0ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 5.8ms)
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.4ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (7.4ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.2ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+Completed   in 7ms
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#update as HTML
+  Parameters: {"recipe"=>{}, "id"=>"980190962"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Completed   in 2ms
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#create as HTML
+  Parameters: {"beer_style"=>#<BeerStyle id: 980190962, name: "MyString", description: "MyText", created_at: "2010-09-15 00:33:16", updated_at: "2010-09-15 00:33:16">}
+Rendered shared/_form_errors.html.haml (32.0ms)
+Rendered beer_styles/_beer_style_form.html.haml (38.1ms)
+Rendered beer_styles/new.html.haml within layouts/application (48.2ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 1.9ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#destroy as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962)
+Redirected to http://test.host/beer_styles
+Completed 302 Found in 9ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#edit as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (3.5ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.9ms)
+  Processing by BeerStylesController#index as HTML
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (2.8ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#show as HTML
+  Parameters: {"id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#update as HTML
+  Parameters: {"beer_style"=>{}, "id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/beer_styles/980190962
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Completed   in 8ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Completed   in 3ms
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (5.0ms)
+Completed   in 11ms
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipe_ingredients"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipe_ingredients"[0m
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipeIngredient Load (0.3ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE ("recipe_ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 0ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "recipes" WHERE ("recipes"."id" = 980190962)[0m
+Redirected to http://test.host/recipes
+Completed 302 Found in 3ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles"[0m
+Rendered recipes/_recipe_form.html.haml (12.3ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 3.3ms)
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles"[0m
+Rendered recipes/_recipe_form.html.haml (7.4ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Completed   in 7ms
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#update as HTML
+  Parameters: {"recipe"=>{}, "id"=>"980190962"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+Completed   in 2ms
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#create as HTML
+  Parameters: {"beer_style"=>#<BeerStyle id: 980190962, name: "MyString", description: "MyText", created_at: "2010-09-15 00:42:31", updated_at: "2010-09-15 00:42:31">}
+Rendered shared/_form_errors.html.haml (30.6ms)
+Rendered beer_styles/_beer_style_form.html.haml (37.8ms)
+Rendered beer_styles/new.html.haml within layouts/application (48.3ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 2.0ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#destroy as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962)
+Redirected to http://test.host/beer_styles
+Completed 302 Found in 8ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#edit as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (3.5ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.9ms)
+  Processing by BeerStylesController#index as HTML
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (2.6ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#show as HTML
+  Parameters: {"id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#update as HTML
+  Parameters: {"beer_style"=>{}, "id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/beer_styles/980190962
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Completed   in 8ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients"[0m
+Completed   in 3ms
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (4.2ms)
+Completed   in 10ms
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 0ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "recipes" WHERE ("recipes"."id" = 980190962)[0m
+Redirected to http://test.host/recipes
+Completed 302 Found in 3ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles"[0m
+Rendered recipes/_recipe_form.html.haml (12.2ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 2.1ms)
+  Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[36mBeerStyle Load (0.2ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles"[0m
+Rendered recipes/_recipe_form.html.haml (7.8ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Completed   in 6ms
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#update as HTML
+  Parameters: {"recipe"=>{}, "id"=>"980190962"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+Completed   in 2ms
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#create as HTML
+  Parameters: {"beer_style"=>#<BeerStyle id: 980190962, name: "MyString", description: "MyText", created_at: "2010-09-15 00:49:53", updated_at: "2010-09-15 00:49:53">}
+Rendered shared/_form_errors.html.haml (32.0ms)
+Rendered beer_styles/_beer_style_form.html.haml (37.9ms)
+Rendered beer_styles/new.html.haml within layouts/application (48.0ms)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 1.9ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#destroy as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962)
+Redirected to http://test.host/beer_styles
+Completed 302 Found in 9ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+  Processing by BeerStylesController#edit as HTML
+  Parameters: {"id"=>980190962}
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (3.5ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 1.0ms)
+  Processing by BeerStylesController#index as HTML
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered beer_styles/_beer_style_form.html.haml (2.5ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#show as HTML
+  Parameters: {"id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+  [1m[36mBeerStyle Load (0.1ms)[0m  [1mSELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1[0m
+  Processing by BeerStylesController#update as HTML
+  Parameters: {"beer_style"=>{}, "id"=>980190962}
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles" WHERE ("beer_styles"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/beer_styles/980190962
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Rendered shared/_form_errors.html.haml (3.6ms)
+Rendered ingredients/_ingredient_form.html.haml (9.0ms)
+Completed 200 OK in 27ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  Processing by IngredientsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "ingredients" WHERE ("ingredients"."id" = 980190962)
+Redirected to http://test.host/ingredients
+Completed 302 Found in 2ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+  Processing by IngredientsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (3.7ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.9ms)
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (3.3ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  Processing by IngredientsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.3ms)
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1[0m
+  Processing by IngredientsController#update as HTML
+  Parameters: {"ingredient"=>{}, "id"=>"980190962"}
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE ("ingredients"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/ingredients/980190962
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 1ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "recipes" WHERE ("recipes"."id" = 980190962)
+Redirected to http://test.host/recipes
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (12.1ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 2.1ms)
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.2ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (7.4ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.2ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+Completed   in 7ms
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+  Processing by RecipesController#update as HTML
+  Parameters: {"recipe"=>{}, "id"=>"980190962"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 980190962) LIMIT 1[0m
+Completed   in 2ms
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  Processing by BeerStylesController#index as HTML
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.9ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (1.8ms)
+Rendered beer_styles/_beer_style_form.html.haml (41.9ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Rendered shared/_form_errors.html.haml (3.3ms)
+Rendered ingredients/_ingredient_form.html.haml (8.7ms)
+Completed 200 OK in 25ms (Views: 16.6ms | ActiveRecord: 0.1ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (3.2ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 1ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.3ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (20.2ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.1ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  Processing by BeerStylesController#index as HTML
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 1.0ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (1.8ms)
+Rendered beer_styles/_beer_style_form.html.haml (45.5ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Rendered shared/_form_errors.html.haml (3.4ms)
+Rendered ingredients/_ingredient_form.html.haml (9.5ms)
+Completed 200 OK in 27ms (Views: 18.6ms | ActiveRecord: 0.1ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (3.4ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 1ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (21.0ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.1ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "beer_styles"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "beer_styles"[0m
+  Processing by BeerStylesController#index as HTML
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.9ms)
+  Processing by BeerStylesController#new as HTML
+Rendered shared/_form_errors.html.haml (1.8ms)
+Rendered beer_styles/_beer_style_form.html.haml (18.9ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#create as HTML
+  Parameters: {"ingredient"=>{}}
+Rendered shared/_form_errors.html.haml (3.1ms)
+Rendered ingredients/_ingredient_form.html.haml (8.3ms)
+Completed 200 OK in 25ms (Views: 16.6ms | ActiveRecord: 0.1ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "ingredients"
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "ingredients"[0m
+  Processing by IngredientsController#index as HTML
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT "ingredients".* FROM "ingredients"
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+  Processing by IngredientsController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+Rendered ingredients/_ingredient_form.html.haml (3.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "recipes"[0m
+  Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{}}
+Completed   in 0ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "recipes"
+  Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+  Processing by RecipesController#new as HTML
+Rendered shared/_form_errors.html.haml (0.1ms)
+  [1m[35mBeerStyle Load (0.1ms)[0m  SELECT "beer_styles".* FROM "beer_styles"
+Rendered recipes/_recipe_form.html.haml (19.3ms)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.1ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m

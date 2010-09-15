@@ -19,24 +19,26 @@
   =h @recipe.batch_size
 %p
   .text-block-label Description
-  = @recipe.description
+  %p=h @recipe.description
 
 - unless @recipe.bitterness.empty?
   %p
     %b Bitterness
-    =h @recipe.bitterness
+    %p=h @recipe.bitterness
 
 - unless @recipe.color.empty?
   %p
     %b Color
     %p=h @recipe.color
 
+
+%p
+  .text-block-label Ingredients
+  %p= render 'ingredients_list', :ingredients => @recipe.recipe_ingredients
+
 %p
   .text-block-label Procedure
   %pre= @recipe.procedure
-
-%h3 Ingredients
-= render 'ingredients_list', :ingredients => @recipe.recipe_ingredients
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 |

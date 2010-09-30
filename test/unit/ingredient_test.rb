@@ -15,11 +15,4 @@ class IngredientTest < ActiveSupport::TestCase
     end
   end
 
-
-  Ingredient.malt do |ing|
-    should " be a malt ingredient" do
-      assert ing.ingredient_type == 'malt'
-    end
-  end
-
 end

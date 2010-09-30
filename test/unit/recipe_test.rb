@@ -14,6 +14,7 @@ class RecipeTest < ActiveSupport::TestCase
   %w(extract grain partial).each { |mash|
     should allow_value(mash).for(:mash_type)
   }
+  should_not allow_value('peanut').for(:mash_type)
 
   context "a recipe with the wrong mash type" do
     setup do

@@ -1,9 +1,9 @@
 class RecipeIngredientsController < ApplicationController
-  # GET /recipe_ingredients
-  # GET /recipe_ingredients.xml
+  # GET /recipes/1/recipe_ingredients
+  # GET /recipes/1/recipe_ingredients.xml
   def index
-    @recipe_ingredients = RecipeIngredient.all
     @recipe = Recipe.find(params[:recipe_id])
+    @recipe_ingredients = RecipeIngredient.find_all_by_recipe_id(params[:recipe_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,8 +11,8 @@ class RecipeIngredientsController < ApplicationController
     end
   end
 
-  # GET /recipe_ingredients/1
-  # GET /recipe_ingredients/1.xml
+  # GET /recipes/1/recipe_ingredients/1
+  # GET /recipes/1/recipe_ingredients/1.xml
   def show
     @recipe_ingredient = RecipeIngredient.find(params[:id])
 
@@ -22,8 +22,8 @@ class RecipeIngredientsController < ApplicationController
     end
   end
 
-  # GET /recipe_ingredients/new
-  # GET /recipe_ingredients/new.xml
+  # GET /recipes/1/recipe_ingredients/new
+  # GET /recipes/1/recipe_ingredients/new.xml
   def new
     @recipe = Recipe.find(params[:recipe_id]);
     @recipe_ingredient = RecipeIngredient.new
@@ -34,14 +34,14 @@ class RecipeIngredientsController < ApplicationController
     end
   end
 
-  # GET /recipe_ingredients/1/edit
+  # GET /recipes/1/recipe_ingredients/1/edit
   def edit
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_ingredient = RecipeIngredient.find(params[:id])
   end
 
-  # POST /recipe_ingredients
-  # POST /recipe_ingredients.xml
+  # POST /recipes/1/recipe_ingredients
+  # POST /recipes/1/recipe_ingredients.xml
   def create
     recipe = Recipe.find(params[:recipe_id])
     ingredient = Ingredient.find(params[:recipe_ingredient][:ingredient])
@@ -60,8 +60,8 @@ class RecipeIngredientsController < ApplicationController
     end
   end
 
-  # PUT /recipe_ingredients/1
-  # PUT /recipe_ingredients/1.xml
+  # PUT /recipes/1/recipe_ingredients/1
+  # PUT /recipes/1/recipe_ingredients/1.xml
   def update
     @recipe_ingredient = RecipeIngredient.find(params[:id])
     params[:recipe_ingredient][:recipe] = Recipe.find(params[:recipe_id])
@@ -78,8 +78,8 @@ class RecipeIngredientsController < ApplicationController
     end
   end
 
-  # DELETE /recipe_ingredients/1
-  # DELETE /recipe_ingredients/1.xml
+  # DELETE /recipes/1/recipe_ingredients/1
+  # DELETE /recipes/1recipe_ingredients/1.xml
   def destroy
     @recipe_ingredient = RecipeIngredient.find(params[:id])
     recipe = @recipe_ingredient.recipe

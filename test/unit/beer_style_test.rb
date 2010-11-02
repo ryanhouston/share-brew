@@ -9,6 +9,11 @@ class BeerStyleTest < ActiveSupport::TestCase
   should validate_presence_of :description
   should validate_presence_of :category
 
+  should ensure_inclusion_of(:min_orig_grav).in_range( 0.0001..4.0001)
+  should ensure_inclusion_of(:max_orig_grav).in_range( 0.0001..4.0001)
+  should ensure_inclusion_of(:min_final_grav).in_range( 0.0001..4.0001)
+  should ensure_inclusion_of(:max_final_grav).in_range( 0.0001..4.0001)
+
   context "a beer style without a name" do
     setup do
       @beer_style = Factory.build(:beer_style, :name => '')

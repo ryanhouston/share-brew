@@ -7,9 +7,64 @@
     = f.text_field :name
 
   .form-element
+    = f.label :category
+    %br
+    = f.text_field :category
+
+  .form-element
+    = f.label 'Ale or Lager?'
+    = f.select(:lager, [['Ale', BeerStyle::ALE], ['Lager', BeerStyle::LAGER]])
+
+  .form-element
     = f.label :description
     %br
     = f.text_area :description
+
+  .form-element
+    = f.label 'Original Gravity (OG) Range (Specific Gravity)'
+    %br
+    = f.text_field :min_orig_grav
+    &nbsp;-&nbsp;
+    = f.text_field :max_orig_grav
+
+  .form-element
+    = f.label 'Final Gravity (FG) Range (specific gravity)'
+    %br
+    = f.text_field :min_final_grav
+    &nbsp;-&nbsp;
+    = f.text_field :max_final_grav
+
+  .form-element
+    = f.label 'General IBU Range'
+    %br
+    = f.text_field :min_IBUs
+    &nbsp;-&nbsp;
+    = f.text_field :max_IBUs
+
+  .form-element
+    = f.label 'General Color Range (SRM)'
+    %br
+    = f.text_field :min_color
+    &nbsp;-&nbsp;
+    = f.text_field :max_color
+
+  .form-element
+    = f.label 'General Carbonation Level'
+    %br
+    = f.text_field :min_carbonation
+    &nbsp;-&nbsp;
+    = f.text_field :max_carbonation
+
+
+  .form-element
+    = f.label 'Alcohol by Volume Range'
+    %br
+    = f.text_field :min_abv
+    \%
+    &nbsp;-&nbsp;
+    = f.text_field :max_abv
+    \%
+
 
   %br
   .form-element

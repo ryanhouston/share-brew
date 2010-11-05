@@ -6,6 +6,35 @@
   %b Description:
   =h @beer_style.description
 
+%p
+  %b Category:
+  =h @beer_style.category
+
+%p.right
+  %b Final Gravity Range
+  =h "#{@beer_style.min_final_grav} - #{@beer_style.max_final_grav}"
+
+%p
+  %b Original Gravity Range
+  =h "#{@beer_style.min_orig_grav} - #{@beer_style.max_orig_grav}"
+
+%p.right
+  %b Color Range (SRM)
+  =h "#{@beer_style.min_color} - #{@beer_style.max_color}"
+
+%p
+  %b Bitterness Range (IBUs)
+  =h "#{@beer_style.min_IBUs} - #{@beer_style.max_IBUs}"
+
+%p.right
+  %b Carbonation Range
+  =h "#{@beer_style.min_carbonation} - #{@beer_style.max_carbonation}"
+
+%p
+  %b Alcohol by Volume
+  =h "#{@beer_style.min_abv}% - #{@beer_style.max_abv}%"
+
+
 = link_to 'Edit', edit_beer_style_path(@beer_style)
 |
 = link_to 'Back', beer_styles_path

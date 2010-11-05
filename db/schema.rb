@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101102035438) do
+ActiveRecord::Schema.define(:version => 20101105044520) do
 
   create_table "beer_styles", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(:version => 20101102035438) do
     t.float    "max_carbonation"
     t.float    "min_abv"
     t.float    "max_abv"
+  end
+
+  create_table "hops", :force => true do |t|
+    t.string   "name"
+    t.string   "typical_use"
+    t.decimal  "alpha_acid",  :precision => 4, :scale => 2
+    t.decimal  "beta_acid",   :precision => 4, :scale => 2
+    t.string   "origin"
+    t.string   "form"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ingredients", :force => true do |t|

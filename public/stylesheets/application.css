@@ -355,6 +355,9 @@ li ol, li ul {
     float: right;
 }
 
+.left {
+  float: left;
+
 #footer {
     margin:0 auto 60px;
     border-top: 10px solid #1A1A1A;

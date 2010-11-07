@@ -1,0 +1,28 @@
+%h2
+  =h "#{@hop.name} (#{@hop.origin})"
+
+%div.right
+  %p
+    %b Typical Use:
+    =h @hop.typical_use
+
+  %p
+    %b Form
+    =h @hop.form
+
+%p
+  %b Alpha Acid
+  =h "#{@hop.alpha_acid}%"
+
+%p
+  %b Beta Acid
+  =h "#{@hop.beta_acid}%"
+
+%p
+  %b Notes
+  %br
+  =h @hop.notes
+
+= link_to 'Edit', edit_hop_path(@hop)
+|
+= link_to 'Back to Hops', hops_path

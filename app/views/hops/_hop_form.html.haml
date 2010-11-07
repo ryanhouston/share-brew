@@ -1,0 +1,41 @@
+= form_for(@hop) do |f|
+  = render 'shared/form_errors', :target => @hop
+
+  .form-element.right
+    = f.label :form
+    = f.select(:form, [['Pellets', Hop::PELLET], ['Plugs', Hop::PLUG], ['Leaf', Hop::LEAF]])
+
+  .form-element
+    = f.label :name
+    %br
+    = f.text_field :name
+
+  .form-element.right
+    = f.label 'Typical Use'
+    = f.select(:typical_use, [['Aroma', Hop::AROMA], ['Bittering', Hop::BITTERING]])
+
+  .form-element
+    = f.label :origin
+    %br
+    = f.text_field :origin
+
+  .clear
+
+  .form-element.right
+    = f.label :beta_acid
+    %br
+    = f.text_field :beta_acid
+
+  .form-element
+    = f.label :alpha_acid
+    %br
+    = f.text_field :alpha_acid
+
+  .form-element
+    = f.label :notes
+    %br
+    = f.text_area :notes
+
+  %br
+  .form-element
+    = f.submit "Save"

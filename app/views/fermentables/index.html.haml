@@ -1,0 +1,26 @@
+%h1 Listing fermentables
+
+%table
+  %tr
+    %th Name
+    %th Origin
+    %th Vendor
+    %th Potential SG
+    %th SRM
+    %th Max in Batch
+    %th{:colspan => 2}
+
+  - @fermentables.each do |fermentable|
+    %tr
+      %td= link_to fermentable.name, fermentable
+      %td= fermentable.origin
+      %td= fermentable.vendor
+      %td= fermentable.potential
+      %td= fermentable.color
+      %td= fermentable.max_in_batch
+      %td= link_to 'Edit', edit_fermentable_path(fermentable)
+      %td= link_to 'Destroy', fermentable, :confirm => 'Are you sure?', :method => :delete
+
+
+.actions
+  = link_to 'New Fermentable', new_fermentable_path

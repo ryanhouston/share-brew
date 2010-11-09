@@ -1,0 +1,48 @@
+= form_for(@fermentable) do |f|
+  - if @fermentable.errors.any?
+    #error_explanation
+      %h2= pluralize(@fermentable.errors.count, "error") + " prohibited this fermentable from being saved:"
+
+      %ul
+      - @fermentable.errors.full_messages.each do |msg|
+        %li= msg
+
+  %p
+    = f.label :name
+    = f.text_field :name
+
+  %p
+    = f.label :origin
+    = f.text_field :origin
+
+  %p
+    = f.label :vendor
+    = f.text_field :vendor
+
+  %p
+    = f.label :form
+    = f.select(:form, [[Fermentable::GRAIN, Fermentable::GRAIN], [Fermentable::DME, Fermentable::DME], [Fermentable::LME, Fermentable::LME], [Fermentable::SUGAR, Fermentable::SUGAR], [Fermentable::ADJUNCT, Fermentable::ADJUNCT]])
+
+  %p
+    = f.label :color
+    = f.text_field :color
+
+  %p
+    = f.label :potential
+    = f.text_field :potential
+
+  %p
+    = f.label :yield
+    = f.text_field :yield
+
+  %p
+    = f.label :max_in_batch
+    = f.text_field :max_in_batch
+
+  %p
+    = f.label :notes
+    %br
+    = f.text_area :notes
+
+  .actions
+    = f.submit

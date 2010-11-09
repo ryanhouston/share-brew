@@ -1,0 +1,34 @@
+#notice= notice
+
+%h2= @fermentable.name
+%h3= @fermentable.vendor + " (#{@fermentable.origin})"
+
+%p
+  %strong= "Form:"
+  = @fermentable.form
+
+%p
+  %strong= "Color (SRM)"
+  = @fermentable.color
+
+%p
+  %strong= "Potential SG"
+  = "#{@fermentable.potential} SG"
+
+%p
+  %strong= "Dry Yield"
+  = "#{@fermentable.yield}%"
+
+%p
+  %strong= "Max usage in batch"
+  = "#{@fermentable.max_in_batch}"
+
+%p
+  %strong= "Notes"
+  %br
+  = @fermentable.notes
+
+
+= link_to 'Edit Fermentable', edit_fermentable_path(@fermentable)
+|
+= link_to 'Back to Fermentables', fermentables_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101107175709) do
+ActiveRecord::Schema.define(:version => 20101107175710) do
 
   create_table "beer_styles", :force => true do |t|
     t.string   "name"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(:version => 20101107175709) do
     t.string   "origin"
     t.string   "vendor"
     t.string   "form"
-    t.decimal  "color",        :precision => 10, :scale => 0
-    t.decimal  "potential",    :precision => 10, :scale => 0
-    t.decimal  "yield",        :precision => 10, :scale => 0
-    t.decimal  "max_in_batch", :precision => 10, :scale => 0
+    t.float    "color"
+    t.decimal  "potential",    :precision => 5, :scale => 4
+    t.float    "yield"
+    t.float    "max_in_batch"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"

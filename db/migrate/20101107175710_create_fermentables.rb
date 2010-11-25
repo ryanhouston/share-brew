@@ -5,10 +5,10 @@ class CreateFermentables < ActiveRecord::Migration
       t.string :origin
       t.string :vendor
       t.string :form
-      t.decimal :color
-      t.decimal :potential
-      t.decimal :yield
-      t.decimal :max_in_batch
+      t.float :color
+      t.decimal :potential, :precision => 5, :scale => 4
+      t.float :yield
+      t.float :max_in_batch
       t.text :notes
 
       t.timestamps

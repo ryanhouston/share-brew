@@ -1,18 +1,24 @@
 require 'test_helper'
 
 class BeerStyleTest < ActiveSupport::TestCase
-  should have_many(:recipes)
+  context "a beer" do
+    setup do
+      @beer_style = Factory(:beer_style)
+    end
 
-  should validate_presence_of :name
-  # SKIP:  This test fails even though the model has the proper validation
-  # should validate_uniqueness_of :name
-  should validate_presence_of :description
-  should validate_presence_of :category
+  	should have_many(:recipes)
 
-  should ensure_inclusion_of(:min_orig_grav).in_range( 0.0001..4.0001)
-  should ensure_inclusion_of(:max_orig_grav).in_range( 0.0001..4.0001)
-  should ensure_inclusion_of(:min_final_grav).in_range( 0.0001..4.0001)
-  should ensure_inclusion_of(:max_final_grav).in_range( 0.0001..4.0001)
+  	should validate_presence_of :name
+	# SKIP - should work but shoulda is not filling out other required fields
+  	# should validate_uniqueness_of(:name).case_insensitive
+  	should validate_presence_of :description
+  	should validate_presence_of :category
+
+  	should ensure_inclusion_of(:min_orig_grav).in_range( 0.0001..4.0001)
+  	should ensure_inclusion_of(:max_orig_grav).in_range( 0.0001..4.0001)
+  	should ensure_inclusion_of(:min_final_grav).in_range( 0.0001..4.0001)
+  	should ensure_inclusion_of(:max_final_grav).in_range( 0.0001..4.0001)
+  end
 
   context "a beer style without a name" do
     setup do

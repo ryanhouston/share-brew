@@ -1,5 +1,4 @@
-require 'rexml/document'
-include REXML
+require 'nokogiri'
 
 module BeerXml
   class BeerXml::Parser
@@ -11,25 +10,23 @@ module BeerXml
 
     def styles
       parsed_styles = []
-      document.elements.each("STYLES/STYLE") do |style|
+      document.xpath("//STYLE").each do |style|
         parsed_styles << parse_style(style)
       end
       parsed_styles
     end
 
     def parse_style (style)
-      parsed_style = style.elements
-      style.elements.each do |elem|
-        puts "Elem: " + elem.name + " => " + elem.text
+      style.elements.each do |element|
+        puts element.name + " => " + element.text
       end
-      parsed_style
+      parsed_style = style
     end
 
     protected
     def document
       if @_document.nil?
-        @_document = Document.new(@_xml)
-        puts @_document.inspect
+        @_document = Nokogiri::XML(@_xml)
       end
       @_document
     end

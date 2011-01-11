@@ -3,6 +3,7 @@ ShareBrew::Application.routes.draw do
   resources :fermentables
   resources :hops
   resources :beer_styles
+  resources :yeasts
   resources :recipes do
     resources :recipe_ingredients
   end

@@ -9,7 +9,7 @@ class CreateYeasts < ActiveRecord::Migration
       t.boolean :use_starter
       t.integer :min_temp
       t.integer :max_temp
-      t.float :attentuation
+      t.float :attenuation
 
       t.timestamps
     end

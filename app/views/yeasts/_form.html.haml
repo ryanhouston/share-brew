@@ -1,0 +1,49 @@
+= form_for(@yeast) do |f|
+  - if @yeast.errors.any?
+    #error_explanation
+      %h2= pluralize(@yeast.errors.count, "error") + " prohibited this yeast from being saved:"
+
+      %ul
+      - @yeast.errors.full_messages.each do |msg|
+        %li= msg
+
+  %p
+    = f.label :name
+    = f.text_field :strain
+
+  %p
+    = f.label :catalog_id
+    = f.text_field :catalog_id
+
+  %p
+    = f.label :vendor
+    = f.text_field :vendor
+
+  %p
+    = f.label :form
+    = f.select(:form, Yeast::Forms)
+
+  %p
+    = f.label :description
+    = f.text_area :description
+
+  %p
+    = f.label :Starter?
+    = f.check_box :use_starter
+
+  %p
+    = f.label :avg_attenuation
+    = f.text_field(:attenuation) + "%"
+
+  %p
+    = f.label :min_temp
+    = f.text_field(:min_temp) + "F"
+
+
+  %p
+    = f.label :max_temp
+    = f.text_field(:max_temp) + "F"
+
+
+  .actions
+    = f.submit

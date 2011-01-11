@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20101210204305) do
     t.boolean  "use_starter"
     t.integer  "min_temp"
     t.integer  "max_temp"
-    t.float    "attentuation"
+    t.float    "attenuation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

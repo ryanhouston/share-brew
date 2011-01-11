@@ -1,0 +1,29 @@
+#notice= notice
+
+%h2= @yeast.strain
+%h3= @yeast.vendor + " (#{@yeast.catalog_id})"
+
+%p
+  %strong= "Form:"
+  = @yeast.form
+
+%p
+  %strong= "Min. Temperature"
+  = "#{@yeast.min_temp} F"
+
+%p
+  %strong= "Max. Temperature"
+  = "#{@yeast.max_temp} F"
+
+%p
+  %strong= "Attenuation"
+  = "#{@yeast.attenuation}%"
+
+%p
+  %strong= "Description"
+  = "#{@yeast.description}"
+
+
+= link_to 'Edit Yeast', edit_yeast_path(@yeast)
+|
+= link_to 'Back to Yeasts', yeasts_path

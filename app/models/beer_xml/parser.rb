@@ -17,10 +17,11 @@ module BeerXml
     end
 
     def parse_style (style)
+      parsed_style = Hash.new
       style.elements.each do |element|
-        puts element.name + " => " + element.text
+        parsed_style[element.name] = element.text 
       end
-      parsed_style = style
+      parsed_style
     end
 
     protected

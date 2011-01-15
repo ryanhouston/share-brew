@@ -9,7 +9,7 @@ module BeerXml
     end
 
     def styles
-      parsed_styles = []
+      parsed_styles = Array.new
       document.xpath("//STYLE").each do |style|
         parsed_styles << parse_style(style)
       end

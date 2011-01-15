@@ -11,7 +11,7 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
       assert_instance_of BeerXml::Importer, @importer
     end
 
-    should "throw exception when accessing reader" do
+    should "throw exception an ArgumentException when accessing reader" do
       assert_raise(BeerXml::UninitializedReaderError) do
         reader = @importer.reader
       end
@@ -20,9 +20,8 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
 
   context "A BeerXml Importer with a valid XML file provided" do
     setup do
-      xml_filename = Rails.root.to_s + '/test/unit/beer_xml/beer_styles.xml'
-      xml_file = File.new(xml_filename)
-      @importer = BeerXml::Importer.new(xml_file)
+      @importer = BeerXml::Importer.new
+      @importer.import(load_file)
     end
 
     should "provide a valid reader" do
@@ -37,7 +36,10 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
       assert_equal 'American Amber Ale', beer_styles.first.name
       assert_equal 'American Ale', beer_styles.first.category
     end
+  end
 
+  def load_file
+    filename = Rails.root.to_s + '/test/unit/beer_xml/beer_styles.xml'
   end
 
 end

@@ -4,7 +4,7 @@ class BeerXml::ReaderTest < ActiveSupport::TestCase
 
   context "a Beer XML Reader" do
     setup do
-      @beer_xml_reader = BeerXml::Reader.new
+      @beer_xml_reader = BeerXml::Reader.new(load_file)
     end
 
     should "be a valid Reader" do
@@ -41,10 +41,13 @@ class BeerXml::ReaderTest < ActiveSupport::TestCase
   end
 
   def load_beer_styles
-    @beer_styles_file = Rails.root.to_s + '/test/unit/beer_xml/beer_styles.xml'
-    file = File.new(@beer_styles_file)
-    @beer_xml_reader = BeerXml::Reader.new(file)
+    @beer_xml_reader = BeerXml::Reader.new(load_file)
     @beer_xml_reader.styles
+  end
+
+  def load_file
+    beer_styles_file = Rails.root.to_s + '/test/unit/beer_xml/beer_styles.xml'
+    File.new(beer_styles_file)
   end
 
 end

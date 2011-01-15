@@ -3,34 +3,20 @@ require 'nokogiri'
 module BeerXml
   class Reader
 
-    def initialize(xml = nil)
-      @_xml = xml
-      @_document = nil
+    def initialize(xml)
+      raise ArgumentError if xml.nil?
+      @document = Nokogiri::XML(xml)
     end
 
     def styles
-      parsed_styles = Array.new
-      document.xpath("//STYLE").each do |style|
-        parsed_styles << parse_style(style)
-      end
-      parsed_styles
-    end
-
-    def parse_style (style)
-      parsed_style = Hash.new
-      style.elements.each do |element|
-        parsed_style[element.name] = element.text
-      end
-      parsed_style
+      @parsed_styles ||= @document.xpath("//STYLE").collect { |style| parse_style(style) }
     end
 
     protected
-    def document
-      if @_document.nil?
-        @_document = Nokogiri::XML(@_xml)
+      def parse_style (style)
+         keys = style.elements.collect { |element| element.name }
+         values = style.elements.collect { |element| element.text }
+         Hash[keys.zip(values)]
       end
-      @_document
-    end
-
   end
 end

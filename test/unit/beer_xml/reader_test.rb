@@ -1,18 +1,18 @@
 require 'test_helper'
 
-class BeerXml::ParserTest < ActiveSupport::TestCase
+class BeerXml::ReaderTest < ActiveSupport::TestCase
 
-  context "a Beer XML Parser" do
+  context "a Beer XML Reader" do
     setup do
-      @beer_xml_parser = BeerXml::Parser.new
+      @beer_xml_reader = BeerXml::Reader.new
     end
 
-    should "be a valid Parser" do
-      assert @beer_xml_parser.instance_of?(BeerXml::Parser), "Class Found #{@beer_xml_parser.class}"
+    should "be a valid Reader" do
+      assert @beer_xml_reader.instance_of?(BeerXml::Reader), "Class Found #{@beer_xml_reader.class}"
     end
   end
 
-  context "Given a valid BeerXml file of beer style data, the Parser" do
+  context "Given a valid BeerXml file of beer style data, the Reader" do
     setup do
       @beer_styles = load_beer_styles
     end
@@ -25,8 +25,9 @@ class BeerXml::ParserTest < ActiveSupport::TestCase
     should "return style data as a hash map" do
       style = @beer_styles.first
       assert (style.kind_of? Hash)
-	end
+  	end
   end
+
 
   context "Given a parsed BeerXml Beer Style" do
     setup do
@@ -42,9 +43,8 @@ class BeerXml::ParserTest < ActiveSupport::TestCase
   def load_beer_styles
     @beer_styles_file = Rails.root.to_s + '/test/unit/beer_xml/beer_styles.xml'
     file = File.new(@beer_styles_file)
-    @beer_xml_parser = BeerXml::Parser.new(file)
-    @beer_xml_parser.styles
+    @beer_xml_reader = BeerXml::Reader.new(file)
+    @beer_xml_reader.styles
   end
-
 
 end

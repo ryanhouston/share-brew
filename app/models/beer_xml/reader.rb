@@ -1,7 +1,7 @@
 require 'nokogiri'
 
 module BeerXml
-  class BeerXml::Parser
+  class BeerXml::Reader
 
     def initialize(xml = nil)
       @_xml = xml
@@ -19,7 +19,7 @@ module BeerXml
     def parse_style (style)
       parsed_style = Hash.new
       style.elements.each do |element|
-        parsed_style[element.name] = element.text 
+        parsed_style[element.name] = element.text
       end
       parsed_style
     end

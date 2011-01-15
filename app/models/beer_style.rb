@@ -10,4 +10,6 @@ class BeerStyle < ActiveRecord::Base
     validates_inclusion_of :max_final_grav, :in => (0.0001..4.0001)
 
     has_many :recipes
+
+    attr_accessor :name, :description, :category
 end

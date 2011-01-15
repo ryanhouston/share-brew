@@ -1,7 +1,7 @@
 require 'nokogiri'
 
 module BeerXml
-  class BeerXml::Reader
+  class Reader
 
     def initialize(xml = nil)
       @_xml = xml

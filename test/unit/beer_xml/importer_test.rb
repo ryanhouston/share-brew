@@ -34,6 +34,8 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
       beer_styles = @importer.styles
       assert_instance_of Array, beer_styles
       assert_instance_of BeerStyle, beer_styles.first
+      assert_equal 'American Amber Ale', beer_styles.first.name
+      assert_equal 'American Ale', beer_styles.first.category
     end
 
   end

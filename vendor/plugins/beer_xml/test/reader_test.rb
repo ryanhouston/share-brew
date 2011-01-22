@@ -46,7 +46,7 @@ class BeerXml::ReaderTest < ActiveSupport::TestCase
   end
 
   def load_file
-    beer_styles_file = Rails.root.to_s + '/test/unit/beer_xml/beer_styles.xml'
+    beer_styles_file = Rails.root.to_s + '/vendor/plugins/beer_xml/test/beer_styles.xml'
     File.new(beer_styles_file)
   end
 

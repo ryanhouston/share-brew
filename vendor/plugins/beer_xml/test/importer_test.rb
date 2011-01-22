@@ -39,7 +39,7 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
   end
 
   def load_file
-    filename = Rails.root.to_s + '/test/unit/beer_xml/beer_styles.xml'
+    filename = Rails.root.to_s + '/vendor/plugins/beer_xml/test/beer_styles.xml'
   end
 
 end

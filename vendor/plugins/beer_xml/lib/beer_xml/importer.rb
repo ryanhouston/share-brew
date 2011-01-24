@@ -14,7 +14,7 @@ module BeerXml
     end
 
     def styles
-      @styles ||= reader.styles.collect { |style| BeerXml::Import::BeerStyle.fromHashMap style }
+      @styles ||= reader.styles.collect { |style| ::BeerStyle.import_from_hash style }
     end
   end
 end

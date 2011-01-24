@@ -5,7 +5,14 @@ module BeerXml
   class Importer
     def import(filename)
       raise ArgumentError if filename.nil?
+      reset_importer
       @current_file = filename
+    end
+
+    def reset_importer
+      @styles = nil
+      @reader = nil
+      @current_file = nil
     end
 
     def reader

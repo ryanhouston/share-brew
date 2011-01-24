@@ -1,13 +1,13 @@
 require 'test_helper'
 
 class BeerStyle < ActiveRecord::Base
-  acts_as_beer_importer :style
+  acts_as_beer_importer :styles
 end
 
 class BeerXml::ActsAsTest < ActiveSupport::TestCase
   context "A BeerStyle" do
     should "have an importer type of 'style'" do
-      assert_equal :style, BeerStyle.beer_importer_type
+      assert_equal :styles, BeerStyle.beer_importer_type
     end
 
     should "can be imported from a BeerXml file" do

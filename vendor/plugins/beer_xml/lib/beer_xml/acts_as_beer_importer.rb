@@ -17,9 +17,9 @@ module BeerXml
     end
 
     def import_beer_xml filename
-      @importer = BeerXml::Importer.new
+      @importer ||= BeerXml::Importer.new
       @importer.import filename
-      @importer.styles
+      @importer.send self.beer_importer_type
     end
 
   end

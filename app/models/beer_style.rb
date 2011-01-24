@@ -11,7 +11,7 @@ class BeerStyle < ActiveRecord::Base
 
     has_many :recipes
 
-    acts_as_beer_importer :style
+    acts_as_beer_importer :styles
 
     attr_accessor :name, :description, :category
 end

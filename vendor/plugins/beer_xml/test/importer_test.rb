@@ -36,6 +36,16 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
       assert_equal 'American Amber Ale', beer_styles.first.name
       assert_equal 'American Ale', beer_styles.first.category
     end
+
+    should "be and to reset its values to a clean state" do
+      @importer.reset_importer
+      assert_raise BeerXml::UninitializedReaderError do
+        reader = @importer.reader
+      end
+      assert_raise BeerXml::UninitializedReaderError do
+        styles = @importer.styles
+      end
+    end
   end
 
   def load_file

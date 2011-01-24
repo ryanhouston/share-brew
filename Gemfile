@@ -5,6 +5,8 @@ gem 'haml', '>= 3.0.18'
 gem 'shoulda'
 gem 'factory_girl'
 gem 'nokogiri'
+gem 'mynyml-redgreen'
+gem 'test-unit'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

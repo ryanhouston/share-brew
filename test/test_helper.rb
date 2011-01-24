@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 require 'factory_girl'
+require 'redgreen'
 
 Factory.define :beer_style do |b|
   b.name 'Beer'

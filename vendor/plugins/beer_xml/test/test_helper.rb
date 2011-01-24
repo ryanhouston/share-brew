@@ -4,3 +4,4 @@ require 'rubygems'
 require 'test/unit'
 require File.expand_path(File.join(ENV['RAILS_ROOT'], 'config/environment.rb'))
 require 'active_support'
+require 'redgreen'

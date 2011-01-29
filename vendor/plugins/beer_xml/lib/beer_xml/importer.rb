@@ -20,8 +20,11 @@ module BeerXml
       @reader ||= BeerXml::Reader.new(File.new(@current_file))
     end
 
-    def styles
-      @styles ||= reader.styles.collect { |style| ::BeerStyle.import_from_hash style }
+    # TODO: BeerStyle should be injected
+    def styles klass
+      @styles ||= reader.styles.collect do |style|
+        klass.import_from_hash style
+      end
     end
   end
 end

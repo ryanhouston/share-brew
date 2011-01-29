@@ -30,7 +30,7 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
     end
 
     should "be able to import (ShareBrew)BeerStyle objects" do
-      beer_styles = @importer.styles
+      beer_styles = @importer.styles BeerStyle
       assert_instance_of Array, beer_styles
       assert_instance_of BeerStyle, beer_styles.first
       assert_equal 'American Amber Ale', beer_styles.first.name
@@ -43,7 +43,7 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
         reader = @importer.reader
       end
       assert_raise BeerXml::UninitializedReaderError do
-        styles = @importer.styles
+        styles = @importer.styles BeerStyle
       end
     end
   end

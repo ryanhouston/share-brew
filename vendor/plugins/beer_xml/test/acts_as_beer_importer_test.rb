@@ -28,7 +28,6 @@ class BeerXml::ActsAsBeerImporterTest < ActiveSupport::TestCase
 
     should "be able to specify attribute mappings" do
      beer_styles = UnusualBeerStyle.import_beer_xml load_file
-     puts beer_styles.first.inspect
      assert_equal 6.0, beer_styles.first.max_abv
     end
   end

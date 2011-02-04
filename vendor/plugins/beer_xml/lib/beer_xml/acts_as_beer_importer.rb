@@ -4,18 +4,27 @@ module BeerXml
   end
 
   module ClassMethods
-    def acts_as_beer_importer_of type, options = nil
-      cattr_accessor :beer_importer_type, :attr_map, :translate_callbacks
+    def acts_as_beer_importer_of type
+      cattr_accessor :beer_importer_type, :attr_map, :method_map
       self.beer_importer_type = type
-      self.attr_map = options[:translated_as] if options
-      self.translate_callbacks = options[:using] if options
       send :include, InstanceMethods
+      self
+    end
+
+    def translated_as xml_to_model_map
+      self.attr_map = xml_to_model_map
+      self
+    end
+
+    def using xml_to_method_map
+      self.method_map = xml_to_method_map
+      self
     end
 
     def import_from_hash style_hash
       beer_style = self.new
       beer_style.load_defaults style_hash
-      beer_style.run_translation_callbacks(style_hash) if self.translate_callbacks
+      beer_style.run_translation_callbacks(style_hash) if self.method_map
       beer_style
     end
 
@@ -45,7 +54,7 @@ module BeerXml
     end
 
     def load_override_if_provided style_attr, attr_value
-      if !self.attr_map.nil? && !self.attr_map[style_attr.to_sym].nil?
+      if self.attr_map && self.attr_map[style_attr.to_sym]
         mapped_attr = self.attr_map[style_attr.to_sym]
         logger.debug "Mapping beer XML <#{style_attr}> to [#{mapped_attr}]\n"
         send "#{mapped_attr}=", attr_value
@@ -56,7 +65,7 @@ module BeerXml
 
   public
     def run_translation_callbacks style_hash
-      self.translate_callbacks.each do |model_attr, model_method|
+      self.method_map.each do |model_attr, model_method|
         translated_value = send model_method, style_hash
         send "#{model_attr}=", translated_value
       end

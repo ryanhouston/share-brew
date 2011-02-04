@@ -7,12 +7,20 @@ end
 class UnusualBeerStyle < ActiveRecord::Base
   load_schema
 
-  acts_as_beer_importer_of :styles,
-    :translated_as => { :abv_max => :max_abv },
-    :using => {:min_abv => :translate_min_abv}
+  acts_as_beer_importer_of(:styles).translated_as({
+    :abv_max => :max_abv, :abv_min => :min_abv,
+  }).using({
+    :description => :compose_description,
+  });
 
-  def translate_min_abv beer_attrs
-    beer_attrs['ABV_MIN'].to_f * -1
+
+  def compose_description beer_attrs
+    desc = beer_attrs["NOTES"] + "\n\n" +
+      beer_attrs["PROFILE"] + "\n\n" +
+      beer_attrs["INGREDIENTS"] + "\n\n" +
+      beer_attrs["EXAMPLES"]
+
+    write_attribute :description, desc
   end
 end
 
@@ -26,21 +34,32 @@ class BeerXml::ActsAsBeerImporterTest < ActiveSupport::TestCase
       beer_styles = BeerStyle.import_beer_xml load_file
       assert_instance_of Array, beer_styles
       assert_instance_of BeerStyle, beer_styles.first
-      assert_nil beer_styles.first.attr_map
+    end
+
+    should "import values for like named attributes" do
+      beer_styles = BeerStyle.import_beer_xml load_file
       assert_equal 'American Amber Ale', beer_styles.first.name
       assert_equal 'American Ale', beer_styles.first.category
     end
+  end
 
-
-    should "be able to map a beer XML property to another attribute" do
+  context "A BeerStyle imported from BeerXML" do
+    setup do
       beer_styles = UnusualBeerStyle.import_beer_xml(load_file)
-      assert_equal 6.0, beer_styles.first.max_abv
+      @first_style = beer_styles.first
+      assert_instance_of Array, beer_styles
     end
 
-    should "be able to provide a call back for mapping beer XML attributes" do
-      beer_styles = UnusualBeerStyle.import_beer_xml(load_file)
-      assert_instance_of Array, beer_styles
-      assert_equal -4.5, beer_styles.first.min_abv
+    should "be able to map a beer XML property to another attribute name" do
+      assert_equal 6.0, @first_style.max_abv
+      assert_equal 4.5, @first_style.min_abv
+    end
+
+    should "be able to define a method for importing a specified attribute" do
+      assert_match /caramel richness/, @first_style.description
+      assert_match /chocolate or roast character/, @first_style.description
+      assert_match /citrusy flavors/, @first_style.description
+      assert_match /Rogue Red Ale/, @first_style.description
     end
   end
 

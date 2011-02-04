@@ -11,7 +11,21 @@ class BeerStyle < ActiveRecord::Base
 
     has_many :recipes
 
-    acts_as_beer_importer_of :styles
+    acts_as_beer_importer_of(:styles).translated_as({
+      :abv_max => :max_abv, :abv_min => :min_abv,
+    }).using({
+      :description => :compose_description,
+    });
 
-    attr_accessor :name, :description, :category
+
+  private
+    def compose_description beer_attrs
+      desc = beer_attrs["NOTES"] + "\n\n" +
+        beer_attrs["PROFILE"] + "\n\n" +
+        beer_attrs["INGREDIENTS"] + "\n\n" +
+        beer_attrs["EXAMPLES"]
+
+      write_attribute :description, desc
+    end
+
 end

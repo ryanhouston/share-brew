@@ -10,4 +10,10 @@ class Hop < ActiveRecord::Base
   validates_presence_of :form
   validates_presence_of :typical_use
 
+  acts_as_beer_importer_of(:hops).translated_as({
+    :alpha => :alpha_acid,
+    :beta => :beta_acid,
+    :use => :typical_use,
+  })
+
 end

@@ -9,13 +9,17 @@ module BeerXml
     end
 
     def styles
-      @parsed_styles ||= @document.xpath("//STYLE").collect { |style| parse_style(style) }
+      @parsed_styles ||= @document.xpath("//STYLE").collect { |style| parse_element(style) }
+    end
+
+	def hops
+      @parsed_hops ||= @document.xpath("//HOP").collect { |hop| parse_element(hop) }
     end
 
     protected
-      def parse_style (style)
-         keys = style.elements.collect { |element| element.name }
-         values = style.elements.collect { |element| element.text }
+      def parse_element (beer_element)
+         keys = beer_element.elements.collect { |element| element.name }
+         values = beer_element.elements.collect { |element| element.text }
          Hash[keys.zip(values)]
       end
   end

@@ -3,6 +3,8 @@ Gemfile.lock
 db/*.sqlite3
 *.sqlite3.db
 *.log
+log/*.log
 tmp/**/*
 config/database.yml
 *.swp
+*.pid.lock

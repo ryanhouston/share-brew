@@ -11,6 +11,7 @@ module BeerXml
 
     def reset_importer
       @styles = nil
+      @hops = nil
       @reader = nil
       @current_file = nil
     end

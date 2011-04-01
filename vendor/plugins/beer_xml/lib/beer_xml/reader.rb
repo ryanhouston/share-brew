@@ -12,8 +12,12 @@ module BeerXml
       @parsed_styles ||= @document.xpath("//STYLE").collect { |style| parse_element(style) }
     end
 
-	def hops
+    def hops
       @parsed_hops ||= @document.xpath("//HOP").collect { |hop| parse_element(hop) }
+    end
+
+    def fermentables
+      @fermentables ||= @document.xpath("//FERMENTABLE").collect{ |fermentable| parse_element(fermentable) }
     end
 
     protected

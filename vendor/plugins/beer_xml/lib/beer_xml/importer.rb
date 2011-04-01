@@ -33,5 +33,11 @@ module BeerXml
       end
     end
 
+    def fermentables klass
+      @fermentables ||= reader.fermentables.collect do |fermentable|
+        klass.import_from_hash fermentable
+      end
+    end
+
   end
 end

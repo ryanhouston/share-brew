@@ -7,4 +7,13 @@ class Yeast < ActiveRecord::Base
   validates_inclusion_of :form, :in => Forms,
 	:message => "%{value} is not a valid form of yeast"
 
+  acts_as_beer_importer_of(:yeasts).translated_as({
+    :name   => :strain,
+    :laboratory => :vendor,
+    :product_id => :catalog_id,
+    :notes => :description,
+    :min_temperature => :min_temp,
+    :max_temperature => :max_temp,
+  })
+
 end

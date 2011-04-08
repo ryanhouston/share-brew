@@ -20,6 +20,10 @@ module BeerXml
       @fermentables ||= @document.xpath("//FERMENTABLE").collect{ |fermentable| parse_element(fermentable) }
     end
 
+    def yeasts
+      @yeasts ||= @document.xpath("//YEAST").collect{ |yeast| parse_element(yeast) }
+    end
+
     protected
       def parse_element (beer_element)
          keys = beer_element.elements.collect { |element| element.name }

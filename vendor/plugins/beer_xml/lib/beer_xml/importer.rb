@@ -39,5 +39,10 @@ module BeerXml
       end
     end
 
+    def yeasts klass
+      @yeasts ||= reader.yeasts.collect do |yeast|
+        klass.import_from_hash yeast
+      end
+    end
   end
 end

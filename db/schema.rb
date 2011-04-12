@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101210204305) do
+ActiveRecord::Schema.define(:version => 20110412030116) do
 
   create_table "beer_styles", :force => true do |t|
     t.string   "name"
@@ -96,12 +96,13 @@ ActiveRecord::Schema.define(:version => 20101210204305) do
     t.string   "catalog_id"
     t.string   "form"
     t.text     "description"
-    t.boolean  "use_starter"
-    t.integer  "min_temp"
-    t.integer  "max_temp"
     t.float    "attenuation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "flocculation"
+    t.string   "strain_type"
+    t.float    "min_temp"
+    t.float    "max_temp"
   end
 
 end

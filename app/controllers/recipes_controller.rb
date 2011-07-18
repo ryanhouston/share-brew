@@ -2,6 +2,9 @@ class RecipesController < ApplicationController
   before_filter :find_recipe,
     :only => [:show, :edit, :update, :destroy]
 
+  before_filter :require_authentication,
+    :only => [:edit, :update, :create, :new]
+
   private
     def find_recipe
       @recipe = Recipe.find(params[:id])
@@ -33,6 +36,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.xml
   def new
     @recipe = Recipe.new
+    @recipe.user_id = current_user.id
 
     respond_to do |format|
       format.html # new.html.erb

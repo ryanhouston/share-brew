@@ -1,4 +1,6 @@
 ShareBrew::Application.routes.draw do
+  devise_for :users
+
   resources :ingredients
   resources :fermentables
   resources :hops

@@ -357,6 +357,7 @@ li ol, li ul {
 
 .left {
   float: left;
+}
 
 #footer {
     margin:0 auto 60px;
@@ -429,3 +430,32 @@ li ol, li ul {
 .gravity-block {
   margin-right: 80px;
 }
+
+.flash {
+  display: block;
+  width: 591px;
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+#notice {
+  background: #BBFF79;
+  border-color: #00AA00;
+}
+
+#error {
+  background: #FFbaba;
+  border-color: #BB4545;
+}
+
+#user-nav {
+  float: right;
+  color: #fff;
+}
+
+#user-nav a:link { color: #fff; font-style: italic; }
+#user-nav a:visited { color: #fff; text-decoration: none; }
+#user-nav a:hover { color: #fff; text-decoration: none; }
+#user-nav a:active { color: #fff; text-decoration: none; }
+

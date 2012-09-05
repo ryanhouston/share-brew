@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.1.0'
 gem 'haml', '>= 3.0.18'
 gem 'shoulda'
 gem 'factory_girl'
@@ -8,7 +8,7 @@ gem 'nokogiri'
 gem 'mynyml-redgreen'
 gem 'test-unit'
 gem 'omniauth'
-gem 'devise', '1.1.rc0'
+gem 'devise'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

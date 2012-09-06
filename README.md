@@ -16,7 +16,8 @@ This project is a slowly moving target.
 
 Installation / Setup
 ---------------------
-Run 'cp config/database.yml.sample config/database.yml'
-Edit config/database.yml with your mysql username and password
-Run 'rake db:migrate'
-Ruan 'script/server' or set up your server however you prefer.
+- ```bundle install```
+- ```cp config/database.yml.sample config/database.yml```
+- Setup config/database.yml with your preferred configuration
+- ```rake db:setup```
+- Start your rails application as normal

@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
-gem 'haml', '>= 3.0.18'
+gem 'rails', '3.2.8'
 gem 'jquery-rails'
+gem 'haml', '>= 3.0.18'
 gem 'shoulda'
 gem 'factory_girl'
 gem 'nokogiri'
@@ -16,6 +16,12 @@ gem 'devise'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
+
+group :assets do
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

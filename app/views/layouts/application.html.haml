@@ -41,6 +41,9 @@
           - if flash[:error]
             %p#error.flash= flash[:error]
 
+          - if flash[:alert]
+            %p#error.flash= flash[:alert]
+
 
           = yield
 

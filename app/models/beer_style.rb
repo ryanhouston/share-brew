@@ -1,3 +1,5 @@
+require 'beer_xml'
+
 class BeerStyle < ActiveRecord::Base
     ALE = 0
     LAGER = 1

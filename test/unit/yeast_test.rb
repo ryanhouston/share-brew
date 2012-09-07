@@ -4,7 +4,7 @@ class YeastTest < ActiveSupport::TestCase
   context "a yeast strain" do
 
     setup do
-      @yeast = Factory(:yeast)
+      @yeast = FactoryGirl.build(:yeast)
     end 
 
     [:strain, :catalog_id, :vendor, :form].each do |value|
@@ -37,7 +37,7 @@ class YeastTest < ActiveSupport::TestCase
     end
 
     should "be import valid yeasts" do
-      assert_valid @yeasts.first
+      assert @yeasts.first.valid?
     end
 
     should "be able to import a beer xml file of yeasts" do

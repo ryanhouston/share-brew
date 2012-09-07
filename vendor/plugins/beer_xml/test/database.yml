@@ -1,4 +1,0 @@
-sqlite3:
-  :adapter: sqlite3
-  :database:  vendor/plugins/beer_xml/test/beer_xml_plugin.sqlite3.db
-

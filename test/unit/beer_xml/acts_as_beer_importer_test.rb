@@ -1,11 +1,14 @@
 require 'test_helper'
+require 'beer_xml'
 
 class BeerStyle < ActiveRecord::Base
   acts_as_beer_importer_of :styles
 end
 
-class UnusualBeerStyle < ActiveRecord::Base
-  load_schema
+class UnusualBeerStyle
+  include BeerXml
+
+  attr_accessor :max_abv, :min_abv, :description
 
   acts_as_beer_importer_of(:styles).translated_as({
     :abv_max => :max_abv, :abv_min => :min_abv,
@@ -20,7 +23,16 @@ class UnusualBeerStyle < ActiveRecord::Base
       beer_attrs["INGREDIENTS"] + "\n\n" +
       beer_attrs["EXAMPLES"]
 
-    write_attribute :description, desc
+    description = desc
+  end
+
+  def logger
+    @logger ||= NullLogger.new
+  end
+
+  class NullLogger
+    def debug( msg )
+    end
   end
 end
 
@@ -39,7 +51,7 @@ class BeerXml::ActsAsBeerImporterTest < ActiveSupport::TestCase
     should "import values for like named attributes" do
       beer_styles = BeerStyle.import_beer_xml load_file
       assert_equal 'American Amber Ale', beer_styles.first.name
-      assert_equal 'American Ale', beer_styles.first.category
+      assert_equal 'American Ale - 10B', beer_styles.first.category
     end
   end
 
@@ -51,8 +63,8 @@ class BeerXml::ActsAsBeerImporterTest < ActiveSupport::TestCase
     end
 
     should "be able to map a beer XML property to another attribute name" do
-      assert_equal 6.0, @first_style.max_abv
-      assert_equal 4.5, @first_style.min_abv
+      assert_equal "6.00", @first_style.max_abv
+      assert_equal "4.50", @first_style.min_abv
     end
 
     should "be able to define a method for importing a specified attribute" do
@@ -64,7 +76,7 @@ class BeerXml::ActsAsBeerImporterTest < ActiveSupport::TestCase
   end
 
   def load_file
-    filename = Rails.root.to_s + '/vendor/plugins/beer_xml/test/beer_styles.xml'
+    filename = Rails.root.to_s + '/test/fixtures/beer_styles.xml'
   end
 
 end

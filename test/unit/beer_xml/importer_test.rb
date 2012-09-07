@@ -34,7 +34,7 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
       assert_instance_of Array, beer_styles
       assert_instance_of BeerStyle, beer_styles.first
       assert_equal 'American Amber Ale', beer_styles.first.name
-      assert_equal 'American Ale', beer_styles.first.category
+      assert_equal 'American Ale - 10B', beer_styles.first.category
     end
 
     should "be and to reset its values to a clean state" do
@@ -49,7 +49,7 @@ class BeerXml::ImporterTest < ActiveSupport::TestCase
   end
 
   def load_file
-    filename = Rails.root.to_s + '/vendor/plugins/beer_xml/test/beer_styles.xml'
+    filename = Rails.root.to_s + '/test/fixtures/beer_styles.xml'
   end
 
 end

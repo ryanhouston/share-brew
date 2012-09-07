@@ -1,1 +1,0 @@
-require 'beer_xml'

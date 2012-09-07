@@ -18,7 +18,7 @@ class RecipeTest < ActiveSupport::TestCase
 
   context "a recipe with the wrong mash type" do
     setup do
-      @recipe = Factory.build(:recipe, :mash_type => 'Peanuts')
+      @recipe = FactoryGirl.build(:recipe, :mash_type => 'Peanuts')
     end
 
     should "not be valid" do

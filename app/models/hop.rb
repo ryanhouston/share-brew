@@ -1,3 +1,5 @@
+require 'beer_xml'
+
 class Hop < ActiveRecord::Base
   AROMA = 'Aroma';
   BITTERING = 'Bittering';

@@ -3,7 +3,7 @@ module BeerXml
   end
 
   class Importer
-    def import(filename)
+    def self.import( filename )
       raise ArgumentError if filename.nil?
       reset_importer
       @current_file = filename
@@ -21,25 +21,25 @@ module BeerXml
       @reader ||= BeerXml::Reader.new(File.new(@current_file))
     end
 
-    def styles klass
+    def styles( klass )
       @styles ||= reader.styles.collect do |style|
         klass.import_from_hash style
       end
     end
 
-    def hops klass
+    def hops( klass )
       @hops ||= reader.hops.collect do |hop|
         klass.import_from_hash hop
       end
     end
 
-    def fermentables klass
+    def fermentables( klass )
       @fermentables ||= reader.fermentables.collect do |fermentable|
         klass.import_from_hash fermentable
       end
     end
 
-    def yeasts klass
+    def yeasts( klass )
       @yeasts ||= reader.yeasts.collect do |yeast|
         klass.import_from_hash yeast
       end

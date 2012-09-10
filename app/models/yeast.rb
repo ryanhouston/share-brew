@@ -2,11 +2,16 @@ class Yeast < ActiveRecord::Base
   Forms = ['dry', 'liquid'] 
   StrainTypes = ['ale', 'lager', 'champagne', 'wine', 'cider']
 
+  attr_accessible :strain, :vendor, :catelog_id, :form, :description, :min_temp, :max_temp
+
   validates_presence_of :strain, :catalog_id, :vendor, :form
-  validates_uniqueness_of :catalog_id, :scope => :vendor, :case_sensitive => true,
-	:message => "should be unique per vendor"
   validates_inclusion_of :form, :in => Forms,
-	:message => "%{value} is not a valid form of yeast"
+    :message => "%{value} is not a valid form of yeast"
+
+  # Apparently not all vendors use proper product IDs. Brewtek had dupes
+  # while Danstar provides none in the beersmith 1.0 export.
+  #validates_uniqueness_of :catalog_id, :scope => :vendor, :case_sensitive => true,
+  #  :message => "should be unique per vendor"
   #validates_inclusion_of :strain_type, :in => StrainTypes,
   #:message => "%{value} is not a valid type of yeast"
 
@@ -30,4 +35,7 @@ class Yeast < ActiveRecord::Base
     write_attribute :strain_type, yeast_attrs['TYPE'].downcase
   end
 
+  def name
+    strain
+  end
 end

@@ -1,18 +1,9 @@
 %h1 Beer Styles
 
-%table
-  %tr
-    %th Name
-    %th Description
-    %th{:colspan => '3'}
-  - for beer_style in @beer_styles
-    %tr
-      %td= beer_style.name
-      %td= beer_style.description
-      %td= link_to 'Show', beer_style
-      %td= link_to 'Edit', edit_beer_style_path(beer_style)
-      %td= link_to 'Destroy', beer_style, :confirm => 'Are you sure?', :method => :delete
-
-%br
+%ul.beer-styles
+  - @beer_styles.each do |style|
+    %li.beer-style
+      = link_to style.name, beer_style_path(style)
+      %span.actions= link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
 
 = link_to 'New beer_style', new_beer_style_path

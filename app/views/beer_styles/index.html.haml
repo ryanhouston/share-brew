@@ -4,6 +4,9 @@
   - @beer_styles.each do |style|
     %li.beer-style
       = link_to style.name, beer_style_path(style)
-      %span.actions= link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
+
+      - if user_signed_in?
+        %span.actions
+          = link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
 
 = link_to 'New beer_style', new_beer_style_path

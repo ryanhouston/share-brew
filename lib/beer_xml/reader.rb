@@ -25,10 +25,11 @@ module BeerXml
     end
 
     protected
-      def parse_element (beer_element)
-         keys = beer_element.elements.collect { |element| element.name }
-         values = beer_element.elements.collect { |element| element.text }
-         Hash[keys.zip(values)]
-      end
+    def parse_element (beer_element)
+       keys = beer_element.elements.collect { |element| element.name }
+       values = beer_element.elements.collect { |element| element.text }
+       Hash[keys.zip(values)]
+    end
+
   end
 end

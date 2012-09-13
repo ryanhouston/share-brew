@@ -8,9 +8,11 @@
   %p
     %b Expected FG
     =h @recipe.final_gravity
+
 %p
   %b Style
   =h @recipe.beer_style.name
+
 %p
   %b Mash type
   =h @recipe.mash_type
@@ -21,19 +23,25 @@
   .text-block-label Description
   %p=h @recipe.description
 
-- unless @recipe.bitterness.empty?
-  %p
-    %b Bitterness
-    %p=h @recipe.bitterness
+.right.gravity-block
+  - unless @recipe.bitterness.empty?
+    %p
+      %b Bitterness
+      =h "#{@recipe.bitterness} IBUs"
 
-- unless @recipe.color.empty?
-  %p
-    %b Color
-    %p=h @recipe.color
+  - unless @recipe.color.empty?
+    %p
+      %b Color
+      =h "#{@recipe.color} SRM"
 
-%p
-  .text-block-label Procedure
-  %pre= @recipe.procedure
+%h3 Ingredients
+.ingredients
+  %h4 Hops
+  %ul.hop-additions
+    %li= render @recipe.hop_additions
+
+%h3 Procedure
+%pre= @recipe.procedure
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 |

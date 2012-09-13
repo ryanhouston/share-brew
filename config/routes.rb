@@ -5,7 +5,9 @@ ShareBrew::Application.routes.draw do
   resources :hops
   resources :beer_styles
   resources :yeasts
-  resources :recipes
+  resources :recipes do
+    resources :hop_additions
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

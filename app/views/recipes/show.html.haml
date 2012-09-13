@@ -1,4 +1,5 @@
 %h2= h @recipe.name
+%em=h @recipe.beer_style.name
 
 .right.gravity-block
   %p
@@ -8,20 +9,6 @@
   %p
     %b Expected FG
     =h @recipe.final_gravity
-
-%p
-  %b Style
-  =h @recipe.beer_style.name
-
-%p
-  %b Mash type
-  =h @recipe.mash_type
-%p
-  %b Batch size
-  =h @recipe.batch_size
-%p
-  .text-block-label Description
-  %p=h @recipe.description
 
 .right.gravity-block
   - unless @recipe.bitterness.empty?
@@ -34,14 +21,28 @@
       %b Color
       =h "#{@recipe.color} SRM"
 
+
+%div
+  %p
+    %b Mash type
+    =h @recipe.mash_type
+
+  %p
+    %b Batch size
+    =h @recipe.batch_size
+  %p=h @recipe.description
+
 %h3 Ingredients
 .ingredients
   %h4 Hops
-  %ul.hop-additions
-    %li= render @recipe.hop_additions
+  .hop-additions
+    = render @recipe.hop_additions
 
-%h3 Procedure
-%pre= @recipe.procedure
+%br
+
+%div
+  %h3 Procedure
+  %pre= @recipe.procedure
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 |

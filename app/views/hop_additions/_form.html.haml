@@ -1,0 +1,32 @@
+= recipe_form.fields_for :hop_additions do |hop_form|
+  .add-hop
+    %p
+      = hop_form.label :hop
+      = hop_form.select :hop_id,
+                        Hop.all.collect {|hop| [hop.name, hop.id] },
+                        {:prompt => 'Choose Hop'}
+
+    %p
+      = hop_form.label :alpha_acid
+      = hop_form.text_field :alpha_acid
+
+    %p
+      = hop_form.label :beta_acid
+      = hop_form.text_field :beta_acid
+
+    %p
+      = hop_form.label :weight
+      = hop_form.text_field :weight
+
+    %p
+      = hop_form.label :duration
+      = hop_form.text_field :duration
+
+    %p
+      = hop_form.label :form
+      = hop_form.select :form, [['Pellet', :pellet], ['Whole Leaf', :whole_leaf], ['Plug', :plug]]
+
+    %p
+      = hop_form.label :use
+      = hop_form.select :use, [['First Wort', :first_wort], ['Boil', :boil], ['Dry Hop', :dry_hop]]
+

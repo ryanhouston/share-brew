@@ -1,3 +1,4 @@
+- @recipe.hop_additions.build
 = form_for(@recipe) do |f|
   = render 'shared/form_errors', :target => @recipe
 
@@ -45,5 +46,9 @@
     = f.label :procedure
     %br
     = f.text_area :procedure
+
+  .hops
+    %h3 Hops
+    = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
   %p
     = f.submit 'Save'

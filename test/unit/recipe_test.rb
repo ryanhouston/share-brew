@@ -3,9 +3,6 @@ require 'test_helper'
 class RecipeTest < ActiveSupport::TestCase
   should belong_to :beer_style
 
-  should have_many :recipe_ingredients
-  should have_many(:ingredients).through(:recipe_ingredients)
-
   should validate_presence_of :name
   should validate_presence_of :batch_size
   should validate_presence_of :description

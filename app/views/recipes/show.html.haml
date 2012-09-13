@@ -31,11 +31,6 @@
     %b Color
     %p=h @recipe.color
 
-
-%p
-  .text-block-label Ingredients
-  %p= render 'ingredients_list', :ingredients => @recipe.recipe_ingredients
-
 %p
   .text-block-label Procedure
   %pre= @recipe.procedure

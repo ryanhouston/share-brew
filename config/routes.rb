@@ -1,14 +1,11 @@
 ShareBrew::Application.routes.draw do
   devise_for :users
 
-  resources :ingredients
   resources :fermentables
   resources :hops
   resources :beer_styles
   resources :yeasts
-  resources :recipes do
-    resources :recipe_ingredients
-  end
+  resources :recipes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

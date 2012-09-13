@@ -24,13 +24,6 @@ FactoryGirl.define do
     mash_type 'partial'
   end
 
-  factory :ingredient do
-    name 'Ingredient'
-    description 'A generic ingredient for testing.'
-    ingredient_type 'malt'
-    association :recipe
-  end
-
   factory :yeast do
     strain 'American Ale'
     catalog_id '1056'

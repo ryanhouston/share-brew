@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913033839) do
+ActiveRecord::Schema.define(:version => 20120913041734) do
 
   create_table "beer_styles", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,21 @@ ActiveRecord::Schema.define(:version => 20120913033839) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "hop_additions", :force => true do |t|
+    t.integer  "hop_id"
+    t.integer  "recipe_id"
+    t.decimal  "alpha_acid", :precision => 4, :scale => 2, :null => false
+    t.decimal  "beta_acid",  :precision => 4, :scale => 2
+    t.decimal  "weight",                                   :null => false
+    t.string   "form",                                     :null => false
+    t.integer  "duration",                                 :null => false
+    t.string   "use",                                      :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+  end
+
+  add_index "hop_additions", ["hop_id"], :name => "index_hop_additions_on_hop_id"
 
   create_table "hops", :force => true do |t|
     t.string   "name"

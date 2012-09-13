@@ -4,51 +4,61 @@
 
   = hidden_field_tag(:user_id, @recipe.user_id)
 
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.label :beer_style
-    %br
-    = f.collection_select(:beer_style, BeerStyle.all, :id, :name)
-    %br
-    = link_to 'Add new style', new_beer_style_path
-  %p
-    = f.label :mash_type
-    %br
-    = f.select(:mash_type, [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
-  %p
-    = f.label :description
-    %br
-    = f.text_area :description
-  %p
-    = f.label :batch_size
-    %br
-    = f.text_field :batch_size
-  %p
-    = f.label :original_gravity
-    %br
-    = f.text_field :original_gravity
-  %p
-    = f.label :final_gravity
-    %br
-    = f.text_field :final_gravity
-  %p
-    = f.label :bitterness
-    %br
-    = f.text_field :bitterness
-  %p
-    = f.label :color
-    %br
-    = f.text_field :color
-  %p
-    = f.label :procedure
-    %br
-    = f.text_area :procedure
+  %fieldset.field-row
+    .field-row
+      .left
+        .field-label= f.label :name
+        .field= f.text_field :name
+      .left
+        .field-label= f.label :beer_style
+        .field= f.collection_select(:beer_style, BeerStyle.all, :id, :name)
+        %br
+        = link_to 'Add new style', new_beer_style_path
+    .field-row
+      .left
+        .field-label= f.label :mash_type
+        .field= f.select(:mash_type, [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
+      .left
+        .field-label= f.label :batch_size
+        .field
+          =f.text_field :batch_size, :size => 3
+          gallons
 
-  .hops
-    %h3 Hops
-    = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
+  %br
+
+  %fieldset.field-row
+    %legend.field-label= f.label :description
+    .field= f.text_area :description, :size => "60x4"
+
+  %fieldset.field-row
+    %legend Vitals
+    .left
+      .field-label= f.label :original_gravity
+      .field
+        = f.text_field :original_gravity, :size => 6
+        SG
+    .left
+      .field-label= f.label :final_gravity
+      .field
+        = f.text_field :final_gravity, :size => 6
+        SG
+    .left
+      .field-label= f.label :bitterness
+      .field
+        = f.text_field :bitterness, :size => 6
+        IBUs
+    .left
+      .field-label= f.label :color
+      .field
+        = f.text_field :color, :size => 6
+        SRM
+
+  %fieldset.field-row
+    %legend.field-label= f.label :procedure
+    .field= f.text_area :procedure, :size => "60x4"
+
+  %h3 Hops
+  = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
+
   %p
     = f.submit 'Save'

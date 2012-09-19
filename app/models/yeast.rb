@@ -2,7 +2,7 @@ class Yeast < ActiveRecord::Base
   Forms = ['dry', 'liquid'] 
   StrainTypes = ['ale', 'lager', 'champagne', 'wine', 'cider']
 
-  attr_accessible :strain, :vendor, :catelog_id, :form, :description, :min_temp, :max_temp
+  attr_accessible :strain, :vendor, :form, :description, :min_temp, :max_temp, :catalog_id, :attenuation
 
   validates_presence_of :strain, :catalog_id, :vendor, :form
   validates_inclusion_of :form, :in => Forms,

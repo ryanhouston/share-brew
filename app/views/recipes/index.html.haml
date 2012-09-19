@@ -1,29 +1,7 @@
-%h1 Listing Recipes
+%h1 All Recipes
 
-%table
-  %tr
-    %th Name
-    %th Mash type
-    %th Description
-    %th Batch size
-    %th Expected OG
-    %th Expected FG
-    %th Bitterness
-    %th Color
-
+%ul.recipes
   - @recipes.each do |recipe|
-    %tr
-      %td= link_to h(recipe.name), recipe
-      %td=h recipe.mash_type
-      %td=h recipe.description
-      %td=h recipe.batch_size
-      %td=h recipe.original_gravity
-      %td=h recipe.final_gravity
-      %td=h recipe.bitterness
-      %td=h recipe.color
-      %td= link_to 'Edit', edit_recipe_path(recipe)
-      %td= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete
-
-%br
+    %li= render :partial => 'recipes/recipe', :locals => { :recipe => recipe }
 
 = link_to 'New recipe', new_recipe_path

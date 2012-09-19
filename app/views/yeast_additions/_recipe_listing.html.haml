@@ -6,8 +6,9 @@
     %span.starter= "(#{yeast_addition.starter_size} ml starter)"
 
   - if show_controls
-    .controls
-      = link_to "Delete",
+    %span.controls
+      = link_to 'Edit', edit_recipe_yeast_addition_path(yeast_addition.recipe_id, yeast_addition.id)
+      = link_to 'Delete',
                 [yeast_addition.recipe, yeast_addition],
                 :method => :delete,
                 :confirm => "Are you sure you want to delete the yeast addition?"

@@ -58,5 +58,7 @@
   - unless @recipe.new_record?
     = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
 
-  %p
+  %br
+
+  .field-row.controls
     = f.submit 'Save'

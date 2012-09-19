@@ -16,5 +16,11 @@ class YeastAdditionsController < ApplicationController
     end
   end
 
+  def destroy
+    @yeast_addition = YeastAddition.find(params[:id])
+    @yeast_addition.destroy
+    redirect_to(recipe_path(@yeast_addition.recipe_id))
+  end
+
 end
 

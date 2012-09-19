@@ -50,7 +50,11 @@
   = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
 
   %h3 Yeast
-  = render :partial => 'yeast_additions/recipe_listing', :collection => @recipe.yeast_additions, :as => :yeast_addition
+  = render :partial => 'yeast_additions/recipe_listing',
+           :collection => @recipe.yeast_additions,
+           :as => :yeast_addition,
+           :locals => { :show_controls => true }
+
   - unless @recipe.new_record?
     = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
 

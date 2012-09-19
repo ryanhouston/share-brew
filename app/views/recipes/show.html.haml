@@ -40,7 +40,9 @@
 
   %h4 Yeast
   .yeast-additions
-    = render :partial => 'yeast_additions/recipe_listing', :collection => @recipe.yeast_additions, :as => :yeast_addition
+    = render :partial => 'yeast_additions/recipe_listing',
+             :collection => @recipe.yeast_additions,
+             :as => :yeast_addition
 
 %br
 

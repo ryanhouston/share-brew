@@ -3,7 +3,11 @@
 
 %p
   %strong= "Form:"
-  = @yeast.form
+  = @yeast.form.capitalize
+
+%p
+  %strong= "Type:"
+  = @yeast.strain_type.capitalize
 
 %p
   %strong= "Min. Temperature"

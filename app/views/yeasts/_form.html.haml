@@ -24,6 +24,10 @@
     = f.select(:form, Yeast::Forms)
 
   %p
+    = f.label :strain_type
+    = f.select(:strain_type, Yeast::StrainTypes)
+
+  %p
     = f.label :description
     = f.text_area :description
 

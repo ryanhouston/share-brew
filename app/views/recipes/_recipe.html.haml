@@ -1,5 +1,6 @@
 .recipe-listing
   = link_to recipe.name, recipe
+  %em= recipe.beer_style.name
   = "(#{recipe.mash_type})"
   = "#{recipe.original_gravity} - #{recipe.final_gravity} | "
   = recipe.bitterness + ' IBUs | '

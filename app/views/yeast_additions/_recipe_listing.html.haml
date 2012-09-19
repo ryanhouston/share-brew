@@ -1,0 +1,4 @@
+.yeast-addition
+  %span.yeast-name= yeast_addition.yeast.strain
+  - if yeast_addition.use_starter
+    %span.starter= "(#{yeast_addition.starter_size} ml starter)"

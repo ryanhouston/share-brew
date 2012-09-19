@@ -1,0 +1,19 @@
+= form_for([@recipe, @yeast_addition]) do |f|
+  = render 'shared/form_errors', :target => @yeast_addition
+
+  .field-row
+    .field-group
+      .field-label= f.label :yeast_id
+      .field= f.collection_select(:yeast_id, Yeast.all, :id, :strain)
+  .field-row
+    .field-group
+      .field
+        = f.check_box :use_starter
+        = f.label :use_starter
+    .field-group
+      .field-label= f.label :starter_size
+      .field= f.text_field(:starter_size, :size => 8) + ' ml'
+
+  .field-row
+    = f.submit
+

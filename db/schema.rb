@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20120919170729) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "yeast_additions", :force => true do |t|
-    t.boolean  "use_starter?"
+    t.boolean  "use_starter"
     t.integer  "starter_size"
     t.integer  "yeast_id"
     t.integer  "recipe_id"

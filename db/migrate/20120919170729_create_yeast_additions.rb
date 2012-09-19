@@ -1,7 +1,7 @@
 class CreateYeastAdditions < ActiveRecord::Migration
   def change
     create_table :yeast_additions do |t|
-      t.boolean :use_starter?
+      t.boolean :use_starter
       t.integer :starter_size
       t.references :yeast
       t.references :recipe

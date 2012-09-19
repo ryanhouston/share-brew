@@ -5,6 +5,7 @@ class Recipe < ActiveRecord::Base
     belongs_to :beer_style
     belongs_to :user
     has_many   :hop_additions
+    has_many   :yeast_additions
 
     accepts_nested_attributes_for :hop_additions, :allow_destroy => :true,
       :reject_if => proc { |attrs| attrs['hop_id'].blank? }

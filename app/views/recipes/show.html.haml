@@ -36,13 +36,13 @@
 .ingredients
   %h4 Hops
   .hop-additions
-    = render @recipe.hop_additions
+    = render(@recipe.hop_additions) || "No hops have been added yet."
 
   %h4 Yeast
   .yeast-additions
-    = render :partial => 'yeast_additions/recipe_listing',
+    = render(:partial => 'yeast_additions/recipe_listing',
              :collection => @recipe.yeast_additions,
-             :as => :yeast_addition
+             :as => :yeast_addition) || "No yeasts have been added yet."
 
 %br
 

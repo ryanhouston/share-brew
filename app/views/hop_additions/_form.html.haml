@@ -7,10 +7,8 @@
                           Hop.all.collect {|hop| [hop.name, hop.id] },
                           {:prompt => 'Choose Hop'}
       .field-group
-        .field-label
-          = hop_form.label(:alpha_acid)
-        .field
-          = hop_form.text_field(:alpha_acid, :size => 2) + ' %'
+        .field-label= hop_form.label(:alpha_acid)
+        .field= hop_form.text_field(:alpha_acid, :size => 2) + ' %'
 
       .field-group
         .field-label= hop_form.label :beta_acid
@@ -18,13 +16,11 @@
 
       .field-group
         .field-label= hop_form.label :weight
-        .field
-          = hop_form.text_field(:weight, :size => 2) + ' oz.'
+        .field= hop_form.text_field(:weight, :size => 2) + ' oz.'
 
       .field-group
         .field-label= hop_form.label :duration
-        .field
-          = hop_form.text_field(:duration, :size => 2) + ' minutes'
+        .field= hop_form.text_field(:duration, :size => 2) + ' minutes'
 
     .field-row
       .field-group

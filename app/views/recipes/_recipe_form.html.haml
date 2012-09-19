@@ -15,11 +15,11 @@
       .field-group
         .field-label= f.label :batch_size
         .field=f.text_field(:batch_size, :size => 3) + ' gallons'
+
     .field-row
       .field-group
         .field-label= f.label :beer_style
-        .field
-          = f.collection_select(:beer_style, BeerStyle.all, :id, :name)
+        .field= f.collection_select(:beer_style, BeerStyle.all, :id, :name)
 
   %br
 
@@ -31,24 +31,16 @@
     %legend Vitals
     .field-group
       .field-label= f.label :original_gravity
-      .field
-        = f.text_field :original_gravity, :size => 6
-        SG
+      .field= f.text_field(:original_gravity, :size => 6) + ' SG'
     .field-group
       .field-label= f.label :final_gravity
-      .field
-        = f.text_field :final_gravity, :size => 6
-        SG
+      .field= f.text_field(:final_gravity, :size => 6) + ' SG'
     .field-group
       .field-label= f.label :bitterness
-      .field
-        = f.text_field :bitterness, :size => 6
-        IBUs
+      .field= f.text_field(:bitterness, :size => 6) + ' IBUs'
     .field-group
       .field-label= f.label :color
-      .field
-        = f.text_field :color, :size => 6
-        SRM
+      .field= f.text_field(:color, :size => 6) + ' SRM'
 
   %fieldset.field-row
     %legend.field-label= f.label :procedure

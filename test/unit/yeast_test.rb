@@ -19,7 +19,7 @@ class YeastTest < ActiveSupport::TestCase
       should_not allow_value(value).for(:form)
     end
 
-    Yeast::StrainTypes.each do |value|
+    Yeast::STRAIN_TYPES.each do |value|
       should allow_value(value).for(:strain_type)
     end
   end

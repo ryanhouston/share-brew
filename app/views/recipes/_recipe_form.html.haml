@@ -46,6 +46,13 @@
     %legend.field-label= f.label :procedure
     .field= f.text_area :procedure, :size => "60x4"
 
+
+  %h3 Fermentables
+  = render(:partial => 'fermentable_additions/fermentable_addition',
+           :collection => @recipe.fermentable_additions,
+           :locals => { :show_controls => true })
+  = link_to 'Add Fermentable', new_recipe_fermentable_addition_path(@recipe)
+
   %h3 Hops
   = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
 

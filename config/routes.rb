@@ -10,6 +10,7 @@ ShareBrew::Application.routes.draw do
   resources :recipes do
     resources :hop_additions
     resources :yeast_additions
+    resources :fermentable_additions
   end
 
 end

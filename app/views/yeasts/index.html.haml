@@ -1,28 +1,13 @@
-%h1 Listing yeasts
+%h1 Yeasts
 
-%table
-  %tr
-    %th Name
-    %th Catalog ID
-    %th Vendor
-    %th Form
-    %th Atten. %
-    %th Min Temp.
-    %th Max Temp.
-    %th{:colspan => 2}
-
+%ul.yeast-list
   - @yeasts.each do |yeast|
-    %tr
-      %td= link_to yeast.strain, yeast
-      %td= yeast.catalog_id
-      %td= yeast.vendor
-      %td= yeast.form
-      %td= yeast.attenuation
-      %td= yeast.min_temp
-      %td= yeast.max_temp
+    %li
+      = link_to yeast.strain, yeast
+      = "#{yeast.vendor} (#{yeast.catalog_id})"
+      %em= yeast.form
       %td= link_to 'Edit', edit_yeast_path(yeast)
       %td= link_to 'Destroy', yeast, :confirm => 'Are you sure?', :method => :delete
 
-
 .actions
-  = link_to 'New Fermentable', new_yeast_path
+  = link_to 'New Yeast', new_yeast_path

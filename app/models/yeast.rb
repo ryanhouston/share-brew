@@ -2,7 +2,7 @@ class Yeast < ActiveRecord::Base
   Forms = ['dry', 'liquid']
   StrainTypes = ['ale', 'lager', 'champagne', 'wine', 'cider']
 
-  attr_accessible :strain, :vendor, :form, :description, :min_temp, :max_temp, :catalog_id, :attenuation
+  attr_accessible :strain, :strain_type, :vendor, :form, :description, :min_temp, :max_temp, :catalog_id, :attenuation
 
   validates_presence_of :strain, :catalog_id, :vendor, :form
   validates_inclusion_of :form, :in => Forms,
@@ -12,8 +12,8 @@ class Yeast < ActiveRecord::Base
   # while Danstar provides none in the beersmith 1.0 export.
   #validates_uniqueness_of :catalog_id, :scope => :vendor, :case_sensitive => true,
   #  :message => "should be unique per vendor"
-  #validates_inclusion_of :strain_type, :in => StrainTypes,
-  #:message => "%{value} is not a valid type of yeast"
+  validates_inclusion_of :strain_type, :in => StrainTypes,
+    :message => "%{value} is not a valid type of yeast"
 
   acts_as_beer_importer_of(:yeasts).translated_as({
     :name   => :strain,

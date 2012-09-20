@@ -5,14 +5,12 @@ class YeastTest < ActiveSupport::TestCase
 
     setup do
       @yeast = FactoryGirl.build(:yeast)
-    end 
+    end
 
     [:strain, :catalog_id, :vendor, :form].each do |value|
       should validate_presence_of value
     end
 
-    ## SKIP - should work but shoulda is not filling other required fields
-    # should validate_uniqueness_of(:catalog_id).scoped_to(:vendor)
     %w(dry liquid).each do |value|
       should allow_value(value).for(:form)
     end
@@ -52,7 +50,6 @@ class YeastTest < ActiveSupport::TestCase
       assert_equal 'Medium', yeast.flocculation
       assert_equal 'liquid', yeast.form
       assert_equal 'lager', yeast.strain_type
-      
     end
   end
 

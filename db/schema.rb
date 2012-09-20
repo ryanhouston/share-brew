@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919170729) do
+ActiveRecord::Schema.define(:version => 20120920213840) do
 
   create_table "beer_styles", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(:version => 20120919170729) do
     t.float    "min_abv"
     t.float    "max_abv"
   end
+
+  create_table "fermentable_additions", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "fermentable_id"
+    t.decimal  "weight"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "fermentable_additions", ["fermentable_id"], :name => "index_fermentable_additions_on_fermentable_id"
+  add_index "fermentable_additions", ["recipe_id"], :name => "index_fermentable_additions_on_recipe_id"
 
   create_table "fermentables", :force => true do |t|
     t.string   "name"

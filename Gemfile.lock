@@ -164,6 +164,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda
+  shoulda-matchers
   sqlite3
   test-unit
   thin

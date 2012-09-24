@@ -8,7 +8,6 @@ gem 'nokogiri'
 gem 'omniauth'
 gem 'devise'
 
-gem 'sqlite3'
 gem 'mysql'
 
 group :assets do
@@ -18,10 +17,14 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'shoulda'
-  gem 'factory_girl'
-  gem 'mynyml-redgreen'
-  gem 'test-unit'
+  gem 'sqlite3'
 
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl'
+
+  # these dependencies are being phased out in favor of rspec
+  gem 'shoulda'
+  gem 'mynyml-redgreen'
+  gem 'test-unit'
 end

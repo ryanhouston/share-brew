@@ -12,6 +12,6 @@ class Recipe < ActiveRecord::Base
     accepts_nested_attributes_for :hop_additions, :allow_destroy => :true,
       :reject_if => proc { |attrs| attrs['hop_id'].blank? }
 
-    validates_presence_of :name, :batch_size, :description, :procedure
+    validates_presence_of :name, :batch_size, :description
     validates_inclusion_of :mash_type, :in => ['extract', 'grain', 'partial']
 end

@@ -4,7 +4,10 @@ class BeerStyle < ActiveRecord::Base
     ALE = 0
     LAGER = 1
 
-    attr_accessible :name, :category, :lager, :description, :min_orig_grav, :max_orig_grav, :min_final_grav, :max_final_grav, :min_IBUs, :max_IBUs, :min_color, :max_color, :min_carbonation, :max_carbonation, :min_abv, :max_abv
+    attr_accessible :name, :category, :lager, :description,
+      :min_orig_grav, :max_orig_grav, :min_final_grav, :max_final_grav,
+      :min_IBUs, :max_IBUs, :min_color, :max_color,
+      :min_carbonation, :max_carbonation, :min_abv, :max_abv
 
     validates_uniqueness_of :name, :case_sensitivity => false
     validates_presence_of :name, :description, :category

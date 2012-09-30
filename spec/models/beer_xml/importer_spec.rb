@@ -32,7 +32,7 @@ describe BeerXml::Importer do
   end
 
   def load_file
-    filename = Rails.root.to_s + '/test/fixtures/beer_styles.xml'
+    filename = Rails.root.to_s + '/spec/fixtures/beer_styles.xml'
   end
 end
 

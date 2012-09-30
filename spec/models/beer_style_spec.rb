@@ -34,7 +34,7 @@ describe BeerStyle do
   end
 
   def load_styles_xml
-    filename = Rails.root + 'test/fixtures/bjcp-2008-styles.xml'
+    filename = Rails.root + 'spec/fixtures/bjcp-2008-styles.xml'
   end
 end
 

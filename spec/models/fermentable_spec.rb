@@ -25,7 +25,7 @@ describe Fermentable do
     end
 
     def load_fermentables_xml
-      filename = Rails.root + 'test/fixtures/grain.xml'
+      filename = Rails.root + 'spec/fixtures/grain.xml'
     end
   end
 end

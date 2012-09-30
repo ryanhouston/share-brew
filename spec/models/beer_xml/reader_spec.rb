@@ -19,7 +19,7 @@ describe BeerXml::Reader do
   end
 
   def load_file
-    beer_styles_file = Rails.root.to_s + '/test/fixtures/beer_styles.xml'
+    beer_styles_file = Rails.root.to_s + '/spec/fixtures/beer_styles.xml'
     File.new(beer_styles_file)
   end
 end

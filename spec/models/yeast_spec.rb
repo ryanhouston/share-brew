@@ -32,7 +32,7 @@ describe Yeast do
     its( :strain_type ) { should eq 'lager' }
 
     def load_file
-      file = Rails.root + 'test/fixtures/yeast.xml'
+      file = Rails.root + 'spec/fixtures/yeast.xml'
     end
   end
 end

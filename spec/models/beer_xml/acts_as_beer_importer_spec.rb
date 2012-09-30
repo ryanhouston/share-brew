@@ -30,7 +30,7 @@ describe BeerXml do
   end
 
   def load_file
-    Rails.root.to_s + '/test/fixtures/beer_styles.xml'
+    Rails.root.to_s + '/spec/fixtures/beer_styles.xml'
   end
 end
 

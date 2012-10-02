@@ -47,25 +47,26 @@
     .field= f.text_area :procedure, :size => "60x4"
 
 
-  %h3 Fermentables
-  = render(:partial => 'fermentable_additions/fermentable_addition',
-           :collection => @recipe.fermentable_additions,
-           :locals => { :show_controls => true })
-  = link_to 'Add Fermentable', new_recipe_fermentable_addition_path(@recipe)
-
-  %h3 Hops
-  = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
-
-  %h3 Yeast
-  = render :partial => 'yeast_additions/recipe_listing',
-           :collection => @recipe.yeast_additions,
-           :as => :yeast_addition,
-           :locals => { :show_controls => true }
-
   - unless @recipe.new_record?
-    = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
+    %h3 Fermentables
+    = render(:partial => 'fermentable_additions/fermentable_addition',
+             :collection => @recipe.fermentable_additions,
+             :locals => { :show_controls => true })
+    = link_to 'Add Fermentable', new_recipe_fermentable_addition_path(@recipe)
+
+    %h3 Hops
+    = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
+
+    %h3 Yeast
+    = render :partial => 'yeast_additions/recipe_listing',
+             :collection => @recipe.yeast_additions,
+             :as => :yeast_addition,
+             :locals => { :show_controls => true }
+
+    - unless @recipe.new_record?
+      = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
 
   %br
 
   .field-row.controls
-    .right= f.submit 'Save'
+    .right= f.submit(@recipe.new_record? ? 'Next' : 'Save')

@@ -38,7 +38,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(params[:recipe])
 
     if @recipe.save
-      redirect_to(@recipe, :notice => 'Recipe was successfully created.')
+      redirect_to(edit_recipe_path(@recipe), :notice => 'Recipe was successfully created.')
     else
       render :action => "new"
     end

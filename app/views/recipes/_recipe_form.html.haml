@@ -47,27 +47,32 @@
 
 
   - unless @recipe.new_record?
-    %h3 Fermentables
-    = render(:partial => 'fermentable_additions/fermentable_addition',
-             :collection => @recipe.fermentable_additions,
-             :locals => { :show_controls => true })
-    = link_to 'Add Fermentable', new_recipe_fermentable_addition_path(@recipe)
+    %fieldset.field-row
+      %legend.field-label Ingredients
+      %h3 Fermentables
+      #fermentables
+        = render(:partial => 'fermentable_additions/fermentable_addition',
+                 :collection => @recipe.fermentable_additions,
+                 :locals => { :show_controls => true })
+        = link_to 'Add Fermentable',
+                  new_recipe_fermentable_addition_path(@recipe),
+                  :remote => true, :"data-new-ingredient" => 'fermentables'
 
-    %h3 Hops
-    - @recipe.hop_additions
-    - if @recipe.hop_additions
-      = render(:partial => 'hop_additions/hop_addition',
-               :collection => @recipe.hop_additions,
-               :locals => { :show_controls => true })
-    = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe)
+      %h3 Hops
+      - @recipe.hop_additions
+      - if @recipe.hop_additions
+        = render(:partial => 'hop_additions/hop_addition',
+                 :collection => @recipe.hop_additions,
+                 :locals => { :show_controls => true })
+      = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe)
 
-    %h3 Yeast
-    = render :partial => 'yeast_additions/recipe_listing',
-             :collection => @recipe.yeast_additions,
-             :as => :yeast_addition,
-             :locals => { :show_controls => true }
+      %h3 Yeast
+      = render :partial => 'yeast_additions/recipe_listing',
+               :collection => @recipe.yeast_additions,
+               :as => :yeast_addition,
+               :locals => { :show_controls => true }
 
-    = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
+      = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
 
   %br
 

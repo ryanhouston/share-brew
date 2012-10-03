@@ -1,0 +1,2 @@
+$("a[data-new-ingredient=fermentables]").hide();
+$("<%= escape_javascript(render :partial => 'form') %>").attr('data-remote', true).appendTo('#fermentables');

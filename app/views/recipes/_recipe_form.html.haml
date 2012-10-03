@@ -1,4 +1,3 @@
-- @recipe.hop_additions.build
 = form_for(@recipe) do |f|
   = render 'shared/form_errors', :target => @recipe
 
@@ -55,7 +54,12 @@
     = link_to 'Add Fermentable', new_recipe_fermentable_addition_path(@recipe)
 
     %h3 Hops
-    = render :partial => 'hop_additions/form', :locals => { :recipe_form => f }
+    - @recipe.hop_additions
+    - if @recipe.hop_additions
+      = render(:partial => 'hop_additions/hop_addition',
+               :collection => @recipe.hop_additions,
+               :locals => { :show_controls => true })
+    = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe)
 
     %h3 Yeast
     = render :partial => 'yeast_additions/recipe_listing',
@@ -63,8 +67,7 @@
              :as => :yeast_addition,
              :locals => { :show_controls => true }
 
-    - unless @recipe.new_record?
-      = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
+    = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
 
   %br
 

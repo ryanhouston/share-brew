@@ -12,23 +12,11 @@ class FermentableAdditionsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @fermentable_addition = @recipe.fermentable_additions.build(params[:fermentable_addition])
-
-    respond_to do |format|
-      if @fermentable_addition.save
-        format.html do
-          redirect_to edit_recipe_path(@recipe), notice:
-            "Added #{@fermentable_addition.fermentable.name} to recipe"
-        end
-        format.js {}
-      else
-        format.html { render :new }
-        format.js do
-          @remote = true
-          render :new
-        end
-      end
-    end
+    @recipe.add_fermentable(
+      params[:fermentable_addition],
+      success: method(:created_successfully),
+      failure: method(:creation_failed)
+    )
   end
 
   def edit
@@ -44,4 +32,28 @@ class FermentableAdditionsController < ApplicationController
       render :edit
     end
   end
+
+  private
+  def created_successfully
+    respond_to do |format|
+      format.html do
+        redirect_to edit_recipe_path(@recipe),
+          notice: "Added #{@fermentable_addition.fermentable.name} to recipe"
+      end
+
+      format.js {}
+    end
+  end
+
+  def creation_failed
+    respond_to do |format|
+      format.html { render :new }
+
+      format.js do
+        @remote = true
+        render :new
+      end
+    end
+  end
+
 end

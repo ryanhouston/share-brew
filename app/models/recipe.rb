@@ -15,9 +15,9 @@ class Recipe < ActiveRecord::Base
     @fermentable_addition = fermentable_additions.build(params)
 
     if @fermentable_addition.save
-      callbacks[:success].call if callbacks[:success]
+      callbacks[:success].try(:call)
     else
-      callbacks[:failure].call if callbacks[:failure]
+      callbacks[:failure].try(:call)
     end
   end
 end

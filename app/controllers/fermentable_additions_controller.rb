@@ -14,11 +14,20 @@ class FermentableAdditionsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @fermentable_addition = @recipe.fermentable_additions.build(params[:fermentable_addition])
 
-    if @fermentable_addition.save
-      flash[:notice] = "Added #{@fermentable_addition.fermentable.name} to recipe"
-      redirect_to edit_recipe_path(@recipe)
-    else
-      render :new
+    respond_to do |format|
+      if @fermentable_addition.save
+        format.html do
+          redirect_to edit_recipe_path(@recipe), notice:
+            "Added #{@fermentable_addition.fermentable.name} to recipe"
+        end
+        format.js {}
+      else
+        format.html { render :new }
+        format.js do
+          @remote = true
+          render :new
+        end
+      end
     end
   end
 

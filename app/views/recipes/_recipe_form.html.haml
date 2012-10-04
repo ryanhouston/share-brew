@@ -45,36 +45,32 @@
     %legend.field-label= f.label :procedure
     .field= f.text_area :procedure, :size => "60x4"
 
-
-  - unless @recipe.new_record?
-    %fieldset.field-row
-      %legend.field-label Ingredients
-      %h3 Fermentables
-      #fermentables
-        = render(:partial => 'fermentable_additions/fermentable_addition',
-                 :collection => @recipe.fermentable_additions,
-                 :locals => { :show_controls => true })
-        = link_to 'Add Fermentable',
-                  new_recipe_fermentable_addition_path(@recipe),
-                  :remote => true, :"data-new-ingredient" => 'fermentables'
-
-      %h3 Hops
-      - @recipe.hop_additions
-      - if @recipe.hop_additions
-        = render(:partial => 'hop_additions/hop_addition',
-                 :collection => @recipe.hop_additions,
-                 :locals => { :show_controls => true })
-      = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe)
-
-      %h3 Yeast
-      = render :partial => 'yeast_additions/recipe_listing',
-               :collection => @recipe.yeast_additions,
-               :as => :yeast_addition,
-               :locals => { :show_controls => true }
-
-      = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
-
-  %br
-
   .field-row.controls
     .right= f.submit(@recipe.new_record? ? 'Next' : 'Save')
+
+  %br.clear
+
+- unless @recipe.new_record?
+  %fieldset.field-row
+    %legend.field-label Ingredients
+
+    %h3 Fermentables
+    = render :partial => 'fermentable_additions/list'
+
+    %h3 Hops
+    - @recipe.hop_additions
+    - if @recipe.hop_additions
+      = render(:partial => 'hop_additions/hop_addition',
+               :collection => @recipe.hop_additions,
+               :locals => { :show_controls => true })
+    = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe)
+
+    %h3 Yeast
+    = render :partial => 'yeast_additions/recipe_listing',
+             :collection => @recipe.yeast_additions,
+             :as => :yeast_addition,
+             :locals => { :show_controls => true }
+
+    = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe)
+
+

@@ -1,4 +1,9 @@
 class FermentableAdditionsController < ApplicationController
+
+  def index
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @fermentable_addition = @recipe.fermentable_additions.build

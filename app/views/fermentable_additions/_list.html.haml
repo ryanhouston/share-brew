@@ -1,0 +1,7 @@
+#fermentables
+  = render(:partial => 'fermentable_additions/fermentable_addition',
+           :collection => @recipe.fermentable_additions,
+           :locals => { :show_controls => true })
+  = link_to 'Add Fermentable',
+            new_recipe_fermentable_addition_path(@recipe),
+            :remote => true, :"data-new-ingredient" => 'fermentables'

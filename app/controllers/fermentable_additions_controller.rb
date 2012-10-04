@@ -7,6 +7,7 @@ class FermentableAdditionsController < ApplicationController
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @fermentable_addition = @recipe.fermentable_additions.build
+    @remote = request.xhr?
   end
 
   def create

@@ -8,7 +8,7 @@ gem 'nokogiri'
 gem 'omniauth'
 gem 'devise'
 
-gem 'mysql'
+gem 'chosen-rails'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'

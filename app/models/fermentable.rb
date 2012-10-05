@@ -1,3 +1,5 @@
+require 'beer_xml'
+
 class Fermentable < ActiveRecord::Base
   GRAIN = 'Grain'
   DME = 'Dry Malt Extract'

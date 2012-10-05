@@ -1,5 +1,9 @@
 class YeastAdditionsController < ApplicationController
 
+  def index
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @yeast_addition = @recipe.yeast_additions.build

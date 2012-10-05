@@ -16,14 +16,10 @@ class HopAdditionsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @hop_addition = @recipe.hop_additions.build(params[:hop_addition])
-
-    if @hop_addition.save
-      flash[:notice] = "Added #{@hop_addition.hop.name} to recipe"
-      redirect_to edit_recipe_path(@recipe)
-    else
-      render :new
-    end
+    @recipe.add_hop(
+      params[:hop_addition],
+      success: method(:created_successfully),
+      failure: method(:creation_failed))
   end
 
   def edit
@@ -46,5 +42,31 @@ class HopAdditionsController < ApplicationController
     flash[:notice] = "Removed hop addition for " + @hop_addition.hop.name
     redirect_to(edit_recipe_path(@hop_addition.recipe_id))
   end
+
+  private
+  def created_successfully( hop_addition )
+    respond_to do |format|
+      format.html do
+        redirect_to edit_recipe_path(@recipe),
+          :notice => "Added #{hop_addition.hop.name} to recipe"
+      end
+
+      format.js {}
+    end
+  end
+
+  def creation_failed( hop_addition )
+    @hop_addition = hop_addition
+
+    respond_to do |format|
+      format.html { render :new }
+
+      format.js do
+        @remote = true
+        render :new
+      end
+    end
+  end
+
 end
 

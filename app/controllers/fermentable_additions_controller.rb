@@ -34,18 +34,20 @@ class FermentableAdditionsController < ApplicationController
   end
 
   private
-  def created_successfully
+  def created_successfully( fermentable_addition )
     respond_to do |format|
       format.html do
         redirect_to edit_recipe_path(@recipe),
-          notice: "Added #{@fermentable_addition.fermentable.name} to recipe"
+          notice: "Added #{fermentable_addition.fermentable.name} to recipe"
       end
 
       format.js {}
     end
   end
 
-  def creation_failed
+  def creation_failed( fermentable_addition )
+    @fermentable_addition = fermentable_addition
+
     respond_to do |format|
       format.html { render :new }
 

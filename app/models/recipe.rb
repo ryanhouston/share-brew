@@ -12,12 +12,22 @@ class Recipe < ActiveRecord::Base
   validates_inclusion_of :mash_type, :in => ['extract', 'grain', 'partial']
 
   def add_fermentable( params, callbacks )
-    @fermentable_addition = fermentable_additions.build(params)
+    add_ingredient :fermentable, params, callbacks
+  end
 
-    if @fermentable_addition.save
-      callbacks[:success].try(:call)
+  def add_hop( params, callbacks )
+    add_ingredient(:hop, params, callbacks)
+  end
+
+  private
+  def add_ingredient( type, params, callbacks )
+    type_additions = send (type.to_s + '_additions').to_sym
+    ingredient_addition = type_additions.build params
+
+    if ingredient_addition.save
+      callbacks[:success].try(:call, ingredient_addition)
     else
-      callbacks[:failure].try(:call)
+      callbacks[:failure].try(:call, ingredient_addition)
     end
   end
 end

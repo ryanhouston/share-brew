@@ -5,4 +5,5 @@ class FermentableAddition < ActiveRecord::Base
 
   validates :recipe_id, :presence => true
   validates :fermentable_id, :presence => true
+  validates :weight, :presence => true, :numericality => true
 end

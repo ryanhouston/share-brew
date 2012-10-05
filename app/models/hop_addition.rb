@@ -3,6 +3,12 @@ class HopAddition < ActiveRecord::Base
   belongs_to :recipe
   belongs_to :hop
 
-  validates :recipe_id, :presence => true
-  validates :hop_id, :presence => true
+  validates :recipe_id,   presence: true
+  validates :hop_id,      presence: true
+  validates :alpha_acid,  presence: true, numericality: true
+  validates :beta_acid,   numericality:   { allow_blank: true }
+  validates :form,        presence: true
+  validates :duration,    presence: true, numericality: true
+  validates :weight,      presence: true, numericality: true
+  validates :use,         presence: true
 end

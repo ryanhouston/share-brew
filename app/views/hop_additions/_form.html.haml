@@ -1,4 +1,6 @@
 = form_for([@recipe, @hop_addition], :remote => @remote) do |hop_form|
+  = render 'shared/form_errors', :target => @hop_addition
+
   .add-hop
     .field-row
       .field-group

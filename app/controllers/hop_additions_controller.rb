@@ -4,6 +4,10 @@ class HopAdditionsController < ApplicationController
     @hop_addition = HopAddition.find(params[:id])
   end
 
+  def index
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @hop_addition = HopAddition.new

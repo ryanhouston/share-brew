@@ -58,12 +58,7 @@
     = render :partial => 'fermentable_additions/list'
 
     %h3 Hops
-    - @recipe.hop_additions
-    - if @recipe.hop_additions
-      = render(:partial => 'hop_additions/hop_addition',
-               :collection => @recipe.hop_additions,
-               :locals => { :show_controls => true })
-    = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe)
+    = render :partial => 'hop_additions/list'
 
     %h3 Yeast
     = render :partial => 'yeast_additions/recipe_listing',

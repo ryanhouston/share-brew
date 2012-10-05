@@ -1,0 +1,6 @@
+#hops
+  = render(:partial => 'hop_additions/hop_addition',
+           :collection => @recipe.hop_additions,
+           :locals => { :show_controls => true })
+  = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe),
+      :remote => true, :"data-ingredient" => 'hops'

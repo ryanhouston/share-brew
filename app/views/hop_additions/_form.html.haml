@@ -1,4 +1,4 @@
-= form_for([@hop_addition.recipe, @hop_addition]) do |hop_form|
+= form_for([@recipe, @hop_addition], :remote => @remote) do |hop_form|
   .add-hop
     .field-row
       .field-group

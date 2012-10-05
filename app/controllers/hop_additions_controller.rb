@@ -11,6 +11,7 @@ class HopAdditionsController < ApplicationController
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @hop_addition = HopAddition.new
+    @remote = request.xhr?
   end
 
   def create

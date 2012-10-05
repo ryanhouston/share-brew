@@ -1,4 +1,6 @@
 = form_for([@fermentable_addition.recipe, @fermentable_addition], :remote => @remote) do |f|
+  = render 'shared/form_errors', :target => @fermentable_addition
+
   .field-row
     .field-group
       .field-label= f.label :fermentable_id

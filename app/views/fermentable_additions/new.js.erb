@@ -1,2 +1,5 @@
 $("a[data-ingredient=fermentables]").hide();
+
+// Ensure any previous forms are removed
+$("#new_fermentable_addition").remove();
 $("<%= escape_javascript(render :partial => 'form') %>").appendTo('#fermentables');

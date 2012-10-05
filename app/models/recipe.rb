@@ -19,6 +19,10 @@ class Recipe < ActiveRecord::Base
     add_ingredient(:hop, params, callbacks)
   end
 
+  def add_yeast( params, callbacks )
+    add_ingredient(:yeast, params, callbacks)
+  end
+
   private
   def add_ingredient( type, params, callbacks )
     type_additions = send (type.to_s + '_additions').to_sym

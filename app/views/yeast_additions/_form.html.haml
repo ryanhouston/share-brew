@@ -1,4 +1,4 @@
-= form_for([@recipe, @yeast_addition]) do |f|
+= form_for([@recipe, @yeast_addition], :remote => @remote) do |f|
   = render 'shared/form_errors', :target => @yeast_addition
 
   .field-row

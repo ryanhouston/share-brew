@@ -12,13 +12,10 @@ class YeastAdditionsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @yeast_addition = @recipe.yeast_additions.build(params[:yeast_addition])
-
-    if @yeast_addition.save
-      redirect_to(edit_recipe_path(@recipe), :notice => "Yeast addition added")
-    else
-      render :new
-    end
+    @recipe.add_yeast(
+      params[:yeast_addition],
+      success: method(:created_successfully),
+      failure: method(:creation_failed))
   end
 
   def edit
@@ -46,5 +43,27 @@ class YeastAdditionsController < ApplicationController
     redirect_to(edit_recipe_path(@yeast_addition.recipe_id))
   end
 
+  private
+  def created_successfully( yeast_addition )
+    respond_to do |format|
+      format.html do
+        redirect_to edit_recipe_path(@recipe), :notice => "Yeast addition added"
+      end
+      format.js {}
+    end
+  end
+
+  def creation_failed( yeast_addition )
+    @yeast_addition = yeast_addition
+
+    respond_to do |format|
+      format.html { render :new }
+
+      format.js do
+        @remote = true
+        render :new
+      end
+    end
+  end
 end
 

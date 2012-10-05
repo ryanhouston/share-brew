@@ -1,2 +1,5 @@
 $("a[data-ingredient=yeasts]").hide();
+
+// Ensure old invalid forms are removed
+$("#new_yeast_addition").remove();
 $("<%=j render :partial => 'form' %>").appendTo('#yeasts');

@@ -11,15 +11,15 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :name, :batch_size, :description
   validates_inclusion_of :mash_type, :in => ['extract', 'grain', 'partial']
 
-  def add_fermentable( params, callbacks )
+  def add_fermentable( params, callbacks={} )
     add_ingredient :fermentable, params, callbacks
   end
 
-  def add_hop( params, callbacks )
+  def add_hop( params, callbacks={} )
     add_ingredient(:hop, params, callbacks)
   end
 
-  def add_yeast( params, callbacks )
+  def add_yeast( params, callbacks={} )
     add_ingredient(:yeast, params, callbacks)
   end
 
@@ -33,5 +33,7 @@ class Recipe < ActiveRecord::Base
     else
       callbacks[:failure].try(:call, ingredient_addition)
     end
+
+    ingredient_addition
   end
 end

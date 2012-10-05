@@ -25,4 +25,13 @@ FactoryGirl.define do
     form 'liquid'
     vendor 'Wyeast'
   end
+
+  factory :fermentable do
+    name   'Pale Malt'
+    origin 'US'
+    vendor 'Rahr'
+    form 'Grain'
+    color '2'
+    potential '1.058'
+  end
 end

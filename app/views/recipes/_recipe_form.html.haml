@@ -10,7 +10,8 @@
         .field= f.text_field :name
       .field-group
         .field-label= f.label :mash_type
-        .field= f.select(:mash_type, [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
+        .field= f.select(:mash_type,
+          [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
       .field-group
         .field-label= f.label :batch_size
         .field=f.text_field(:batch_size, :size => 3) + ' gallons'
@@ -18,7 +19,9 @@
     .field-row
       .field-group
         .field-label= f.label :beer_style
-        .field= f.collection_select(:beer_style, BeerStyle.all, :id, :name)
+        .field= f.collection_select(:beer_style, BeerStyle.all, :id, :name,
+          {:include_blank => true},
+          {:class => 'chzn-select', :'data-placeholder' => "Choose a Beer Style..."})
 
   %br
 

@@ -3,6 +3,7 @@ class YeastAdditionsController < ApplicationController
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @yeast_addition = @recipe.yeast_additions.build
+    @remote = request.xhr?
   end
 
   def create

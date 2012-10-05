@@ -7,7 +7,8 @@
         .field-label= hop_form.label :hop
         .field= hop_form.select :hop_id,
                           Hop.all.collect {|hop| [hop.name, hop.id] },
-                          {:prompt => 'Choose Hop'}
+                          {:include_blank => true},
+                          {:'data-placeholder' => 'Choose Hop...', :class => 'chzn-select'}
       .field-group
         .field-label= hop_form.label(:alpha_acid)
         .field= hop_form.text_field(:alpha_acid, :size => 2) + ' %'

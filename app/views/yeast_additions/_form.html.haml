@@ -4,7 +4,9 @@
   .field-row
     .field-group
       .field-label= f.label :yeast_id
-      .field= f.collection_select(:yeast_id, Yeast.all, :id, :strain)
+      .field= f.collection_select(:yeast_id, Yeast.all, :id, :strain,
+                {:include_blank => true},
+                {:'data-placeholder' => 'Choose Hop...', :class => 'chzn-select'})
   .field-row
     .field-group
       .field

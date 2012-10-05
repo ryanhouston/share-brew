@@ -4,3 +4,5 @@ $("a[data-ingredient=hops]").hide();
 // Ensure old invalid form is removed
 $("#new_hop_addition").remove();
 $("<%=j render :partial => 'form' %>").appendTo('#hops');
+$(".chzn-select").chosen();
+

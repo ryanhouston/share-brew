@@ -39,8 +39,15 @@ class HopAdditionsController < ApplicationController
   def destroy
     @hop_addition = HopAddition.find(params[:id])
     @hop_addition.destroy
-    flash[:notice] = "Removed hop addition for " + @hop_addition.hop.name
-    redirect_to(edit_recipe_path(@hop_addition.recipe_id))
+    @recipe = @hop_addition.recipe
+
+    respond_to do |format|
+      format.html do
+        flash[:notice] = "Removed hop addition for " + @hop_addition.hop.name
+        redirect_to(edit_recipe_path(@hop_addition.recipe_id))
+      end
+      format.js {}
+    end
   end
 
   private

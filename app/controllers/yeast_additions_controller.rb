@@ -39,8 +39,15 @@ class YeastAdditionsController < ApplicationController
   def destroy
     @yeast_addition = YeastAddition.find(params[:id])
     @yeast_addition.destroy
-    flash[:notice] = "Removed yeast addition for " + @yeast_addition.yeast.strain
-    redirect_to(edit_recipe_path(@yeast_addition.recipe_id))
+    @recipe = Recipe.find(params[:recipe_id])
+
+    respond_to do |format|
+      format.html do
+        flash[:notice] = "Removed yeast addition for " + @yeast_addition.yeast.strain
+        redirect_to(edit_recipe_path(@yeast_addition.recipe_id))
+      end
+      format.js {}
+    end
   end
 
   private

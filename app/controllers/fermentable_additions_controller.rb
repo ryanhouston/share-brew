@@ -33,6 +33,17 @@ class FermentableAdditionsController < ApplicationController
     end
   end
 
+  def destroy
+    @fermentable_addition = FermentableAddition.find(params[:id])
+    @fermentable_addition.destroy
+    @recipe = @fermentable_addition.recipe
+
+    respond_to do |format|
+      format.html { redirect_to edit_recipe_path(@fermentable_addition.recipe) }
+      format.js {}
+    end
+  end
+
   private
   def created_successfully( fermentable_addition )
     respond_to do |format|

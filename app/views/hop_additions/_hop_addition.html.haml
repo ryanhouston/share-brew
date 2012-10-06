@@ -11,7 +11,8 @@
     %span.controls
       = link_to 'Edit', edit_recipe_hop_addition_path(hop_addition.recipe_id, hop_addition.id)
       = link_to 'Delete',
-                [hop_addition.recipe, hop_addition],
-                :method => :delete,
-                :confirm => "Are you sure you want to delete the hop addition?"
+        [hop_addition.recipe, hop_addition],
+        :method => :delete,
+        :confirm => "Are you sure you want to delete the hop addition?",
+        :remote => true
 

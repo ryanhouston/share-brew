@@ -24,6 +24,7 @@ FactoryGirl.define do
     catalog_id '1056'
     form 'liquid'
     vendor 'Wyeast'
+    strain_type 'ale'
   end
 
   factory :fermentable do
@@ -33,5 +34,15 @@ FactoryGirl.define do
     form 'Grain'
     color '2'
     potential '1.058'
+  end
+
+  factory :hop do
+    name 'Cascade'
+    typical_use 'Both'
+    alpha_acid '4.5'
+    beta_acid '3.2'
+    origin 'US'
+    form 'pellet'
+    notes 'One of the "C" hops. Citrusy'
   end
 end

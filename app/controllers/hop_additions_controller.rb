@@ -23,14 +23,29 @@ class HopAdditionsController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:recipe_id])
     @hop_addition = HopAddition.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :edit }
+      format.js do
+        @remote = true
+        render :new
+      end
+    end
   end
 
   def update
     @hop_addition = HopAddition.find(params[:id])
 
     if @hop_addition.update_attributes(params[:hop_addition])
-      redirect_to edit_recipe_path(@hop_addition.recipe)
+      respond_to do |format|
+        format.html { redirect_to edit_recipe_path(@hop_addition.recipe) }
+        format.js   do
+          @recipe = Recipe.find(params[:recipe_id])
+          render :create
+        end
+      end
     else
       render :edit
     end

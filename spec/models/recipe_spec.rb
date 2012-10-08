@@ -23,7 +23,7 @@ describe Recipe do
 
   end
 
-  context "triggering a success callback" do
+  context "triggering a success callback after create" do
     subject { FactoryGirl.create :recipe }
     before do
       @success_called = nil

@@ -36,19 +36,12 @@ class HopAdditionsController < ApplicationController
   end
 
   def update
+    @recipe = Recipe.find(params[:recipe_id])
     @hop_addition = HopAddition.find(params[:id])
-
-    if @hop_addition.update_attributes(params[:hop_addition])
-      respond_to do |format|
-        format.html { redirect_to edit_recipe_path(@hop_addition.recipe) }
-        format.js   do
-          @recipe = Recipe.find(params[:recipe_id])
-          render :create
-        end
-      end
-    else
-      render :edit
-    end
+    @hop_addition.update_with_callbacks(
+      params[:hop_addition],
+      success: method(:successfully_updated),
+      failure: method(:failed_update))
   end
 
   def destroy
@@ -90,5 +83,24 @@ class HopAdditionsController < ApplicationController
     end
   end
 
+  def successfully_updated( hop_addition )
+    respond_to do |format|
+      format.html { redirect_to edit_recipe_path(@hop_addition.recipe) }
+      format.js   do
+        @recipe = Recipe.find(params[:recipe_id])
+        render :create
+      end
+    end
+  end
+
+  def failed_update( hop_addition )
+    respond_to do |format|
+      format.html { render :edit }
+      format.js   do
+        @remote = true
+        render :new
+      end
+    end
+  end
 end
 

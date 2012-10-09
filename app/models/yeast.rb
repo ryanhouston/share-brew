@@ -1,6 +1,6 @@
 class Yeast < ActiveRecord::Base
   FORMS = ['dry', 'liquid']
-  STRAIN_TYPES = ['ale', 'lager', 'champagne', 'wine', 'cider']
+  STRAIN_TYPES = ['ale', 'lager', 'wheat', 'champagne', 'wine', 'cider']
 
   attr_accessible :strain, :strain_type, :vendor, :form, :description, :min_temp, :max_temp, :catalog_id, :attenuation
 

@@ -7,7 +7,9 @@
 
   - if show_controls
     %span.controls
-      = link_to 'Edit', edit_recipe_yeast_addition_path(yeast_addition.recipe_id, yeast_addition.id)
+      = link_to 'Edit',
+        edit_recipe_yeast_addition_path(yeast_addition.recipe_id, yeast_addition.id),
+        remote: true
       = link_to 'Delete',
         [yeast_addition.recipe, yeast_addition],
         :method => :delete,

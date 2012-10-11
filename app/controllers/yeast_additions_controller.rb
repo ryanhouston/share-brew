@@ -22,18 +22,20 @@ class YeastAdditionsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @yeast_addition = YeastAddition.find(params[:id])
 
+    respond_to do |format|
+      format.js { @remote = true }
+    end
+
     render :new
   end
 
   def update
+    @recipe = Recipe.find(params[:id])
     @yeast_addition = YeastAddition.find(params[:id])
-
-    if @yeast_addition.update_attributes(params[:yeast_addition])
-      flash[:notice] = "#{@yeast_addition.yeast.strain} yeast addition updated"
-      redirect_to(edit_recipe_path(@yeast_addition.recipe_id))
-    else
-      render :new
-    end
+    @yeast_addition.update_with_callbacks(
+      params[:yeast_addition],
+      success: method(:successfully_updated),
+      failure: method(:failed_update))
   end
 
   def destroy
@@ -67,6 +69,23 @@ class YeastAdditionsController < ApplicationController
       format.html { render :new }
 
       format.js do
+        @remote = true
+        render :new
+      end
+    end
+  end
+
+  def successfully_updated( yeast_addition )
+    respond_to do |format|
+      format.html { redirect_to edit_recipe_path(@recipe) }
+      format.js { render :create }
+    end
+  end
+
+  def failed_update( yeast_addition )
+    respond_to do |format|
+      format.html { render :edit }
+      format.js   do
         @remote = true
         render :new
       end

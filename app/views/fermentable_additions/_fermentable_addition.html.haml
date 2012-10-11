@@ -6,9 +6,11 @@
 
   - if show_controls
     %span.controls
-      = link_to 'Edit', edit_recipe_fermentable_addition_path(fermentable_addition.recipe_id, fermentable_addition.id)
+      = link_to 'Edit',
+        edit_recipe_fermentable_addition_path(fermentable_addition.recipe_id, fermentable_addition.id),
+        remote: true
       = link_to 'Delete',
         [fermentable_addition.recipe, fermentable_addition],
-        :method => :delete,
-        :confirm => "Are you sure you want to delete the fermentable addition?",
-        :remote => true
+        method: :delete,
+        confirm: "Are you sure you want to delete the fermentable addition?",
+        remote: true

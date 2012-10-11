@@ -20,17 +20,26 @@ class FermentableAdditionsController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
     @fermentable_addition = FermentableAddition.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :edit }
+      format.js do
+        @remote = true
+        render :new
+      end
+    end
   end
 
   def update
+    @recipe = Recipe.find(params[:id])
     @fermentable_addition = FermentableAddition.find(params[:id])
 
-    if @fermentable_addition.update_attributes(params[:fermentable_addition])
-      redirect_to edit_recipe_path(@fermentable_addition.recipe)
-    else
-      render :edit
-    end
+    @fermentable_addition.update_with_callbacks(
+      params[:fermentable_addition],
+      success: method(:successfully_updated),
+      failure: method(:failed_update))
   end
 
   def destroy
@@ -63,6 +72,23 @@ class FermentableAdditionsController < ApplicationController
       format.html { render :new }
 
       format.js do
+        @remote = true
+        render :new
+      end
+    end
+  end
+
+  def successfully_updated( fermentable_addition )
+    respond_to do |format|
+      format.html { redirect_to edit_recipe_path(@recipe) }
+      format.js { render :create }
+    end
+  end
+
+  def failed_update( fermentable_addition )
+    respond_to do |format|
+      format.html { render :edit }
+      format.js   do
         @remote = true
         render :new
       end

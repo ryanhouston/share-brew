@@ -21,15 +21,15 @@ describe Yeast do
     end
 
     it { should be_kind_of(Yeast) }
-    its( :strain ) { should eq "American Megabrewery" }
-    its( :vendor ) { should eq "Brewtek" }
-    its( :catalog_id ) { should eq "CL-0620" }
-    its( :min_temp ) { should eq 8.8889 }
-    its( :max_temp ) { should eq 14.4444 }
-    its( :attenuation ) { should eq 73.00 }
+    its( :strain ) { should eq "Cooper Ale" }
+    its( :vendor ) { should eq "Coopers" }
+    its( :catalog_id ) { should eq "-" }
+    its( :min_temp ) { should eq 16.6667 }
+    its( :max_temp ) { should eq 22.2222 }
+    its( :attenuation ) { should eq 75.00 }
     its( :flocculation ) { should eq 'Medium' }
-    its( :form ) { should eq 'liquid' }
-    its( :strain_type ) { should eq 'lager' }
+    its( :form ) { should eq 'dry' }
+    its( :strain_type ) { should eq 'ale' }
 
     def load_file
       file = Rails.root + 'spec/fixtures/yeast.xml'

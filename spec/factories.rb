@@ -45,4 +45,10 @@ FactoryGirl.define do
     form 'pellet'
     notes 'One of the "C" hops. Citrusy'
   end
+
+  factory :user do
+    email 'first@user.com'
+    password 'password'
+    password_confirmation 'password'
+  end
 end

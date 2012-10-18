@@ -1,11 +1,19 @@
 class HopsController < ApplicationController
+  before_filter :find_hop,
+    only: [:show, :edit, :update, :destroy]
+
+private
+  def find_hop
+    @hop = Hop.find params[:id]
+  end
+
+public
 
   def index
     @hops = Hop.all
   end
 
   def show
-    @hop = Hop.find(params[:id])
   end
 
 
@@ -15,7 +23,6 @@ class HopsController < ApplicationController
 
 
   def edit
-    @hop = Hop.find(params[:id])
   end
 
 
@@ -32,8 +39,6 @@ class HopsController < ApplicationController
 
 
   def update
-    @hop = Hop.find(params[:id])
-
     if @hop.update_attributes(params[:hop])
       flash[:notice] = 'Hop was successfully updated.'
       redirect_to(@hop)
@@ -43,9 +48,7 @@ class HopsController < ApplicationController
   end
 
   def destroy
-    @hop = Hop.find(params[:id])
     @hop.destroy
-
     redirect_to(hops_url)
   end
 

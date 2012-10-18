@@ -22,9 +22,4 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl'
-
-  # these dependencies are being phased out in favor of rspec
-  gem 'shoulda'
-  gem 'mynyml-redgreen'
-  gem 'test-unit'
 end

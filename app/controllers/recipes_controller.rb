@@ -46,7 +46,6 @@ class RecipesController < ApplicationController
 
   # PUT /recipes/1
   def update
-    @recipe = Recipe.find(params[:id])
     params[:recipe][:beer_style] = BeerStyle.find(params[:recipe][:beer_style]);
 
     if @recipe.update_attributes(params[:recipe])
@@ -58,7 +57,6 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1
   def destroy
-    @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
     redirect_to(recipes_url)

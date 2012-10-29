@@ -1,12 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'thin'
 gem 'rails', '3.2.8'
+gem 'haml',  '>= 3.0.18'
 gem 'jquery-rails'
-gem 'haml', '>= 3.0.18'
+gem 'thin'
+gem 'mysql', group: :production
+
 gem 'nokogiri'
-gem 'omniauth'
 gem 'devise'
+gem 'cancan'
 
 gem 'chosen-rails'
 

@@ -24,11 +24,11 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
-    @recipe.user_id = current_user.id
   end
 
   # GET /recipes/1/edit
   def edit
+    authorize! :update, @recipe
   end
 
   # POST /recipes
@@ -36,6 +36,7 @@ class RecipesController < ApplicationController
     @beer_style = BeerStyle.find(params[:recipe][:beer_style]);
     params[:recipe][:beer_style] = @beer_style;
     @recipe = Recipe.new(params[:recipe])
+    @recipe.user_id = current_user.id
 
     if @recipe.save
       redirect_to(edit_recipe_path(@recipe), :notice => 'Recipe was successfully created.')
@@ -46,6 +47,7 @@ class RecipesController < ApplicationController
 
   # PUT /recipes/1
   def update
+    authorize! :update, @recipe
     params[:recipe][:beer_style] = BeerStyle.find(params[:recipe][:beer_style]);
 
     if @recipe.update_attributes(params[:recipe])

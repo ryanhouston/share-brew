@@ -12,7 +12,7 @@ class BeerStylesController < ApplicationController
 
   # GET /beer_styles
   def index
-    @beer_styles = BeerStyle.all
+    @beer_styles = BeerStyle.order :name
   end
 
   # GET /beer_styles/1

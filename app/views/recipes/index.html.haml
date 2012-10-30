@@ -4,4 +4,9 @@
   - @recipes.each do |recipe|
     %li= render :partial => 'recipes/recipe', :locals => { :recipe => recipe }
 
-= link_to 'New recipe', new_recipe_path
+- if can? :create, Recipe
+  = link_to 'New recipe', new_recipe_path
+- else
+  %p
+    = link_to('Log in', new_user_session_path)
+    to create your own recipes

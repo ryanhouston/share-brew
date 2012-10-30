@@ -5,6 +5,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     can :read, Recipe
+    can :create, Recipe unless user.new_record?
     can [:update, :destroy], Recipe, user_id: user.id
 
     if user.admin?

@@ -8,11 +8,7 @@ class Ability
     can :create, Recipe unless user.new_record?
     can [:update, :destroy], Recipe, user_id: user.id
 
-    if user.admin?
-      can [:create, :update, :destroy], BeerStyle
-      can [:create, :update, :destroy], Hop
-      can [:create, :update, :destroy], Fermentable
-      can [:create, :update, :destroy], Yeast
-    end
+    # Admins can do all the things
+    can :manage, :all if user.admin?
   end
 end

@@ -1,7 +1,7 @@
 class YeastsController < ApplicationController
   # GET /yeasts
   def index
-    @yeasts = Yeast.all
+    @yeasts = Yeast.order :strain
   end
 
   # GET /yeasts/1

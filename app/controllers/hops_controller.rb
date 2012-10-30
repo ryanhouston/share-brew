@@ -10,7 +10,7 @@ private
 public
 
   def index
-    @hops = Hop.all
+    @hops = Hop.order :name
   end
 
   def show

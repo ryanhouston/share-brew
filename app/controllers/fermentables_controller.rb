@@ -1,7 +1,7 @@
 class FermentablesController < ApplicationController
   # GET /fermentables
   def index
-    @fermentables = Fermentable.all
+    @fermentables = Fermentable.order :name
   end
 
   # GET /fermentables/1

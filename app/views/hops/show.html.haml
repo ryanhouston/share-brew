@@ -23,6 +23,7 @@
   %br
   =h @hop.notes
 
-= link_to 'Edit', edit_hop_path(@hop)
-|
+- if can? :update, @hop
+  = link_to 'Edit', edit_hop_path(@hop)
+  |
 = link_to 'Back to Hops', hops_path

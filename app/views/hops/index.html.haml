@@ -6,15 +6,17 @@
     %th Origin
     %th Alpha Acid %
     %th Use
-    %th{:colspan => '2'}
+    - if can?(:update, Hop) or can?(:destroy, Hop)
+      %th{:colspan => '2'}
   - for hop in @hops
     %tr
       %td= link_to hop.name, hop
       %td= hop.origin
       %td= "#{hop.alpha_acid}%"
       %td= hop.typical_use
-      %td= link_to 'Edit', edit_hop_path(hop)
-      %td= link_to 'Destroy', hop, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Edit', edit_hop_path(hop) if can? :update, hop
+      - if can? :destroy, hop
+        %td= link_to 'Destroy', hop, confirm: 'Are you sure?', method: :delete
 
 %br
 

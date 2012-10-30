@@ -23,6 +23,7 @@ public
 
 
   def edit
+    authorize! :update, @hop
   end
 
 
@@ -39,6 +40,8 @@ public
 
 
   def update
+    authorize! :update, @hop
+
     if @hop.update_attributes(params[:hop])
       flash[:notice] = 'Hop was successfully updated.'
       redirect_to(@hop)
@@ -48,6 +51,8 @@ public
   end
 
   def destroy
+    authorize! :destroy, @hop
+
     @hop.destroy
     redirect_to(hops_url)
   end

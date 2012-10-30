@@ -26,6 +26,7 @@
   = "#{@yeast.description}"
 
 
-= link_to 'Edit Yeast', edit_yeast_path(@yeast)
-|
+- if can? :update, @yeast
+  = link_to 'Edit Yeast', edit_yeast_path(@yeast)
+  |
 = link_to 'Back to Yeasts', yeasts_path

@@ -1,4 +1,12 @@
 class YeastsController < ApplicationController
+  before_filter :find_yeast, only: [:edit, :update, :destroy, :show]
+private
+  def find_yeast
+    @yeast = Yeast.find(params[:id])
+  end
+
+public
+
   # GET /yeasts
   def index
     @yeasts = Yeast.order :strain
@@ -6,7 +14,6 @@ class YeastsController < ApplicationController
 
   # GET /yeasts/1
   def show
-    @yeast = Yeast.find(params[:id])
   end
 
   # GET /yeasts/new
@@ -16,7 +23,7 @@ class YeastsController < ApplicationController
 
   # GET /yeasts/1/edit
   def edit
-    @yeast = Yeast.find(params[:id])
+    authorize! :update, @yeast
   end
 
   # POST /yeasts
@@ -32,7 +39,7 @@ class YeastsController < ApplicationController
 
   # PUT /yeasts/1
   def update
-    @yeast = Yeast.find(params[:id])
+    authorize! :update, @yeast
 
     if @yeast.update_attributes(params[:yeast])
       redirect_to(@yeast, :notice => 'Yeast was successfully updated.')
@@ -43,7 +50,7 @@ class YeastsController < ApplicationController
 
   # DELETE /yeasts/1
   def destroy
-    @yeast = Yeast.find(params[:id])
+    authorize! :destroy, @yeast
     @yeast.destroy
 
     redirect_to(yeasts_url)

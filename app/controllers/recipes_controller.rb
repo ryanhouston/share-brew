@@ -59,6 +59,7 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1
   def destroy
+    authorize! :destroy, @recipe
     @recipe.destroy
 
     redirect_to(recipes_url)

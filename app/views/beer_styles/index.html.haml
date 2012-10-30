@@ -5,7 +5,7 @@
     %li.beer-style
       = link_to style.name, beer_style_path(style)
 
-      - if user_signed_in?
+      - if can? :destroy, style
         %span.actions
           = link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
 

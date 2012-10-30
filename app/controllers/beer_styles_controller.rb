@@ -26,6 +26,7 @@ class BeerStylesController < ApplicationController
 
   # GET /beer_styles/1/edit
   def edit
+    authorize! :update, @beer_style
   end
 
   # POST /beer_styles
@@ -42,6 +43,8 @@ class BeerStylesController < ApplicationController
 
   # PUT /beer_styles/1
   def update
+    authorize! :update, @beer_style
+
     if @beer_style.update_attributes(params[:beer_style])
       flash[:notice] = 'BeerStyle was successfully updated.'
       redirect_to(@beer_style)
@@ -52,6 +55,8 @@ class BeerStylesController < ApplicationController
 
   # DELETE /beer_styles/1
   def destroy
+    authorize! :destroy, @beer_style
+
     @beer_style.destroy
     redirect_to(beer_styles_url)
   end

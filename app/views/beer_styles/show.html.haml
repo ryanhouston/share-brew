@@ -31,6 +31,7 @@
     =h "#{@beer_style.min_abv}% - #{@beer_style.max_abv}%"
 
 
-= link_to 'Edit', edit_beer_style_path(@beer_style)
-|
+- if can? :update, @beer_style
+  = link_to 'Edit', edit_beer_style_path(@beer_style)
+  |
 = link_to 'Back', beer_styles_path

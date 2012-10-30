@@ -19,7 +19,7 @@
     .field-row
       .field-group
         .field-label= f.label :beer_style
-        .field= f.collection_select(:beer_style, BeerStyle.all, :id, :name,
+        .field= f.collection_select(:beer_style_id, BeerStyle.all, :id, :name,
           {:include_blank => true},
           {:class => 'chzn-select', :'data-placeholder' => "Choose a Beer Style..."})
 

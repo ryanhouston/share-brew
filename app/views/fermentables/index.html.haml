@@ -6,8 +6,10 @@
       = link_to fermentable.name, fermentable
       = fermentable.vendor if fermentable.vendor
       = "#{fermentable.color} SRM"
-      = link_to 'Edit', edit_fermentable_path(fermentable)
-      = link_to 'Destroy', fermentable, :confirm => 'Are you sure?', :method => :delete
+
+      = link_to 'Edit', edit_fermentable_path(fermentable) if can? :update, fermentable
+      - if can? :destroy, fermentable
+        = link_to 'Destroy', fermentable, :confirm => 'Are you sure?', :method => :delete
 
 
 .actions

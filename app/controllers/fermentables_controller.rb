@@ -1,4 +1,13 @@
 class FermentablesController < ApplicationController
+  before_filter :find_fermentable,
+    only: [:show, :edit, :update, :destroy]
+
+private
+  def find_fermentable
+    @fermentable = Fermentable.find(params[:id])
+  end
+
+public
   # GET /fermentables
   def index
     @fermentables = Fermentable.order :name
@@ -6,7 +15,6 @@ class FermentablesController < ApplicationController
 
   # GET /fermentables/1
   def show
-    @fermentable = Fermentable.find(params[:id])
   end
 
   # GET /fermentables/new
@@ -16,7 +24,7 @@ class FermentablesController < ApplicationController
 
   # GET /fermentables/1/edit
   def edit
-    @fermentable = Fermentable.find(params[:id])
+    authorize! :update, @fermentable
   end
 
   # POST /fermentables
@@ -32,7 +40,7 @@ class FermentablesController < ApplicationController
 
   # PUT /fermentables/1
   def update
-    @fermentable = Fermentable.find(params[:id])
+    authorize! :update, @fermentable
 
     if @fermentable.update_attributes(params[:fermentable])
       redirect_to(@fermentable, :notice => 'Fermentable was successfully updated.')
@@ -43,7 +51,7 @@ class FermentablesController < ApplicationController
 
   # DELETE /fermentables/1
   def destroy
-    @fermentable = Fermentable.find(params[:id])
+    authorize! :destroy, @fermentable
     @fermentable.destroy
 
     redirect_to(fermentables_url)

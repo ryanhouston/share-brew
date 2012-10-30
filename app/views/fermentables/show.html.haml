@@ -27,6 +27,7 @@
   = @fermentable.notes
 
 
-= link_to 'Edit Fermentable', edit_fermentable_path(@fermentable)
-|
+- if can? :update, @fermentable
+  = link_to 'Edit Fermentable', edit_fermentable_path(@fermentable)
+  |
 = link_to 'Back to Fermentables', fermentables_path

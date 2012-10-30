@@ -12,5 +12,6 @@
         = link_to 'Destroy', fermentable, :confirm => 'Are you sure?', :method => :delete
 
 
-.actions
-  = link_to 'New Fermentable', new_fermentable_path
+- if can? :create, Fermentable
+  .actions
+    = link_to 'New Fermentable', new_fermentable_path

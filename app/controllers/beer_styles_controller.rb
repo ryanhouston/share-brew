@@ -21,6 +21,7 @@ class BeerStylesController < ApplicationController
 
   # GET /beer_styles/new
   def new
+    authorize! :create, BeerStyle
     @beer_style = BeerStyle.new
   end
 
@@ -31,6 +32,7 @@ class BeerStylesController < ApplicationController
 
   # POST /beer_styles
   def create
+    authorize! :create, BeerStyle
     @beer_style = BeerStyle.new(params[:beer_style])
 
     if @beer_style.save

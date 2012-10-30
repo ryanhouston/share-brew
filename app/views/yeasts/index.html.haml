@@ -10,5 +10,6 @@
       - if can? :destroy, yeast
         %td= link_to 'Destroy', yeast, confirm: 'Are you sure?', method: :delete
 
-.actions
-  = link_to 'New Yeast', new_yeast_path
+- if can? :create, Yeast
+  .actions
+    = link_to 'New Yeast', new_yeast_path

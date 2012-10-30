@@ -18,6 +18,7 @@ public
 
 
   def new
+    authorize! :create, Hop
     @hop = Hop.new
   end
 
@@ -28,6 +29,7 @@ public
 
 
   def create
+    authorize! :create, Hop
     @hop = Hop.new(params[:hop])
 
     if @hop.save

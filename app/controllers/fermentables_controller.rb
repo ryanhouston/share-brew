@@ -19,6 +19,7 @@ public
 
   # GET /fermentables/new
   def new
+    authorize! :create, Fermentable
     @fermentable = Fermentable.new
   end
 
@@ -29,6 +30,7 @@ public
 
   # POST /fermentables
   def create
+    authorize! :create, Fermentable
     @fermentable = Fermentable.new(params[:fermentable])
 
     if @fermentable.save

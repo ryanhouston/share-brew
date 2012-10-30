@@ -20,4 +20,4 @@
 
 %br
 
-= link_to 'New Hop', new_hop_path
+= link_to 'New Hop', new_hop_path if can? :create, Hop

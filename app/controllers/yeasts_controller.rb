@@ -18,6 +18,7 @@ public
 
   # GET /yeasts/new
   def new
+    authorize! :create, Yeast
     @yeast = Yeast.new
   end
 
@@ -28,6 +29,7 @@ public
 
   # POST /yeasts
   def create
+    authorize! :create, Yeast
     @yeast = Yeast.new(params[:yeast])
 
     if @yeast.save

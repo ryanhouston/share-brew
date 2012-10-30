@@ -9,4 +9,4 @@
         %span.actions
           = link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New beer_style', new_beer_style_path
+= link_to 'New beer_style', new_beer_style_path if can? :create, BeerStyle

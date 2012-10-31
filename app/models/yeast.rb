@@ -1,4 +1,6 @@
 class Yeast < ActiveRecord::Base
+  include BeerXml
+
   FORMS = ['dry', 'liquid']
   STRAIN_TYPES = ['ale', 'lager', 'wheat', 'champagne', 'wine', 'cider']
 

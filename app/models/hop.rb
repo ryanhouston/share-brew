@@ -1,11 +1,13 @@
 require 'beer_xml'
 
 class Hop < ActiveRecord::Base
-  AROMA = 'Aroma';
-  BITTERING = 'Bittering';
-  PELLET = 'Pellet';
-  PLUG = 'Plug';
-  LEAF = 'Leaf';
+  include BeerXml
+
+  AROMA = 'Aroma'
+  BITTERING = 'Bittering'
+  PELLET = 'Pellet'
+  PLUG = 'Plug'
+  LEAF = 'Leaf'
 
   attr_accessible :name, :alpha_acid, :beta_acid, :form, :typical_use, :notes, :origin
 

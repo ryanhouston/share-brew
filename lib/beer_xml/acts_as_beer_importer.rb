@@ -74,4 +74,3 @@ module BeerXml
   end
 end
 
-ActiveRecord::Base.send :include, BeerXml

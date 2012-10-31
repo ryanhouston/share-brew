@@ -7,7 +7,11 @@ class RecipesController < ApplicationController
 
   private
     def find_recipe
-      @recipe = Recipe.find(params[:id])
+      @recipe = Recipe.includes(
+        hop_additions: [:hop],
+        fermentable_additions: [:fermentable],
+        yeast_additions: [:yeast]
+      ).find(params[:id])
     end
 
   public

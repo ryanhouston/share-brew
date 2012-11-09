@@ -14,4 +14,14 @@ class FermentableAddition < ActiveRecord::Base
       callbacks[:failure].try(:call, self)
     end
   end
+
+  def gravity_units
+    (weight * fermentable.potential_in_GUs * mash_efficiency)
+  end
+
+  # This is hardcoded for now but should be taken from the related recipe
+  def mash_efficiency
+    0.68
+  end
+
 end

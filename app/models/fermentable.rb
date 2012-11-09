@@ -35,4 +35,8 @@ class Fermentable < ActiveRecord::Base
     write_attribute :form, fermentable_form
   end
 
+  def potential_in_GUs
+    (potential - 1) * 1000
+  end
+
 end

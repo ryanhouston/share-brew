@@ -27,6 +27,11 @@ describe Fermentable do
     def load_fermentables_xml
       filename = Rails.root + 'spec/fixtures/grain.xml'
     end
+
+    context "#potential_in_GUs" do
+      subject { FactoryGirl.build :fermentable, potential: 1.038 }
+      its (:potential_in_GUs) { should == 38 }
+    end
   end
 end
 

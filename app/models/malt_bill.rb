@@ -2,9 +2,7 @@ class MaltBill
   attr_accessor :fermentables, :batch_size, :mash_efficiency
 
   def initialize(attributes = {})
-    @fermentables = attributes[:fermentables]
-    @batch_size   = attributes[:batch_size]
-    @mash_efficiency = attributes[:mash_efficiency]
+    attributes.each { |name, value| send("#{name}=", value) }
   end
 
   def starting_gravity
@@ -18,7 +16,8 @@ class MaltBill
   end
 
   def fermentable_gravity_units(fermentable_addition)
-    (fermentable_addition.weight * fermentable_addition.fermentable.potential_in_GUs * mash_efficiency)
+    (fermentable_addition.weight *
+      fermentable_addition.fermentable.potential_in_GUs * mash_efficiency)
   end
 end
 

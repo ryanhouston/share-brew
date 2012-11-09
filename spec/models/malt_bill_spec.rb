@@ -34,14 +34,14 @@ describe MaltBill do
         :fermentable, potential: 1.038)
     end
 
-    its (:mash_efficiency)  { should == 0.68 }
-
     # 10 lbs * 38 GUs * 0.68 mash efficiency
     it "calculates gravity units in relation to the recipe" do
       gravity_units = subject.fermentable_gravity_units(@fermentable_addition)
       sprintf('%5.2f', gravity_units).should == "258.40"
     end
+  end
 
+  describe "calculating gravity units" do
     it "calculates the total gravity units of the malt bill" do
       gravity_units = subject.total_gravity_units
       sprintf('%5.2f', gravity_units).should ==  "293.76"

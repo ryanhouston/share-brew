@@ -23,6 +23,14 @@ class Recipe < ActiveRecord::Base
     add_ingredient(:yeast, params, callbacks)
   end
 
+  def self.find_with_ingredients( id )
+    Recipe.includes(
+      hop_additions: :hop,
+      fermentable_additions: :fermentable,
+      yeast_additions: :yeast
+    ).find( id )
+  end
+
   private
   def add_ingredient( type, params, callbacks )
     type_additions = send (type.to_s + '_additions').to_sym

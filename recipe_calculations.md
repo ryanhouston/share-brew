@@ -40,8 +40,53 @@ Calculating the Hops
 
 A function of time and gravity of wort. Describes the efficiency of the isomerization of the alpha acids as a function of time.
 
+#### Tinseth formula
 [A chart](http://www.howtobrew.com/section1/chapter5-5.html) exists for this.
+
+From the online publication of [How to Brew](http://www.howtobrew.com/section1/chapter5-5.html):
+> The degree of utilization is composed of a Gravity Factor and a Time Factor.
+> The gravity factor accounts for reduced utilization due to higher wort
+> gravities. The boil time factor accounts for the change in utilization due to
+> boil time
+
+    Utilization = f(G) x f(T)
+    where
+    f(G) = 1.65 x 0.000125^(Gb - 1)
+    f(T) = [1 - e^(-0.04 x T)] / 4.15
+
+```ruby
+class TinsethHopUtilizationFormula
+  def self.utilization( boil_gravity, boil_time )
+    utilization_due_to_gravity(boil_gravity) * utilization_for_time(boil_time)
+  end
+
+  def self.utilization_due_to_gravity( boil_gravity )
+    1.65 * 0.000125**(boil_gravity - 1)
+  end
+
+  def self.utilization_for_time( boil_time )
+    (1 - Math.exp(-0.04 * boil_time)) / 4.15
+  end
+end
+```
+
+```ruby
+class IBUCalculator
+  def ibus_for_addtion(weight, alpha_acid, boil_time, boil_gravity, batch_size)
+    AAUs_for_addition(weight, alpha_acid) *
+      hop_utilization(boil_gravity, boil_time) * 75 / batch_size
+  end
+
+  def AAUs_for_addition(weight, alpha_acid)
+    weight * alpha_acid
+  end
+
+  def hop_utilization( boil_gravity, boil_time )
+    TinsethHopUtilizationFormula.utilization(boil_gravity, boil_time)
+  end
+end
+```
 
 References
 ----------
-Palmer, Johnr. How To Brew
+Palmer, John. How To Brew

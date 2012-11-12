@@ -61,14 +61,14 @@
     .fermentables-list
       = render :partial => 'fermentable_additions/list'
     .fermentables-vitals
-      Calculated Starting Gravity:
+      %strong Calculated Starting Gravity:
       = @recipe.calculated_starting_gravity
 
     %h3 Hops
     .hops-list
       = render :partial => 'hop_additions/list'
     .hops-vitals
-      Calculated IBUs:
+      %strong Calculated IBUs:
       = @recipe.IBUs.round(2)
 
     %h3 Yeast

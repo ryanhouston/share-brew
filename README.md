@@ -18,7 +18,6 @@ This project is a slowly moving target.
 Installation / Setup
 ---------------------
 - ```bundle install```
-- ```cp config/database.yml.sample config/database.yml```
 - Setup config/database.yml with your preferred configuration
 - ```rake db:setup``` will create the database with the necessary tables and
   load seed data for the BJCP 2008 list of beer styles and a set of malts,

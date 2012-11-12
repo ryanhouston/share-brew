@@ -58,10 +58,18 @@
     %legend.field-label Ingredients
 
     %h3 Fermentables
-    = render :partial => 'fermentable_additions/list'
+    .fermentables-list
+      = render :partial => 'fermentable_additions/list'
+    .fermentables-vitals
+      Calculated Starting Gravity:
+      = @recipe.calculated_starting_gravity
 
     %h3 Hops
-    = render :partial => 'hop_additions/list'
+    .hops-list
+      = render :partial => 'hop_additions/list'
+    .hops-vitals
+      Calculated IBUs:
+      = @recipe.IBUs.round(2)
 
     %h3 Yeast
     = render :partial => 'yeast_additions/list'

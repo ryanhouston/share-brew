@@ -10,7 +10,7 @@ class IBUCalculator
   def IBUs_for_addition( attrs = {} )
     AAUs_for_addition(attrs[:weight], attrs[:alpha_acid]) *
       hop_utilization(attrs[:boil_gravity], attrs[:boil_time]) *
-      75 / attrs[:batch_size]
+      75 / attrs[:batch_size].to_f
   end
 end
 

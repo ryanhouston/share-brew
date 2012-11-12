@@ -33,7 +33,7 @@ class Recipe < ActiveRecord::Base
 
   def mash_efficiency
     # @todo set this from user input
-    68.0
+    0.68
   end
 
   def boil_length
@@ -42,7 +42,7 @@ class Recipe < ActiveRecord::Base
   end
 
   def malt_bill
-    malt_bill = MaltBill.new(
+    MaltBill.new(
       fermentables:     fermentable_additions,
       batch_size:       batch_size,
       mash_efficiency:  mash_efficiency
@@ -50,7 +50,7 @@ class Recipe < ActiveRecord::Base
   end
 
   def calculated_starting_gravity
-    malt_bill.starting_gravity
+    malt_bill.starting_gravity.round(3)
   end
 
   def IBUs

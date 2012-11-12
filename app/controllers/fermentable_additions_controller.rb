@@ -20,7 +20,7 @@ class FermentableAdditionsController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
     @fermentable_addition = FermentableAddition.find(params[:id])
 
     respond_to do |format|
@@ -33,7 +33,7 @@ class FermentableAdditionsController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
     @fermentable_addition = FermentableAddition.find(params[:id])
 
     @fermentable_addition.update_with_callbacks(

@@ -1,5 +1,6 @@
 ShareBrew
 ==========
+[![Build Status](https://secure.travis-ci.org/RyanHouston/share-brew.png?branch=master)](https://travis-ci.org/RyanHouston/share-brew)
 
 Overview
 ---------

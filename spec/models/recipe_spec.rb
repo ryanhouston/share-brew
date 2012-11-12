@@ -78,5 +78,16 @@ describe Recipe do
     end
   end
 
+  context "calculates vital statistics" do
+    subject { FactoryGirl.build(:recipe, batch_size: 5.5) }
+
+    it "provides a projected IBU caclulation based on recipe" do
+      subject.IBUs.should_not be_nil
+    end
+
+    it "provides an expected original gravity based on recipe" do
+      subject.calculated_starting_gravity.should_not be_nil
+    end
+  end
 end
 

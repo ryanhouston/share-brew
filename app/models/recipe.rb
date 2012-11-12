@@ -31,6 +31,42 @@ class Recipe < ActiveRecord::Base
     ).find( id )
   end
 
+  def mash_efficiency
+    # @todo set this from user input
+    68.0
+  end
+
+  def boil_length
+    # @todo set this from user input
+    60
+  end
+
+  def malt_bill
+    malt_bill = MaltBill.new(
+      fermentables:     fermentable_additions,
+      batch_size:       batch_size,
+      mash_efficiency:  mash_efficiency
+    )
+  end
+
+  def calculated_starting_gravity
+    malt_bill.starting_gravity
+  end
+
+  def IBUs
+    calculator = IBUCalculator.new
+
+    hop_additions.inject(0) do |ibu_sum, addition|
+      ibu_sum + calculator.IBUs_for_addition(
+        weight:       addition.weight,
+        alpha_acid:   addition.alpha_acid,
+        batch_size:   batch_size,
+        boil_time:    boil_length,
+        boil_gravity: calculated_starting_gravity
+      )
+    end
+  end
+
   private
   def add_ingredient( type, params, callbacks )
     type_additions = send (type.to_s + '_additions').to_sym

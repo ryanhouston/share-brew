@@ -153,6 +153,7 @@ DEPENDENCIES
   mysql
   nokogiri
   rails (= 3.2.8)
+  rake
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda-matchers

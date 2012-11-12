@@ -1,1 +1,2 @@
 $("#hops").replaceWith("<%=j render 'list' %>");
+$('#calculated_ibus').text('<%= @recipe.IBUs.round(2) %>');

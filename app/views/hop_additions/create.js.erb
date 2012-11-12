@@ -1,3 +1,4 @@
 $('#hops').replaceWith(
   "<%=j render(:partial => 'hop_additions/list') %>"
 );
+$('#calculated_ibus').text('<%= @recipe.IBUs.round(2) %>');

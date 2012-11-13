@@ -31,13 +31,13 @@ class Recipe < ActiveRecord::Base
     ).find( id )
   end
 
+  # TODO set mash efficiency from user input
   def mash_efficiency
-    # @todo set this from user input
     0.68
   end
 
+  # TODO set boil length from user input
   def boil_length
-    # @todo set this from user input
     60
   end
 

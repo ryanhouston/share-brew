@@ -4,6 +4,7 @@ gem 'rake'
 gem 'rails', '3.2.8'
 gem 'haml',  '>= 3.0.18'
 gem 'jquery-rails'
+
 gem 'thin'
 gem 'mysql', group: :production
 
@@ -12,6 +13,7 @@ gem 'devise'
 gem 'cancan'
 
 gem 'chosen-rails'
+gem 'neat'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'

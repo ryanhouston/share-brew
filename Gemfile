@@ -13,6 +13,7 @@ gem 'devise'
 gem 'cancan'
 
 gem 'chosen-rails'
+gem 'bourbon'
 gem 'neat'
 
 group :assets do

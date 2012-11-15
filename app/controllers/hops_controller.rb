@@ -14,6 +14,10 @@ public
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @hop }
+    end
   end
 
 

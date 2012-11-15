@@ -30,7 +30,7 @@ class YeastAdditionsController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
     @yeast_addition = YeastAddition.find(params[:id])
     @yeast_addition.update_with_callbacks(
       params[:yeast_addition],
@@ -48,7 +48,7 @@ class YeastAdditionsController < ApplicationController
         flash[:notice] = "Removed yeast addition for " + @yeast_addition.yeast.strain
         redirect_to(edit_recipe_path(@yeast_addition.recipe_id))
       end
-      format.js {}
+      format.js { render :update_list }
     end
   end
 
@@ -58,7 +58,7 @@ class YeastAdditionsController < ApplicationController
       format.html do
         redirect_to edit_recipe_path(@recipe), :notice => "Yeast addition added"
       end
-      format.js {}
+      format.js { render :update_list }
     end
   end
 
@@ -78,7 +78,7 @@ class YeastAdditionsController < ApplicationController
   def successfully_updated( yeast_addition )
     respond_to do |format|
       format.html { redirect_to edit_recipe_path(@recipe) }
-      format.js { render :create }
+      format.js { render :update_list }
     end
   end
 

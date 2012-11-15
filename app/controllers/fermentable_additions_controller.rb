@@ -49,7 +49,7 @@ class FermentableAdditionsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to edit_recipe_path(@fermentable_addition.recipe) }
-      format.js {}
+      format.js { render :update_list }
     end
   end
 
@@ -61,7 +61,7 @@ class FermentableAdditionsController < ApplicationController
           notice: "Added #{fermentable_addition.fermentable.name} to recipe"
       end
 
-      format.js {}
+      format.js { render :update_list }
     end
   end
 
@@ -81,7 +81,7 @@ class FermentableAdditionsController < ApplicationController
   def successfully_updated( fermentable_addition )
     respond_to do |format|
       format.html { redirect_to edit_recipe_path(@recipe) }
-      format.js { render :create }
+      format.js { render :update_list }
     end
   end
 

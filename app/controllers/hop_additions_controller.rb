@@ -54,7 +54,7 @@ class HopAdditionsController < ApplicationController
         flash[:notice] = "Removed hop addition for " + @hop_addition.hop.name
         redirect_to(edit_recipe_path(@hop_addition.recipe_id))
       end
-      format.js {}
+      format.js { render :update_list }
     end
   end
 
@@ -66,7 +66,7 @@ class HopAdditionsController < ApplicationController
           :notice => "Added #{hop_addition.hop.name} to recipe"
       end
 
-      format.js {}
+      format.js { render :update_list }
     end
   end
 
@@ -88,7 +88,7 @@ class HopAdditionsController < ApplicationController
       format.html { redirect_to edit_recipe_path(@hop_addition.recipe) }
       format.js   do
         @recipe = Recipe.find(params[:recipe_id])
-        render :create
+        render :update_list
       end
     end
   end

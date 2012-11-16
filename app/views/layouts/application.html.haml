@@ -38,13 +38,13 @@
       #body
         #content
           - if flash[:notice]
-            %p#notice.flash= notice
+            %p.flash.notice= notice
 
           - if flash[:error]
-            %p#error.flash= flash[:error]
+            %p.flash.error= flash[:error]
 
           - if flash[:alert]
-            %p#error.flash= flash[:alert]
+            %p.flash.error= flash[:alert]
 
 
           = yield
@@ -64,7 +64,3 @@
                   %li= link_to 'Yeast', yeasts_path
         .clear
 
-
-      #footer
-        .footer-content
-        .footer-width

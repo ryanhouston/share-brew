@@ -1,6 +1,8 @@
 $body-color: #ddd;
 $canvas-color: #333;
 $container-border: 2px solid #444;
+$base-text-color: #000;
+$header-color: #FF7918;
 
 body {
   background: $canvas-color;
@@ -77,13 +79,13 @@ a:focus { outline: none; }
 span.required { color: #ff0000; }
 
 h1 {
-  color: #000;
+  color: $base-text-color;
   font-size: 35px;
   font-family: $helvetica;
 }
 
 h2 {
-  color: #000;
+  color: $base-text-color;
   font-family: $lucida-grande;
   font-size: 22px;
   letter-spacing: 0px;
@@ -93,23 +95,23 @@ h2 {
 }
 
 h3 {
-  color: #555;
+  color: lighten($base-text-color, 33.5%);
   font-size: 18px;
   font-weight: bold;
-  margin: 10px 0;
+  margin-top: 10px;
   font-family: $helvetica;
 }
 
 h4 {
   padding: 10px 0;
   font-size: 15px;
-  color: #999;
+  color: lighten($base-text-color, 40%);
 }
 
 h5 {
   padding-bottom: 10px;
   font-size: 13px;
-  color: #999;
+  color: lighten($base-text-color, 40%);
 }
 
 ul, ol {
@@ -136,7 +138,6 @@ li ol, li ul {
   padding: 20px 45px;
   margin-bottom: 20px;
 
-  $header-color: #FF7918;
   @include background(
     linear-gradient($header-color, darken($header-color, 40%))
   );
@@ -146,7 +147,7 @@ li ol, li ul {
   .site-title {
     h1 a {
       float: left;
-      color: #ddd;
+      color: $body-color;
       font-size: 50px;
       font-weight: normal;
       text-decoration: none;
@@ -155,7 +156,7 @@ li ol, li ul {
     }
     h2 {
       float: left;
-      color: #FFE0CC;
+      color: $body-color;
       font-family: $georgia;
       font-size: 13px;
       margin-left: 12px;
@@ -167,7 +168,7 @@ li ol, li ul {
 
   #user-nav {
     float: right;
-    color: #fff;
+    color: $body-color;
     font-weight: bold;
 
     .button {
@@ -201,7 +202,7 @@ li ol, li ul {
       display: block;
       padding: 15px 0px;
       a {
-        color: #ddd;
+        color: $body-color;
         display: block;
         border-right: 1px solid #333;
         font-size: 11px;
@@ -211,8 +212,7 @@ li ol, li ul {
         text-decoration: none;
 
         &:hover {
-          color: #fff;
-          text-decoration: underline;
+          color: $header-color;
         }
       }
     }

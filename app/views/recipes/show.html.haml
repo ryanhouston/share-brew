@@ -48,10 +48,12 @@
              :collection => @recipe.yeast_additions,
              :as => :yeast_addition) || "No yeasts have been added yet."
 
-%div
-  %h3 Procedure
-  %pre= @recipe.procedure
+- unless @recipe.procedure.empty?
+  %div
+    %h3 Procedure
+    %pre= @recipe.procedure
 
+%br
 - if can? :update, @recipe
   = link_to('Edit', edit_recipe_path(@recipe)) + ' | '
 = link_to 'Back', recipes_path

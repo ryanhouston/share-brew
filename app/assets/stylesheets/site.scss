@@ -345,49 +345,9 @@ li ol, li ul {
     }
 }
 
-
-.clear {
-    clear: both;
-}
-
-.right {
-    float: right;
-}
-
-.left {
-  float: left;
-}
-
-#footer {
-    margin:0 auto 60px;
-    border-top: 10px solid #1A1A1A;
-
-    p {
-        text-align: left;
-        color: #eee;
-        font-size: 12px;
-        font-family: $helvetica;
-        margin: 0;
-        padding: 0;
-
-        a {
-            color: #fff;
-            font-weight: bold;
-        }
-    }
-    .footer-content {
-        padding: 30px 5px 60px;
-        background: #444;
-        border-top: 10px solid #262626;
-
-        p {
-            color: #666;
-            position: relative;
-            top: 12px;
-            margin-left: 165px;
-        }
-    }
-}
+.clear { clear: both; }
+.right { float: right; }
+.left  { float: left; }
 
 .flash {
   display: block;

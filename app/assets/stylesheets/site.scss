@@ -1,5 +1,6 @@
 $body-color: #ddd;
 $canvas-color: #333;
+$container-border: 2px solid #444;
 
 body {
   background: $canvas-color;
@@ -184,9 +185,10 @@ li ol, li ul {
 
 #nav {
   height: 45px;
-  background-color: #111;
+  background-color: #1a1a1a;
   border-radius: 6px 6px 0 0;
-  border: 1px solid #000;
+  border: $container-border;
+  border-bottom: none;
 
   ul {
     list-style: none;
@@ -224,7 +226,8 @@ li ol, li ul {
   margin-bottom: 40px;
   background: none;
   background-color: $body-color;
-  border: 1px solid darken($body-color, 20%);
+  border: $container-border;
+  border-top: none;
   border-radius: 0 0 6px 6px;
 }
 

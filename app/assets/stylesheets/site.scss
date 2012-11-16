@@ -1,63 +1,63 @@
 body {
-    background: #333;
-    margin:0;
-    padding:0;
-    font-family: $verdana;
-    font-size: 13px;
-    color: #666;
+  background: #333;
+  margin:0;
+  padding:0;
+  font-family: $verdana;
+  font-size: 13px;
+  color: #666;
 }
 
 * {
-    margin:0;
-    padding:0;
+  margin:0;
+  padding:0;
 }
 
 /** element defaults **/
 table {
-    width: 100%;
-    text-align: left;
+  width: 100%;
+  text-align: left;
 }
 
 th, td {
-    padding: 10px 10px;
+  padding: 10px 10px;
 }
 
 th {
-    color: #fff;
-    background: #E66000 none repeat-x scroll left top;
+  color: #fff;
+  background: #E66000 none repeat-x scroll left top;
 }
 
 td {
-    border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 code, blockquote {
-    display: block;
-    border-left: 5px solid #222;
-    padding: 10px;
-    margin-bottom: 20px;
+  display: block;
+  border-left: 5px solid #222;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 code {
-    background-color: #222;
-    color:#ccc;
-    border: none;
+  background-color: #222;
+  color:#ccc;
+  border: none;
 }
 blockquote {
-    border-left: 5px solid #222;
-}
+  border-left: 5px solid #222;
 
-blockquote p {
+  p {
     font-style: italic;
     font-family: $georgia;
     margin: 0;
     color: #333;
     height: 1%;
+  }
 }
 
 p {
-    line-height: 1.9em;
-    margin-bottom: 10px;
-    font-size: 12px;
+  line-height: 1.9em;
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 
 pre {
@@ -66,163 +66,153 @@ pre {
   margin-bottom: 10px;
 }
 
-a {
-    color: #D1700E;
-}
+a { color: #D1700E; }
+a:hover { color: #1F4F82; }
+a:focus { outline: none; }
 
-a:hover {
-    color: #1F4F82;
-}
-
-a:focus {
-    outline: none;
-}
-
-span.required {
-    color: #ff0000;
-}
+span.required { color: #ff0000; }
 
 h1 {
-    color: #000;
-    font-size: 35px;
-    font-family: $helvetica;
+  color: #000;
+  font-size: 35px;
+  font-family: $helvetica;
 }
 
 h2 {
-    color: #000;
-    font-family: $lucida-grande;
-    font-size: 22px;
-    letter-spacing: 0px;
-    font-weight: normal;
-    padding: 0 0 5px;
-    margin: 0;
+  color: #000;
+  font-family: $lucida-grande;
+  font-size: 22px;
+  letter-spacing: 0px;
+  font-weight: normal;
+  padding: 0 0 5px;
+  margin: 0;
 }
 
 h3 {
-    color: #555;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-family: $helvetica;
+  color: #555;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: $helvetica;
 }
 
 h4 {
-    padding-bottom: 10px;
-    font-size: 15px;
-    color: #999;
+  padding-bottom: 10px;
+  font-size: 15px;
+  color: #999;
 }
 
 h5 {
-    padding-bottom: 10px;
-    font-size: 13px;
-    color: #999;
+  padding-bottom: 10px;
+  font-size: 13px;
+  color: #999;
 }
 
 ul, ol {
-    margin: 0 0 35px 35px;
+  margin: 0 0 35px 35px;
 }
 
 li {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 li ol, li ul {
-    font-size: 1.0em;
-    margin-bottom: 0;
-    padding-top: 5px;
+  font-size: 1.0em;
+  margin-bottom: 0;
+  padding-top: 5px;
 }
 
 
 #container {
-    @include outer-container;
+  @include outer-container;
 }
 
 #header {
-    padding: 30px 15px;
-    margin-bottom: 15px;
+  padding: 30px 15px;
+  margin-bottom: 15px;
 
-    $header-color: #FF7918;
-    @include background(
-        linear-gradient($header-color, darken($header-color, 40%))
-    );
-    @include box-shadow(0 0 8px 8px);
-    border-radius: 0 0 6px 6px;
+  $header-color: #FF7918;
+  @include background(
+    linear-gradient($header-color, darken($header-color, 40%))
+  );
+  @include box-shadow(0 0 8px 8px);
+  border-radius: 0 0 6px 6px;
 
-    h1 a {
-        color: #ddd;
-        font-size: 50px;
-        font-weight: normal;
-        text-decoration: none;
-        letter-spacing: -3px;
-        float: left;
-    }
-    h2 {
-        color: #FFE0CC;
-        float: left;
-        font-family: $georgia;
-        font-size: 13px;
-        margin-left: 12px;
-        margin-top: 24px;
-        padding-left: 4px;
-        letter-spacing: 0;
-    }
+  h1 a {
+    color: #ddd;
+    font-size: 50px;
+    font-weight: normal;
+    text-decoration: none;
+    letter-spacing: -3px;
+    float: left;
+  }
+  h2 {
+    color: #FFE0CC;
+    float: left;
+    font-family: $georgia;
+    font-size: 13px;
+    margin-left: 12px;
+    margin-top: 24px;
+    padding-left: 4px;
+    letter-spacing: 0;
+  }
 }
 
 #nav {
+  height: 45px;
+  background-color: #111;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid #000;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     height: 45px;
-    background-color: #111;
-    border-radius: 6px 6px 0 0;
-    border: 1px solid #000;
 
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        height: 45px;
+    li {
+      float: left;
+      display: block;
+      padding: 15px 0px;
+      a {
+        color: #ddd;
+        display: block;
+        border-right: 1px solid #333;
+        font-size: 11px;
+        font-weight: bold;
+        font-family: $lucida-grande;
+        padding: 0 20px;
+        text-decoration: none;
 
-        li {
-            float: left;
-            display: block;
-            padding: 15px 0px;
-            a {
-                color: #ddd;
-                display: block;
-                border-right: 1px solid #333;
-                font-size: 11px;
-                font-weight: bold;
-                font-family: $lucida-grande;
-                padding: 0 20px;
-                text-decoration: none;
-
-                &:hover {
-                    color: #fff;
-                    text-decoration: underline;
-                }
-            }
+        &:hover {
+          color: #fff;
+          text-decoration: underline;
         }
+      }
     }
+  }
 }
 
 
 #body {
-    $body-color: #ddd;
-    @include row;
-    padding: 10px;
-    margin-bottom: 40px;
-    background: none;
-    background-color: $body-color;
-    border: 1px solid darken($body-color, 20%);
-    border-radius: 0 0 6px 6px;
+  $body-color: #ddd;
+  @include row;
+  padding: 10px;
+  margin-bottom: 40px;
+  background: none;
+  background-color: $body-color;
+  border: 1px solid darken($body-color, 20%);
+  border-radius: 0 0 6px 6px;
 }
 
 #content {
-    @include span-columns(9);
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-right-color: #c0c0c0;
-    border-bottom-color: #c0c0c0;
-    border-radius: 8px;
+  @include span-columns(9);
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-right-color: #c0c0c0;
+  border-bottom-color: #c0c0c0;
+  border-radius: 8px;
 }
 
 .clear { clear: both; }
@@ -248,12 +238,12 @@ li ol, li ul {
 }
 
 #user-nav {
-    float: right;
-    color: #fff;
+  float: right;
+  color: #fff;
 
-    a:link    { color: #fff; font-style: italic; }
-    a:visited { color: #fff; text-decoration: none; }
-    a:hover   { color: #fff; text-decoration: none; }
-    a:active  { color: #fff; text-decoration: none; }
+  a:link    { color: #fff; font-style: italic; }
+  a:visited { color: #fff; text-decoration: none; }
+  a:hover   { color: #fff; text-decoration: none; }
+  a:active  { color: #fff; text-decoration: none; }
 }
 

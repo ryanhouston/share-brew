@@ -1,53 +1,53 @@
 fieldset {
-    display: block;
-    border: none;
-    border-top: 1px solid #ccc;
+  display: block;
+  border: none;
+  border-top: 1px solid #ccc;
 
-    legend {
-        font-weight: bold;
-        font-size: 13px;
-        padding-right: 10px;
-        color: #333;
-    }
+  legend {
+    font-weight: bold;
+    font-size: 13px;
+    padding-right: 10px;
+    color: #333;
+  }
 
-    form {
-        padding-top: 15px;
-    }
+  form {
+    padding-top: 15px;
+  }
 
-    p label {
-        float: left;
-        width: 150px;
-    }
+  p label {
+    float: left;
+    width: 150px;
+  }
 }
 
 form {
-    input, select, textarea {
-        padding: 5px;
-        color: #333333;
-        border: 1px solid #ddd;
-        border-right:1px solid #ccc;
-        border-bottom:1px solid #ccc;
-        background-color:#fff;
-        font-family: $helvetica;
-        font-size: 13px;
-    }
+  input, select, textarea {
+    padding: 5px;
+    color: #333333;
+    border: 1px solid #ddd;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    background-color:#fff;
+    font-family: $helvetica;
+    font-size: 13px;
+  }
 
-    textarea {
-      width: 90%;
-    }
+  textarea {
+    width: 90%;
+  }
 
-    input.formbutton {
-        border: none;
-        background: #333;
-        color: #ffffff;
-        font-weight: bold;
-        padding: 5px 10px;
-        font-size: 12px;
-        font-family: $lucida-grande;
-        letter-spacing: 1px;
-        width: auto;
-        overflow: visible;
-    }
+  input.formbutton {
+    border: none;
+    background: #333;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: $lucida-grande;
+    letter-spacing: 1px;
+    width: auto;
+    overflow: visible;
+  }
 }
 
 .field-row {

@@ -261,6 +261,7 @@ li ol, li ul {
 
 #body {
     $body-color: #ddd;
+    @include row;
     padding: 10px;
     margin-bottom: 40px;
     background: none;
@@ -277,72 +278,6 @@ li ol, li ul {
     border-right-color: #c0c0c0;
     border-bottom-color: #c0c0c0;
     border-radius: 8px;
-}
-
-.sidebar {
-    @include span-columns(2);
-    margin-left: 30px;
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
-            margin-bottom: 20px;
-            line-height: 1.9em;
-            padding: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-right-color: #c0c0c0;
-            border-bottom-color: #c0c0c0;
-            border-radius: 8px;
-        }
-
-        li ul li {
-            display: block;
-            border-top: none;
-            padding: 6px 2px;
-            margin: 0;
-            line-height: 1.5em;
-            font-size: 13px;
-            border: none;
-
-            a {
-                font-weight: normal;
-                color: #222;
-
-                &:hover {
-                    color: #000;
-                }
-
-            }
-        }
-    }
-
-    li ul.blocklist li {
-        padding: 0;
-        display: inline;
-
-        a {
-            display: block;
-            border-bottom:1px solid #e0e0e0;
-            padding: 6px 5px;
-            text-decoration: none;
-            font-family: $verdana;
-            font-size: 12px;
-        }
-    }
-
-    h4 {
-        color: #222;
-        font-family: $lucida-grande;
-        font-size: 19px;
-        letter-spacing: 1px;
-        margin: 0;
-        padding: 5px 0px;
-        font-weight: normal;
-    }
 }
 
 .clear { clear: both; }

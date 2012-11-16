@@ -78,61 +78,6 @@ a:focus {
     outline: none;
 }
 
-fieldset {
-    display: block;
-    border: none;
-    border-top: 1px solid #ccc;
-}
-
-fieldset legend {
-    font-weight: bold;
-    font-size: 13px;
-    padding-right: 10px;
-    color: #333;
-}
-
-fieldset form {
-    padding-top: 15px;
-}
-
-fieldset p label {
-    float: left;
-    width: 150px;
-}
-
-form input, form select, form textarea {
-    padding: 5px;
-    color: #333333;
-    border: 1px solid #ddd;
-    border-right:1px solid #ccc;
-    border-bottom:1px solid #ccc;
-    background-color:#fff;
-    font-family: $helvetica;
-    font-size: 13px;
-}
-
-form textarea {
-  width: 90%;
-}
-
-form input.formbutton {
-    border: none;
-    background: #333;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 5px 10px;
-    font-size: 12px;
-    font-family: $lucida-grande;
-    letter-spacing: 1px;
-    width: auto;
-    overflow: visible;
-}
-
-form.searchform p {
-    margin: 5px 0;
-}
-
-
 span.required {
     color: #ff0000;
 }

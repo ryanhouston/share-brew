@@ -1,4 +1,7 @@
 $(function() {
+  // Initialize chosen plugin for beer style chooser
+  $(".chzn-select").chosen();
+
   $(document).on('change', '#hop_addition_hop_id', function(event) {
     $.ajax({
       url: '/hops/' + $(this).val(),

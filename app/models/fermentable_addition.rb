@@ -14,5 +14,9 @@ class FermentableAddition < ActiveRecord::Base
       callbacks[:failure].try(:call, self)
     end
   end
+
+  def percentage_of_malt_bill
+    weight / recipe.malt_bill.total_weight * 100
+  end
 end
 

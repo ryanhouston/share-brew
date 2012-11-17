@@ -19,5 +19,11 @@ class MaltBill
     (fermentable_addition.weight *
       fermentable_addition.fermentable.potential_in_GUs * mash_efficiency)
   end
+
+  def total_weight
+    fermentables.inject(0.0) do |total_weight, fermentable_addition|
+      total_weight + fermentable_addition.weight
+    end
+  end
 end
 

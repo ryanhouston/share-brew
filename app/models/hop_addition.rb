@@ -19,5 +19,16 @@ class HopAddition < ActiveRecord::Base
       callbacks[:failure].try(:call, self)
     end
   end
+
+  def IBUs
+    calculator = IBUCalculator.new
+    calculator.IBUs_for_addition(
+      weight:       weight,
+      alpha_acid:   alpha_acid,
+      boil_time:    duration,
+      batch_size:   recipe.batch_size,
+      boil_gravity: recipe.calculated_starting_gravity
+    )
+  end
 end
 

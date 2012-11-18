@@ -6,7 +6,7 @@ gem 'haml',  '>= 3.0.18'
 gem 'jquery-rails'
 
 gem 'thin'
-gem 'mysql', group: :production
+gem 'pg'
 
 gem 'nokogiri'
 gem 'devise'

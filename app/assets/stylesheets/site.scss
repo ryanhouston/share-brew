@@ -239,6 +239,14 @@ li ol, li ul {
   border-radius: 8px;
 }
 
+#right-sidebar {
+  @include shift(9);
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
 .clear { clear: both; }
 .right { float: right; }
 .left  { float: left; }

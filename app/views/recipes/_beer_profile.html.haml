@@ -1,0 +1,47 @@
+.beer-profile
+  %h3 Beer Profile
+  %fieldset.style-guide
+    %legend Style Guide
+    .gravity
+      %strong SG
+      = "#{@recipe.beer_style.min_orig_grav} - #{@recipe.beer_style.max_orig_grav}"
+      %br
+      %strong FG
+      = "#{@recipe.beer_style.min_final_grav} - #{@recipe.beer_style.max_final_grav}"
+    .color
+      %strong Color
+      = "#{@recipe.beer_style.min_color} - #{@recipe.beer_style.max_color} SRM"
+    .bitterness
+      %strong IBUs
+      = "#{@recipe.beer_style.min_IBUs} - #{@recipe.beer_style.max_IBUs} IBUs"
+    .alcohol
+      %strong ABV
+      = "#{@recipe.beer_style.min_abv}% - #{@recipe.beer_style.max_abv}%"
+    .carbonation
+      %strong Carbonation
+      = "#{@recipe.beer_style.min_carbonation} - #{@recipe.beer_style.max_carbonation} vols"
+  %fieldset.profile
+    %legend Recipe Estimates
+    .gravity
+      %strong SG
+      %span#calculated_starting_gravity= @recipe.calculated_starting_gravity
+      %br
+      %strong FG
+      todo
+    .color
+      %strong Color
+      todo
+    .bitterness
+      %strong IBUs
+      %span#calculated_ibus= @recipe.IBUs.round(2)
+      %br
+      %strong Bitterness Ratio
+      todo
+  %fieldset.alcohol
+    %legend Alcohol
+    %strong Estimated ABV:
+    todo
+    %br
+    %strong Actual ABV:
+    todo
+

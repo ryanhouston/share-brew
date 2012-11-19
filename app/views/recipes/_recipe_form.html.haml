@@ -84,4 +84,6 @@
     = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe),
       :remote => true, class: 'button', :'data-ingredient' => 'yeasts'
 
+- content_for :right_sidebar do
+  = render 'recipes/beer_profile'
 

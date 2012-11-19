@@ -48,3 +48,7 @@
         #content
           = yield
 
+        - if content_for? :right_sidebar
+          #right-sidebar
+            = yield :right_sidebar
+

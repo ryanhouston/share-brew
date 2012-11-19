@@ -87,7 +87,7 @@ h2 {
   font-size: 22px;
   letter-spacing: 0px;
   font-weight: normal;
-  padding: 0 0 5px;
+  padding: 10px 0;
   margin: 0;
 }
 
@@ -225,18 +225,8 @@ li ol, li ul {
   padding: 10px;
   margin-bottom: 40px;
   background: none;
-  background-color: $body-color;
-  border-radius: 0 0 6px 6px;
-}
-
-#content {
-  @include span-columns(9);
-  padding: 10px;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-right-color: #c0c0c0;
-  border-bottom-color: #c0c0c0;
-  border-radius: 8px;
+  border-radius: 0 0 6px 6px;
 }
 
 #right-sidebar {

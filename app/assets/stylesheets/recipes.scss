@@ -8,7 +8,16 @@
   margin-right: 80px;
 }
 
-.fermentables-vitals, .hops-vitals {
-  float: right;
+#fermentables, #hops, .edit_recipe {
+  @include span-columns(9);
+  margin-bottom: 10px;
 }
 
+.fermentables-vitals, .hops-vitals, .style-guide {
+  padding-top: 20px;
+
+  strong {
+    display: inline-block;
+    width: 100px;
+  }
+}

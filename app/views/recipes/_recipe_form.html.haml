@@ -55,35 +55,31 @@
   %br.clear
 
 - unless @recipe.new_record?
-  %fieldset.field-row
-    %legend.field-label Ingredients
+  .style-guide
+    %h2 Beer Style Guide
+    = render 'recipes/beer_style_guide'
+  %br.clear
 
-    %h3 Fermentables
-    = render partial: 'fermentable_additions/list', locals: { show_controls: true }
+  %h2 Fermentables
+  = render partial: 'fermentable_additions/list', locals: { show_controls: true }
+  = render 'recipes/malt_profile'
 
-    %br
-    .fermentables-vitals
-      %strong Calculated Starting Gravity:
-      %span#calculated_starting_gravity= @recipe.calculated_starting_gravity
-    = link_to 'Add Fermentable',
-      new_recipe_fermentable_addition_path(@recipe),
-      remote: true, class: 'button', :"data-ingredient" => 'fermentables'
+  %br.clear
+  = link_to 'Add Fermentable',
+    new_recipe_fermentable_addition_path(@recipe),
+    remote: true, class: 'button', :"data-ingredient" => 'fermentables'
 
-    %h3 Hops
-    = render partial: 'hop_additions/list', locals: { show_controls: true }
-    %br
-    .hops-vitals
-      %strong Calculated IBUs:
-      %span#calculated_ibus= @recipe.IBUs.round(2)
-    = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe),
-      remote: true, class: 'button', :"data-ingredient" => 'hops'
+  %h2 Hops
+  = render partial: 'hop_additions/list', locals: { show_controls: true }
+  = render 'recipes/hop_profile'
+  %br.clear
+  = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe),
+    remote: true, class: 'button', :"data-ingredient" => 'hops'
 
-    %h3 Yeast
-    = render :partial => 'yeast_additions/list'
-    %br
-    = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe),
-      :remote => true, class: 'button', :'data-ingredient' => 'yeasts'
-
-- content_for :right_sidebar do
-  = render 'recipes/beer_profile'
+  %h2 Yeast
+  = render :partial => 'yeast_additions/list'
+  %br
+  = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe),
+    :remote => true, class: 'button', :'data-ingredient' => 'yeasts'
+  %br.clear
 

@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
 
   # POST /recipes
   def create
-    @beer_style = BeerStyle.find(params[:recipe][:beer_style]);
+    @beer_style = BeerStyle.find(params[:recipe][:beer_style_id]);
     params[:recipe][:beer_style] = @beer_style;
     @recipe = Recipe.new(params[:recipe])
     @recipe.user_id = current_user.id

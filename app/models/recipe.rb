@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :beer_style, :mash_type, :name, :batch_size, :description,
+  attr_accessible :beer_style, :beer_style_id, :mash_type, :name, :batch_size, :description,
     :original_gravity, :final_gravity, :bitterness, :color, :procedure
 
   belongs_to :beer_style

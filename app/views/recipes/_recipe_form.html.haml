@@ -59,7 +59,8 @@
     %legend.field-label Ingredients
 
     %h3 Fermentables
-    = render :partial => 'fermentable_additions/list'
+    = render partial: 'fermentable_additions/list', locals: { show_controls: true }
+
     %br
     .fermentables-vitals
       %strong Calculated Starting Gravity:
@@ -69,7 +70,7 @@
       remote: true, class: 'button', :"data-ingredient" => 'fermentables'
 
     %h3 Hops
-    = render :partial => 'hop_additions/list'
+    = render partial: 'hop_additions/list', locals: { show_controls: true }
     %br
     .hops-vitals
       %strong Calculated IBUs:

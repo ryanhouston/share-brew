@@ -36,11 +36,11 @@
 .ingredients
   %h4 Fermentables
   .fermentable-additions
-    = render(@recipe.fermentable_additions) || "No fermentables have been added yet."
+    = render :partial => 'fermentable_additions/list'|| "No fermentables have been added yet."
 
   %h4 Hops
   .hop-additions
-    = render(@recipe.hop_additions) || "No hops have been added yet."
+    = render :partial => 'hop_additions/list'|| "No hops have been added yet."
 
   %h4 Yeast
   .yeast-additions

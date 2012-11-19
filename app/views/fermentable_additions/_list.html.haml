@@ -1,3 +1,4 @@
+- show_controls = show_controls || false
 #fermentables
   %table
     %thead
@@ -6,7 +7,8 @@
         %th Color (SRM)
         %th Amount
         %th % of total
-        %th
+        - if show_controls
+          %th
     %tbody
       - @recipe.fermentable_additions.order("weight DESC").each do |addition|
         %tr
@@ -14,13 +16,14 @@
           %td= addition.fermentable.color
           %td= addition.weight.to_s + ' lbs.'
           %td= addition.percentage_of_malt_bill.round(1).to_s + '%'
-          %td
-            = link_to 'Edit',
-              edit_recipe_fermentable_addition_path(addition.recipe_id, addition.id),
-              remote: true
-            = link_to 'Delete',
-              [addition.recipe, addition],
-              method: :delete,
-              confirm: "Are you sure you want to delete the fermentable addition?",
-              remote: true
+          - if show_controls
+            %td
+              = link_to 'Edit',
+                edit_recipe_fermentable_addition_path(addition.recipe_id, addition.id),
+                remote: true
+              = link_to 'Delete',
+                [addition.recipe, addition],
+                method: :delete,
+                confirm: "Are you sure you want to delete the fermentable addition?",
+                remote: true
 

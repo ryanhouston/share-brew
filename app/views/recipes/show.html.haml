@@ -1,46 +1,32 @@
-%h2= h @recipe.name
-%em=h @recipe.beer_style.name
+.recipe-overview
+  %h2= h @recipe.name
+  %em=h @recipe.beer_style.name
 
-.right.gravity-block
-  %p
-    %b Expected OG
-    =h @recipe.original_gravity
-
-  %p
-    %b Expected FG
-    =h @recipe.final_gravity
-
-.right.gravity-block
-  - unless @recipe.bitterness.empty?
+  %div
     %p
-      %b Bitterness
-      =h "#{@recipe.bitterness} IBUs"
+      %b Mash type
+      =h @recipe.mash_type
 
-  - unless @recipe.color.empty?
     %p
-      %b Color
-      =h "#{@recipe.color} SRM"
+      %b Batch size
+      =h @recipe.batch_size
+    %p=h @recipe.description
 
+= render "beer_profile"
+.clear
 
-%div
-  %p
-    %b Mash type
-    =h @recipe.mash_type
-
-  %p
-    %b Batch size
-    =h @recipe.batch_size
-  %p=h @recipe.description
 
 %h3 Ingredients
 .ingredients
   %h4 Fermentables
   .fermentable-additions
     = render :partial => 'fermentable_additions/list'|| "No fermentables have been added yet."
+  .clear
 
   %h4 Hops
   .hop-additions
     = render :partial => 'hop_additions/list'|| "No hops have been added yet."
+  .clear
 
   %h4 Yeast
   .yeast-additions

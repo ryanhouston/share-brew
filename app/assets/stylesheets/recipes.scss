@@ -13,7 +13,7 @@
   margin-bottom: 10px;
 }
 
-.fermentables-vitals, .hops-vitals, .style-guide {
+.fermentables-vitals, .hops-vitals, .style-guide, .beer-profile {
   padding-top: 20px;
 
   strong {
@@ -21,3 +21,12 @@
     width: 100px;
   }
 }
+
+.recipe-overview {
+  @include span-columns(7);
+  float: left;
+}
+.beer-profile {
+  @include span-columns(4);
+}
+

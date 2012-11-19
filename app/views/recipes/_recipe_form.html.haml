@@ -60,17 +60,27 @@
 
     %h3 Fermentables
     = render :partial => 'fermentable_additions/list'
+    %br
     .fermentables-vitals
       %strong Calculated Starting Gravity:
       %span#calculated_starting_gravity= @recipe.calculated_starting_gravity
+    = link_to 'Add Fermentable',
+      new_recipe_fermentable_addition_path(@recipe),
+      remote: true, class: 'button', :"data-ingredient" => 'fermentables'
 
     %h3 Hops
     = render :partial => 'hop_additions/list'
+    %br
     .hops-vitals
       %strong Calculated IBUs:
       %span#calculated_ibus= @recipe.IBUs.round(2)
+    = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe),
+      remote: true, class: 'button', :"data-ingredient" => 'hops'
 
     %h3 Yeast
     = render :partial => 'yeast_additions/list'
+    %br
+    = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe),
+      :remote => true, class: 'button', :'data-ingredient' => 'yeasts'
 
 

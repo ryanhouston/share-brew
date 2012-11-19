@@ -62,7 +62,7 @@ pre {
 a { color: #D1700E; }
 a:hover { color: #1F4F82; }
 a:focus { outline: none; }
-a.button { @include button; }
+a.button { @include button(simple, #D1700E); }
 
 span.required { color: #ff0000; }
 
@@ -129,8 +129,8 @@ li ol, li ul {
   @include background(
     linear-gradient($header-color, darken($header-color, 40%))
   );
-  @include box-shadow(0 0 8px 8px);
   border-radius: 0 0 6px 6px;
+  border: 0 2px 2px 2px solid darken($header-color, 40%);
 
   .site-title {
     h1 a {

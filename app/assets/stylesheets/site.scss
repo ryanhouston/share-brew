@@ -22,6 +22,15 @@ body {
 table {
   width: 100%;
   text-align: left;
+    border-collapse: collapse;
+
+  th {
+    border-bottom: 1px solid #666;
+  }
+
+  th, td {
+    padding: 4px;
+  }
 }
 
 code, blockquote {

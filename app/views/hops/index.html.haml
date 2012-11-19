@@ -12,7 +12,7 @@
     %tr
       %td= link_to hop.name, hop
       %td= hop.origin
-      %td= "#{hop.alpha_acid}%"
+      %td= "#{hop.alpha_acid.round(1)}%"
       %td= hop.typical_use
       %td= link_to 'Edit', edit_hop_path(hop) if can? :update, hop
       - if can? :destroy, hop

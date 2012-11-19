@@ -36,16 +36,15 @@
           %li= link_to 'Yeast', yeasts_path
 
       #body
+        - if flash[:notice]
+          %p.flash.notice= notice
+
+        - if flash[:error]
+          %p.flash.error= flash[:error]
+
+        - if flash[:alert]
+          %p.flash.error= flash[:alert]
+
         #content
-          - if flash[:notice]
-            %p.flash.notice= notice
-
-          - if flash[:error]
-            %p.flash.error= flash[:error]
-
-          - if flash[:alert]
-            %p.flash.error= flash[:alert]
-
-
           = yield
 

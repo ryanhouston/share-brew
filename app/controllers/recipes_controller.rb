@@ -48,7 +48,7 @@ class RecipesController < ApplicationController
   # PUT /recipes/1
   def update
     authorize! :update, @recipe
-    params[:recipe][:beer_style] = BeerStyle.find(params[:recipe][:beer_style]);
+    params[:recipe][:beer_style] = BeerStyle.find(params[:recipe][:beer_style_id]);
 
     if @recipe.update_attributes(params[:recipe])
       redirect_to(@recipe, :notice => 'Recipe was successfully updated.')

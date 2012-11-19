@@ -174,7 +174,9 @@ li ol, li ul {
 
 #nav {
   height: 45px;
-  background-color: #1a1a1a;
+  @include background(
+    linear-gradient(#222, #000)
+  );
   border-radius: 6px 6px 0 0;
   border: $container-border;
   border-bottom: none;

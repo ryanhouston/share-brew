@@ -130,7 +130,8 @@ li ol, li ul {
     linear-gradient($header-color, darken($header-color, 40%))
   );
   border-radius: 0 0 6px 6px;
-  border: 0 2px 2px 2px solid darken($header-color, 40%);
+  border-top: none;
+  @include box-shadow(0 0 6px #000);
 
   .site-title {
     h1 a {
@@ -173,13 +174,12 @@ li ol, li ul {
 }
 
 #nav {
+  @include box-shadow(0 0 6px #000);
   height: 45px;
   @include background(
     linear-gradient(#222, #000)
   );
   border-radius: 6px 6px 0 0;
-  border: $container-border;
-  border-bottom: none;
 
   ul {
     list-style: none;
@@ -211,13 +211,12 @@ li ol, li ul {
 
 
 #body {
+  @include box-shadow(0 0 6px #000);
   @include row;
   padding: 10px;
   margin-bottom: 40px;
   background: none;
   background-color: $body-color;
-  border: $container-border;
-  border-top: none;
   border-radius: 0 0 6px 6px;
 }
 

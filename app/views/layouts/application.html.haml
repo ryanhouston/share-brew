@@ -38,12 +38,15 @@
       #body
         - if flash[:notice]
           %p.flash.notice= notice
+          .clear
 
         - if flash[:error]
           %p.flash.error= flash[:error]
+          .clear
 
         - if flash[:alert]
           %p.flash.error= flash[:alert]
+          .clear
 
         #content
           = yield

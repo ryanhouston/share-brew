@@ -1,5 +1,13 @@
 .beer-profile
   %h3= @recipe.beer_style.name
+  .batch-attributes
+    .attribute
+      %b Mash type
+      = @recipe.mash_type
+    .attribute
+      %b Batch size
+      = @recipe.batch_size
+
   %fieldset.style-guide
     %legend Style Guide
     .gravity
@@ -20,7 +28,7 @@
     .carbonation
       %strong Carbonation
       = "#{@recipe.beer_style.min_carbonation} - #{@recipe.beer_style.max_carbonation} vols"
-  %fieldset.profile
+  %fieldset.recipe-profile
     %legend Recipe Profile
     .gravity
       %strong SG

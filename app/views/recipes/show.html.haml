@@ -1,20 +1,9 @@
-.recipe-overview
-  %h2= h @recipe.name
-  %em=h @recipe.beer_style.name
-
-  %div
-    %p
-      %b Mash type
-      =h @recipe.mash_type
-
-    %p
-      %b Batch size
-      =h @recipe.batch_size
-    %p=h @recipe.description
+%h2=  @recipe.name
 
 = render "beer_profile"
 .clear
 
+%p= @recipe.description
 
 %h3 Ingredients
 .ingredients

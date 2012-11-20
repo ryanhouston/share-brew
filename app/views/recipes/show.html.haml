@@ -2,10 +2,10 @@
   - if can? :update, @recipe
     = link_to('Edit', edit_recipe_path(@recipe), class: 'button')
   = link_to 'Back to Recipes', recipes_path, class: 'button'
-= render "beer_profile"
 
 %h2=  @recipe.name
 
+= render "beer_profile"
 .clear
 
 %p= @recipe.description

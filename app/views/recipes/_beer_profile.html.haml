@@ -32,7 +32,7 @@
     %legend Recipe Profile
     .gravity
       %strong SG
-      %span#calculated_starting_gravity= @recipe.calculated_starting_gravity
+      %span#calculated_starting_gravity= @recipe.profile.calculated_starting_gravity
       %br
       %strong FG
       todo
@@ -47,7 +47,7 @@
       todo
     .bitterness
       %strong IBUs
-      %span#calculated_ibus= @recipe.IBUs.round(2)
+      %span#calculated_ibus= @recipe.profile.IBUs.round(2)
       %br
       %strong Bitterness Ratio
       todo

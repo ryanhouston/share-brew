@@ -27,7 +27,7 @@ class HopAddition < ActiveRecord::Base
       alpha_acid:   alpha_acid,
       boil_time:    duration,
       batch_size:   recipe.batch_size,
-      boil_gravity: recipe.calculated_starting_gravity
+      boil_gravity: recipe.profile.calculated_starting_gravity
     )
   end
 end

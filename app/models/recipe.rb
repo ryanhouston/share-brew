@@ -49,6 +49,10 @@ class Recipe < ActiveRecord::Base
     )
   end
 
+  def profile
+    @profile ||= RecipeProfile.new(self)
+  end
+
 private
   def add_ingredient( type, params, callbacks )
     type_additions = send (type.to_s + '_additions').to_sym

@@ -11,13 +11,7 @@ class RecipeProfile
     calculator = IBUCalculator.new
 
     @recipe.hop_additions.inject(0) do |ibu_sum, addition|
-      ibu_sum + calculator.IBUs_for_addition(
-        weight:       addition.weight,
-        alpha_acid:   addition.alpha_acid,
-        batch_size:   @recipe.batch_size,
-        boil_time:    @recipe.boil_length,
-        boil_gravity: calculated_starting_gravity
-      )
+      ibu_sum + addition.IBUs
     end
   end
 

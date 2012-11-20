@@ -9,6 +9,14 @@ Calculating the Malt Bill
 
     total recipe gravity in GUs = sum(GUs per fermentable)
 
+### Final Gravity of Recipe
+This is the expected final gravity of the beer. Currently this is being calculated using the attenuation factor of the yeast used in the beer. If attenuation of the yeast was 75% we would see the following:
+
+    Final Gravity of recipe = calculated starting gravity * 0.75
+
+This is a naive calculation which does not account for the fermentability of each specific fermentable. For example, a recipe using a large amount of crystal malts is going to end up with a high final gravity than a recipe based purely on two-row base malt.
+
+
 ### Gravity Units per Fermentable in Recipe
     GUs per fermentable = gravity per lb. X weight in lbs
 

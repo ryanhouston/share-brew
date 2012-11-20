@@ -63,13 +63,8 @@
   %br.clear
 
   %h2 Fermentables
-  = render partial: 'fermentable_additions/list', locals: { show_controls: true }
-  = render 'recipes/malt_profile'
-
-  %br.clear
-  = link_to 'Add Fermentable',
-    new_recipe_fermentable_addition_path(@recipe),
-    remote: true, class: 'button', :"data-ingredient" => 'fermentables'
+  #fermentable_additions_edit
+    = render 'recipes/fermentable_additions_edit'
 
   %h2 Hops
   = render partial: 'hop_additions/list', locals: { show_controls: true }

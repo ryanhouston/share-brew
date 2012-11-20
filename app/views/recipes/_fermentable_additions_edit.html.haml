@@ -1,0 +1,7 @@
+= render partial: 'fermentable_additions/list', locals: { show_controls: true }
+= render 'recipes/malt_profile'
+
+%br.clear
+= link_to 'Add Fermentable',
+  new_recipe_fermentable_addition_path(@recipe),
+  remote: true, class: 'button', :"data-ingredient" => 'fermentables'

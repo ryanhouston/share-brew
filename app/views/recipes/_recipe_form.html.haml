@@ -3,26 +3,26 @@
 
   = hidden_field_tag(:user_id, @recipe.user_id)
 
-  %fieldset.field-row
+  %fieldset.field-row.beer-basics
     %legend Basics
     .field-row
       .field-group
         .field-label= f.label :name
-        .field= f.text_field :name
+        .field= f.text_field :name, size: 20
       .field-group
-        .field-label= f.label :mash_type
-        .field= f.select(:mash_type,
-          [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
+        .field-label= f.label :beer_style
+        .field= f.collection_select(:beer_style_id, BeerStyle.all, :id, :name,
+          {:include_blank => true},
+          {:class => 'chzn-select', :'data-placeholder' => "Choose a Beer Style..."})
       .field-group
         .field-label= f.label :batch_size
         .field=f.text_field(:batch_size, :size => 3) + ' gallons'
 
     .field-row
       .field-group
-        .field-label= f.label :beer_style
-        .field= f.collection_select(:beer_style_id, BeerStyle.all, :id, :name,
-          {:include_blank => true},
-          {:class => 'chzn-select', :'data-placeholder' => "Choose a Beer Style..."})
+        .field-label= f.label :mash_type
+        .field= f.select(:mash_type,
+          [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
 
       .field-group
         .field-label= f.label :original_gravity

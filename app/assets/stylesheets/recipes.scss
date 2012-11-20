@@ -29,14 +29,21 @@ form.edit_recipe, form.new_recipe {
 
   strong {
     display: inline-block;
-    width: 100px;
+    width: 140px;
   }
 }
 
 .beer-profile {
+  font-size: 1.1em;
+
+  .style-guide div, .recipe-profile div {
+    padding-left: 15px;
+  }
+
   .style-guide {
     @include span-columns(6);
   }
+
   .recipe-profile {
     @include span-columns(6);
   }

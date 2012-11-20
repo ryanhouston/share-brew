@@ -76,6 +76,11 @@ a.button {
   @include button(simple, $main-color);
   margin-right: 5px;
 }
+a.button.cancel {
+  @include button(simple, $body-color);
+  margin-right: 5px;
+}
+
 
 span.required { color: #ff0000; }
 
@@ -262,10 +267,5 @@ li ol, li ul {
     background: #FFbaba;
     border-color: #BB4545;
   }
-}
-
-.button.small {
-  font-size: .8em;
-  padding: 6px 12px;
 }
 

@@ -14,22 +14,18 @@ module BeerXml
       importer.import(filename)
 
       importer.styles(BeerStyle).each do |style|
-        puts "Style: #{style.name}"
         style.save!
       end
 
       importer.hops(Hop).each do |hop|
-        puts "Hops: #{hop.name}"
         hop.save!
       end
 
       importer.fermentables(Fermentable).each do |fermentable|
-        puts "Fermentable: #{fermentable.name}"
         fermentable.save!
       end
 
       importer.yeasts(Yeast).each do |yeast|
-        puts "Yeast: #{yeast.name}"
         yeast.save!
       end
     end

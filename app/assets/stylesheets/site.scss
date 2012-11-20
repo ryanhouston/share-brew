@@ -71,7 +71,10 @@ pre {
 a { color: #D1700E; }
 a:hover { color: #1F4F82; }
 a:focus { outline: none; }
-a.button { @include button(simple, #D1700E); }
+a.button {
+  @include button(simple, #D1700E);
+  margin-right: 5px;
+}
 
 span.required { color: #ff0000; }
 

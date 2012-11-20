@@ -1,6 +1,11 @@
+.button-panel
+  - if can? :update, @recipe
+    = link_to('Edit', edit_recipe_path(@recipe), class: 'button')
+  = link_to 'Back to Recipes', recipes_path, class: 'button'
+= render "beer_profile"
+
 %h2=  @recipe.name
 
-= render "beer_profile"
 .clear
 
 %p= @recipe.description
@@ -24,11 +29,8 @@
              :as => :yeast_addition) || "No yeasts have been added yet."
 
 - unless @recipe.procedure.empty?
-  %div
+  .procedure
     %h3 Procedure
     %pre= @recipe.procedure
 
 %br
-- if can? :update, @recipe
-  = link_to('Edit', edit_recipe_path(@recipe)) + ' | '
-= link_to 'Back', recipes_path

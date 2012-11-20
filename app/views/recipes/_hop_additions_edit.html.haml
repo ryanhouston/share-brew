@@ -1,0 +1,6 @@
+= render partial: 'hop_additions/list', locals: { show_controls: true }
+= render 'recipes/hop_profile'
+
+%br.clear
+= link_to 'Add Hop', new_recipe_hop_addition_path(@recipe),
+  remote: true, class: 'button', :"data-ingredient" => 'hops'

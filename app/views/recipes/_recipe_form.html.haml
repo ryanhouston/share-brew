@@ -67,11 +67,8 @@
     = render 'recipes/fermentable_additions_edit'
 
   %h2 Hops
-  = render partial: 'hop_additions/list', locals: { show_controls: true }
-  = render 'recipes/hop_profile'
-  %br.clear
-  = link_to 'Add Hop', new_recipe_hop_addition_path(@recipe),
-    remote: true, class: 'button', :"data-ingredient" => 'hops'
+  #hop_additions_edit
+    = render 'recipes/hop_additions_edit'
 
   %h2 Yeast
   = render :partial => 'yeast_additions/list'

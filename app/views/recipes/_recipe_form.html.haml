@@ -71,9 +71,6 @@
     = render 'recipes/hop_additions_edit'
 
   %h2 Yeast
-  = render :partial => 'yeast_additions/list'
-  %br
-  = link_to "Add Yeast", new_recipe_yeast_addition_path(@recipe),
-    :remote => true, class: 'button', :'data-ingredient' => 'yeasts'
-  %br.clear
+  #yeast_additions_edit
+    = render 'recipes/yeast_additions_edit'
 

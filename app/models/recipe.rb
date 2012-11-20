@@ -49,25 +49,7 @@ class Recipe < ActiveRecord::Base
     )
   end
 
-  def calculated_starting_gravity
-    malt_bill.starting_gravity.round(3)
-  end
-
-  def IBUs
-    calculator = IBUCalculator.new
-
-    hop_additions.inject(0) do |ibu_sum, addition|
-      ibu_sum + calculator.IBUs_for_addition(
-        weight:       addition.weight,
-        alpha_acid:   addition.alpha_acid,
-        batch_size:   batch_size,
-        boil_time:    boil_length,
-        boil_gravity: calculated_starting_gravity
-      )
-    end
-  end
-
-  private
+private
   def add_ingredient( type, params, callbacks )
     type_additions = send (type.to_s + '_additions').to_sym
     ingredient_addition = type_additions.build params

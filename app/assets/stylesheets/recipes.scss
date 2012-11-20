@@ -19,7 +19,7 @@
 
 form.edit_recipe, form.new_recipe {
   input[type='submit'] {
-    @include button(shiny, $header-color);
+    @include button(simple, $main-color);
   }
 }
 

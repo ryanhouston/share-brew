@@ -1,3 +1,4 @@
+$main-color: #D1700E;
 $body-color: #ddd;
 $canvas-color: #333;
 $container-border: 2px solid #444;
@@ -68,11 +69,11 @@ pre {
   margin-bottom: 10px;
 }
 
-a { color: #D1700E; }
+a { color: $main-color; }
 a:hover { color: #1F4F82; }
 a:focus { outline: none; }
 a.button {
-  @include button(simple, #D1700E);
+  @include button(simple, $main-color);
   margin-right: 5px;
 }
 
@@ -85,6 +86,7 @@ h1 {
 }
 
 h2 {
+
   color: lighten($base-text-color, 16.75%);
   font-family: $lucida-grande;
   font-size: 22px;
@@ -260,5 +262,10 @@ li ol, li ul {
     background: #FFbaba;
     border-color: #BB4545;
   }
+}
+
+.button.small {
+  font-size: .8em;
+  padding: 6px 12px;
 }
 

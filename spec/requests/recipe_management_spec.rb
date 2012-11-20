@@ -11,7 +11,7 @@ describe 'Recipe management' do
   it 'creates a new recipe before allowing ingredient additions' do
     get '/recipes/new'
     response.should render_template(:new)
-    response.body.should include "Vitals"
+    response.body.should include "Original gravity"
   end
 end
 

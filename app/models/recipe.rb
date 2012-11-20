@@ -8,7 +8,7 @@ class Recipe < ActiveRecord::Base
   has_many   :yeast_additions
   has_many   :fermentable_additions
 
-  validates_presence_of :name, :batch_size, :description
+  validates_presence_of :name, :batch_size
   validates_inclusion_of :mash_type, :in => ['extract', 'grain', 'partial']
 
   def add_fermentable( params, callbacks={} )

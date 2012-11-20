@@ -6,8 +6,8 @@ describe RecipeProfile do
     subject { RecipeProfile.new(FactoryGirl.build(:recipe)) }
     its (:calculated_starting_gravity) { should == 1.0 }
     its (:calculated_final_gravity) { should == 1.0 }
-    its (:IBUs) { should be 0 }
-    its (:bitterness_ratio) { should be 0 }
+    its (:IBUs) { should == 0 }
+    its (:bitterness_ratio) { should == 0.0 }
   end
 
   context "recipe with yeast additions" do

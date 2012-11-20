@@ -6,7 +6,11 @@ class MaltBill
   end
 
   def starting_gravity
-    (total_gravity_units / batch_size.to_f / 1000) + 1
+    (starting_gravity_units / 1000) + 1
+  end
+
+  def starting_gravity_units
+    total_gravity_units / batch_size.to_f
   end
 
   def total_gravity_units

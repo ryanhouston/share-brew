@@ -8,7 +8,6 @@ describe Recipe do
   it { should have_many(:yeast_additions) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:batch_size) }
-  it { should validate_presence_of(:description) }
   it { should ensure_inclusion_of(:mash_type).in_array(%w(extract grain partial)) }
 
   context "when adding fermentable additions" do

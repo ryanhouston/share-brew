@@ -5,4 +5,4 @@
     %span#calculated_ibus= @recipe.profile.IBUs.round(2)
     %br
     %strong Bitterness Ratio
-    %span= @recipe.profile.bitterness_ratio.to_s + ' IBUs/SG'
+    %span= @recipe.profile.bitterness_ratio.round(2).to_s + ' IBUs/SG'

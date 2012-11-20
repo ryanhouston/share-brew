@@ -38,5 +38,10 @@ class RecipeProfile
     end
   end
 
+  def bitterness_ratio
+     ratio = (self.IBUs / @recipe.malt_bill.starting_gravity_units)
+     ratio.nan? ? 0.0 : ratio
+  end
+
 end
 

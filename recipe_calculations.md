@@ -102,7 +102,7 @@ The standard formula has been around and is relatively accurate.
 
 Another formula was devised that provides greater accuracy for higher gravity worts.
 
-   ABV = (76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)
+    ABV = (76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)
 
 ShareBrew will use this second, more accurate formula.
 

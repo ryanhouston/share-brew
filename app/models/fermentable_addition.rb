@@ -19,7 +19,9 @@ class FermentableAddition < ActiveRecord::Base
     weight / recipe.malt_bill.total_weight * 100
   end
 
-  def MCUs
+  # Also referred to as MCUs. This is the amount of color this particular
+  # malt addition adds to the recipe
+  def malt_color_units
     weight * fermentable.color
   end
 end

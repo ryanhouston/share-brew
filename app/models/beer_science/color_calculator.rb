@@ -6,7 +6,7 @@ module BeerScience
 
     def total_MCUs
       @malt_bill.fermentables.inject(0.0) do |total, addition|
-        total + addition.MCUs
+        total + addition.malt_color_units
       end
     end
 

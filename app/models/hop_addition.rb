@@ -21,7 +21,7 @@ class HopAddition < ActiveRecord::Base
   end
 
   def IBUs
-    calculator = IBUCalculator.new
+    calculator = BeerScience::IBUCalculator.new
     calculator.IBUs_for_addition(
       weight:       weight,
       alpha_acid:   alpha_acid,

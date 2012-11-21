@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'ibu_calculator'
+require 'beer_science/ibu_calculator'
 
-describe IBUCalculator do
+describe BeerScience::IBUCalculator do
   it "calculates IBUs given hop addition details" do
     subject.IBUs_for_addition(
       weight: 3.0,

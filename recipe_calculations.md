@@ -62,39 +62,36 @@ From the online publication of [How to Brew](http://www.howtobrew.com/section1/c
     f(G) = 1.65 x 0.000125^(Gb - 1)
     f(T) = [1 - e^(-0.04 x T)] / 4.15
 
-```ruby
-class TinsethHopUtilizationFormula
-  def self.utilization( boil_gravity, boil_time )
-    utilization_due_to_gravity(boil_gravity) * utilization_for_time(boil_time)
-  end
+Calculating Color
+-----------------
+The color of malts is talked about using degrees Lovibond (L) while beer color is talked about in degrees on the Standard Reference Model scale (SRM). The two scales are in fact the same.
 
-  def self.utilization_due_to_gravity( boil_gravity )
-    1.65 * 0.000125**(boil_gravity - 1)
-  end
+### Malt Color Units (MCU)
+MCUs are like the AAUs used in IBU calculation. It's a unit which provides the color added by a malt with regard to malt color and amount used.
 
-  def self.utilization_for_time( boil_time )
-    (1 - Math.exp(-0.04 * boil_time)) / 4.15
-  end
-end
-```
+    MCUs of malt = degrees L x weight in pounds
 
-```ruby
-class IBUCalculator
-  def ibus_for_addtion(weight, alpha_acid, boil_time, boil_gravity, batch_size)
-    AAUs_for_addition(weight, alpha_acid) *
-      hop_utilization(boil_gravity, boil_time) * 75 / batch_size
-  end
+If you added 1 pound of Crystal 40 with a Lovibond rating of 40, that would be equal to 40 MCUs.
 
-  def AAUs_for_addition(weight, alpha_acid)
-    weight * alpha_acid
-  end
+### Standard Reference Model (SRM) estimate for a beer
+The traditional model states that SRM color of a beer can be calculated by dividing the total recipe MCU by the volume of the batch. This is only accurate for beers up to 15 SRM though.
 
-  def hop_utilization( boil_gravity, boil_time )
-    TinsethHopUtilizationFormula.utilization(boil_gravity, boil_time)
-  end
-end
-```
+    SRM = (MCU / recipe volume)
+
+More accurate models for calculating SRM color of beer across a full spectrum of colors have been proposed:
+
+    SRM = 0.3 x MCU + 4.7    (Mosher)
+    SRM = 0.2 x MCU + 8.4    (Daniels)
+    SRM = 1.49 x MCU^0.69    (Morey)
+
+Morey's model seems most accurate as it does not impose a floor which no beer can be lighter than as Mosher and Daniels models do, 4.7 and 8.4 respectively are the lightest beers. It is known that beers do come in lighter than 4.7 SRM.
+
+In How To Brew, Palmer goes into other factors that affect beer color and states thatthese other factors are significant enough that the actual color could be as much as 20% plus or minus the calculated value. He then suggests we can simplify Morey's equation a bit to deter trying to calculate color down to precision levels which are not accurate.
+
+    SRM = 1.5 x MCU^0.7    (Palmer)
+
+ShareBrew will use Palmer's method.
 
 References
 ----------
-Palmer, John. How To Brew
+Palmer, John. How To Brew. 2006. Brewers Publications

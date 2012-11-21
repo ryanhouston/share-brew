@@ -1,2 +1,2 @@
 jQuery ->
-  $('#hops').dataTable()
+  $('table#hops').dataTable()

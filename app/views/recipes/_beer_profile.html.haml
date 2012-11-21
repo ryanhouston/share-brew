@@ -28,7 +28,7 @@
       todo
     .color
       %strong Color
-      todo
+      %span= @recipe.profile.color.to_s + ' SRM'
     .bitterness
       %strong IBUs
       %span= @recipe.profile.IBUs.round(2)

@@ -8,6 +8,7 @@ describe RecipeProfile do
     its (:calculated_final_gravity) { should == 1.0 }
     its (:IBUs) { should == 0 }
     its (:bitterness_ratio) { should == 0.0 }
+    its (:color) { should == 0.0 }
   end
 
   context "recipe with yeast additions" do

@@ -37,9 +37,12 @@ class RecipeProfile
   end
 
   def bitterness_ratio
-     ratio = (self.IBUs / @recipe.malt_bill.starting_gravity_units)
-     ratio.nan? ? 0.0 : ratio
+    ratio = (self.IBUs / @recipe.malt_bill.starting_gravity_units)
+    ratio.nan? ? 0.0 : ratio
   end
 
+  def color
+    BeerScience::ColorCalculator.new(@recipe.malt_bill).SRM
+  end
 end
 

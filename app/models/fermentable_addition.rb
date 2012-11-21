@@ -18,5 +18,9 @@ class FermentableAddition < ActiveRecord::Base
   def percentage_of_malt_bill
     weight / recipe.malt_bill.total_weight * 100
   end
+
+  def MCUs
+    weight * fermentable.color
+  end
 end
 

@@ -92,6 +92,23 @@ In How To Brew, Palmer goes into other factors that affect beer color and states
 
 ShareBrew will use Palmer's method.
 
+Calculating Alcohol by Volume (ABV)
+-----------------------------------
+Two formulas provided by the Brewers Friend website.
+
+The standard formula has been around and is relatively accurate.
+
+    ABV = (og - fg) * 131.25
+
+Another formula was devised that provides greater accuracy for higher gravity worts.
+
+   ABV = (76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)
+
+ShareBrew will use this second, more accurate formula.
+
+### References
+[BrewersFriend](http://www.brewersfriend.com/2011/06/16/alcohol-by-volume-calculator-updated/)
+
 References
 ----------
 Palmer, John. How To Brew. 2006. Brewers Publications

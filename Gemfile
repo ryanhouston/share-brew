@@ -21,7 +21,6 @@ group :assets do
   gem 'neat'
 
   gem 'chosen-rails'
-  gem 'jquery-datatables-rails', git: 'git@github.com:rweng/jquery-datatables-rails'
 end
 
 group :development, :test do

@@ -44,5 +44,15 @@ class RecipeProfile
   def color
     BeerScience::ColorCalculator.new(@recipe.malt_bill).SRM
   end
+
+  def actual_ABV
+    BeerScience::ABVCalculator.calculate(
+      @recipe.original_gravity, @recipe.final_gravity)
+  end
+
+  def estimated_ABV
+    BeerScience::ABVCalculator.calculate(
+      calculated_starting_gravity, calculated_final_gravity)
+  end
 end
 

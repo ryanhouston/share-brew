@@ -22,10 +22,10 @@
       %span= @recipe.profile.calculated_final_gravity.to_s + ' SG'
     .abv-estimated
       %strong Estimated ABV
-      todo
+      %span= @recipe.profile.estimated_ABV.round(2)
     .abv-actual
       %strong Actual ABV
-      todo
+      %span= @recipe.profile.actual_ABV.round(2)
     .color
       %strong Color
       %span= @recipe.profile.color.to_s + ' SRM'

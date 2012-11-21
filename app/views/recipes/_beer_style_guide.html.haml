@@ -1,18 +1,36 @@
-.gravity
+- beer_style = beer_style || BeerStyle.new
+.orig_grav
   %strong SG
-  = "#{@recipe.beer_style.min_orig_grav} - #{@recipe.beer_style.max_orig_grav}"
-  %br
+  %span.min_orig_grav= beer_style.min_orig_grav || ''
+  \-
+  %span.max_orig_grav= beer_style.max_orig_grav || ''
+.final_grav
   %strong FG
-  = "#{@recipe.beer_style.min_final_grav} - #{@recipe.beer_style.max_final_grav}"
+  %span.min_final_grav= beer_style.min_final_grav || ''
+  \-
+  %span.max_final_grav= beer_style.max_final_grav || ''
 .color
   %strong Color
-  = "#{@recipe.beer_style.min_color} - #{@recipe.beer_style.max_color} SRM"
+  %span.min_color= beer_style.min_color
+  \-
+  %span.max_color= beer_style.max_color
+  SRM
 .bitterness
   %strong IBUs
-  = "#{@recipe.beer_style.min_IBUs} - #{@recipe.beer_style.max_IBUs} IBUs"
+  %span.min_IBUs= beer_style.min_IBUs
+  \-
+  %span.max_IBUs= beer_style.max_IBUs
+  IBUs
 .alcohol
   %strong ABV
-  = "#{@recipe.beer_style.min_abv}% - #{@recipe.beer_style.max_abv}%"
+  %span.min_abv= beer_style.min_abv
+  \-
+  %span.max_abv= beer_style.max_abv
+  \%
 .carbonation
   %strong Carbonation
-  = "#{@recipe.beer_style.min_carbonation} - #{@recipe.beer_style.max_carbonation} vols"
+  %span.min_carbonation= beer_style.min_carbonation
+  \-
+  %span.max_carbonation= beer_style.max_carbonation
+  vols
+

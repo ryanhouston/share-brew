@@ -10,24 +10,8 @@
 
   %fieldset.style-guide
     %legend Style Guide
-    .gravity
-      %strong SG
-      = "#{@recipe.beer_style.min_orig_grav} - #{@recipe.beer_style.max_orig_grav}"
-      %br
-      %strong FG
-      = "#{@recipe.beer_style.min_final_grav} - #{@recipe.beer_style.max_final_grav}"
-    .color
-      %strong Color
-      = "#{@recipe.beer_style.min_color} - #{@recipe.beer_style.max_color} SRM"
-    .bitterness
-      %strong IBUs
-      = "#{@recipe.beer_style.min_IBUs} - #{@recipe.beer_style.max_IBUs} IBUs"
-    .alcohol
-      %strong ABV
-      = "#{@recipe.beer_style.min_abv}% - #{@recipe.beer_style.max_abv}%"
-    .carbonation
-      %strong Carbonation
-      = "#{@recipe.beer_style.min_carbonation} - #{@recipe.beer_style.max_carbonation} vols"
+    = render partial: 'beer_style_guide', locals: { beer_style: @recipe.beer_style }
+
   %fieldset.recipe-profile
     %legend Recipe Profile
     .gravity

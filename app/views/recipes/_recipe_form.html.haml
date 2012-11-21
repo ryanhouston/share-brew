@@ -47,12 +47,12 @@
 
   %br.clear
 
-- unless @recipe.new_record?
-  .style-guide
-    %h3 Beer Style Guide
-    = render 'recipes/beer_style_guide'
-  %br.clear
+.style-guide
+  %h3 Beer Style Guide
+  = render partial: 'recipes/beer_style_guide', locals: { beer_style: @recipe.beer_style }
+%br.clear
 
+- unless @recipe.new_record?
   %h2 Fermentables
   #fermentable_additions_edit
     = render 'recipes/fermentable_additions_edit'

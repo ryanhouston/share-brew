@@ -12,7 +12,7 @@
   margin-right: 80px;
 }
 
-#fermentables, #hops, .edit_recipe {
+#fermentables, #hops, .edit_recipe, .new_recipe {
   @include span-columns(9);
   margin-bottom: 10px;
 }
@@ -33,10 +33,27 @@ form.edit_recipe, form.new_recipe {
   }
 }
 
+.fermentables-vitals, .hops-vitals {
+  font-size: .8em;
+}
+
+.style-guide {
+  @include span-columns(3);
+  float: left;
+  font-size: .8em;
+  margin-right: 0px;
+
+  span {
+    display: inline-block;
+    text-align: center;
+    width: 15%;
+  }
+}
+
 .beer-profile {
-  font-size: 1.1em;
 
   .style-guide, .recipe-profile {
+    font-size: 1.1em;
     strong {
       width: 140px;
     }

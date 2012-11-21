@@ -12,5 +12,17 @@ $(function() {
       }
     });
   });
+
+  $(document).on('change', '#recipe_beer_style_id', function(event) {
+    $.ajax({
+      url: '/beer_styles/' + $(this).val(),
+      dataType: 'json',
+      success: function(data) {
+        jQuery.each(data, function(attribute, value) {
+          $('.style-guide span.' + attribute).text(value);
+        });
+      }
+    });
+  });
 });
 

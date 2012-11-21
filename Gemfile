@@ -12,14 +12,16 @@ gem 'nokogiri'
 gem 'devise'
 gem 'cancan'
 
-gem 'chosen-rails'
-gem 'bourbon'
-gem 'neat'
-
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'bourbon'
+  gem 'neat'
+
+  gem 'chosen-rails'
+  gem 'jquery-datatables-rails', git: 'git@github.com:rweng/jquery-datatables-rails'
 end
 
 group :development, :test do

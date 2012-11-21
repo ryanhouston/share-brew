@@ -43,6 +43,16 @@ form.edit_recipe, form.new_recipe {
   font-size: .8em;
   margin-right: 0px;
 
+  h3, .name {
+    text-align: center;
+  }
+  .name {
+    font-size: 1.1em;
+    margin: 0 auto;
+    line-height: 2em;
+    width: 100%;
+    display: block;
+  }
   span {
     display: inline-block;
     text-align: center;

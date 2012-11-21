@@ -1,4 +1,9 @@
 - beer_style = beer_style || BeerStyle.new
+- show_name = show_name || false
+
+- if show_name
+  %em.name= beer_style.name || ''
+
 .orig_grav
   %strong SG
   %span.min_orig_grav= beer_style.min_orig_grav || ''

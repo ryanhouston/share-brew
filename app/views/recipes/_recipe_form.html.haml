@@ -49,7 +49,7 @@
 
 .style-guide
   %h3 Beer Style Guide
-  = render partial: 'recipes/beer_style_guide', locals: { beer_style: @recipe.beer_style }
+  = render partial: 'recipes/beer_style_guide', locals: { beer_style: @recipe.beer_style, show_name: true }
 %br.clear
 
 - unless @recipe.new_record?

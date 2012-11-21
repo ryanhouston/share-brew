@@ -19,7 +19,7 @@ $(function() {
       dataType: 'json',
       success: function(data) {
         jQuery.each(data, function(attribute, value) {
-          $('.style-guide span.' + attribute).text(value);
+          $('.style-guide .' + attribute).text(value);
         });
       }
     });

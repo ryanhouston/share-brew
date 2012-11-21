@@ -1,15 +1,15 @@
 %fieldset.fermentables-vitals
   %legend Malt Profile
-  .gravity
+  .starting-gravity
     %strong Estimated SG
-    %span#calculated_starting_gravity= @recipe.profile.calculated_starting_gravity
-    %br
+    %span= @recipe.profile.calculated_starting_gravity
+  .final-gravity
     %strong Estimated FG
     %span= @recipe.profile.calculated_final_gravity
-  .alcohol
+  .estimated-abv
     %strong Estimated ABV
     todo
-    %br
+  .actual-abv
     %strong Actual ABV
     todo
   .color

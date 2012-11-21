@@ -31,6 +31,10 @@ form.edit_recipe, form.new_recipe {
     display: inline-block;
     width: 90px;
   }
+
+  div {
+    padding: 2px 0;
+  }
 }
 
 .fermentables-vitals, .hops-vitals {
@@ -63,7 +67,7 @@ form.edit_recipe, form.new_recipe {
 .beer-profile {
 
   .style-guide, .recipe-profile {
-    font-size: 1.1em;
+    font-size: 1.0em;
     strong {
       width: 140px;
     }

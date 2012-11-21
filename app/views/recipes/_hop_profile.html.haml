@@ -1,8 +1,8 @@
 %fieldset.hops-vitals
   %legend Hop Profile
-  .bitterness
+  .estimated-ibus
     %strong Estimated IBUs
     %span#calculated_ibus= @recipe.profile.IBUs.round(2)
-    %br
+  .bitterness-ratio
     %strong Bitterness Ratio
     %span= @recipe.profile.bitterness_ratio.round(2).to_s + ' IBUs/SG'

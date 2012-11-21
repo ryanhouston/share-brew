@@ -14,16 +14,16 @@
 
   %fieldset.recipe-profile
     %legend Recipe Profile
-    .gravity
+    .starting-gravity
       %strong SG
       %span= @recipe.profile.calculated_starting_gravity.to_s + ' SG'
-      %br
+    .final-gravity
       %strong FG
       %span= @recipe.profile.calculated_final_gravity.to_s + ' SG'
-    .alcohol
+    .abv-estimated
       %strong Estimated ABV
       todo
-      %br
+    .abv-actual
       %strong Actual ABV
       todo
     .color
@@ -32,7 +32,7 @@
     .bitterness
       %strong IBUs
       %span= @recipe.profile.IBUs.round(2)
-      %br
+    .bitterness-ratio
       %strong Bitterness Ratio
       %span= @recipe.profile.bitterness_ratio.round(2).to_s + ' IBUs/SG'
 

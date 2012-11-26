@@ -87,8 +87,8 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
   end
 
   create_table "recipes", :force => true do |t|
-    t.string   "name",             :null => false
-    t.string   "mash_type",        :null => false
+    t.string   "name",                             :null => false
+    t.string   "mash_type",                        :null => false
     t.text     "description"
     t.string   "batch_size"
     t.string   "original_gravity"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "boil_length"
+    t.integer  "boil_length",      :default => 60, :null => false
     t.decimal  "mash_efficiency"
   end
 

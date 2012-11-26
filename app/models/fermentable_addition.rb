@@ -24,5 +24,7 @@ class FermentableAddition < ActiveRecord::Base
   def malt_color_units
     weight * fermentable.color
   end
+  alias :MCUs :malt_color_units
+
 end
 

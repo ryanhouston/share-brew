@@ -16,7 +16,10 @@ describe FermentableAddition do
       addition
     end
 
-    its(:MCUs) { should == 12.0 }
+    its(:malt_color_units) { should == 12.0 }
+    it "aliases #MCUs to #malt_color_units" do
+      subject.MCUs.should == subject.malt_color_units
+    end
   end
 end
 

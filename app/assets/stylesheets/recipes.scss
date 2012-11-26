@@ -43,7 +43,7 @@ form.edit_recipe, form.new_recipe {
   font-size: .8em;
 }
 
-.style-guide {
+.style-guide, .recipe-profile {
   @include span-columns(3);
   float: left;
   font-size: .8em;
@@ -71,6 +71,7 @@ form.edit_recipe, form.new_recipe {
   .style-guide, .recipe-profile {
     font-size: 1.0em;
     strong {
+      float: left;
       width: 140px;
     }
   }
@@ -78,11 +79,7 @@ form.edit_recipe, form.new_recipe {
     padding-left: 15px;
   }
 
-  .style-guide {
-    @include span-columns(6);
-  }
-
-  .recipe-profile {
+  .style-guide, .recipe-profile {
     @include span-columns(6);
   }
 

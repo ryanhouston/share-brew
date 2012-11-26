@@ -14,25 +14,34 @@
 
   %fieldset.recipe-profile
     %legend Recipe Profile
+    .header
+      %strong &nbsp;
+      %span Estimated
+      %span Actual
     .starting-gravity
       %strong SG
-      %span= @recipe.profile.calculated_starting_gravity.to_s + ' SG'
+      %span.value= @recipe.profile.calculated_starting_gravity.to_s
+      %span.value= @recipe.original_gravity.to_s
+      SG
     .final-gravity
       %strong FG
-      %span= @recipe.profile.calculated_final_gravity.to_s + ' SG'
-    .abv-estimated
-      %strong Estimated ABV
-      %span= @recipe.profile.estimated_ABV.round(2).to_s + '%'
-    .abv-actual
-      %strong Actual ABV
-      %span= @recipe.profile.actual_ABV.round(2).to_s + '%'
+      %span.value= @recipe.profile.calculated_final_gravity.to_s
+      %span.value= @recipe.final_gravity.to_s
+      SG
+    .abv
+      %strong ABV
+      %span.value= @recipe.profile.estimated_ABV.round(2).to_s + '%'
+      %span.value= @recipe.profile.actual_ABV.round(2).to_s + '%'
     .color
       %strong Color
-      %span= @recipe.profile.color.to_s + ' SRM'
+      %span.value= @recipe.profile.color.to_s
+      SRM
     .bitterness
-      %strong IBUs
+      %strong Bitterness
       %span= @recipe.profile.IBUs.round(2)
+      IBUs
     .bitterness-ratio
       %strong Bitterness Ratio
-      %span= @recipe.profile.bitterness_ratio.round(2).to_s + ' IBUs/SG'
+      %span= @recipe.profile.bitterness_ratio.round(2).to_s
+      IBUs/SG
 

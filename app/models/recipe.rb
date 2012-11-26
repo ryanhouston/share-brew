@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
   attr_accessible :beer_style, :beer_style_id, :mash_type, :name, :batch_size,
-    :description, :original_gravity, :final_gravity, :procedure
+    :description, :original_gravity, :final_gravity, :procedure, :boil_length,
+    :mash_efficiency
 
   belongs_to :beer_style
   belongs_to :user
@@ -8,8 +9,10 @@ class Recipe < ActiveRecord::Base
   has_many   :yeast_additions
   has_many   :fermentable_additions
 
-  validates_presence_of :name, :batch_size
+  validates_presence_of :name, :batch_size, :boil_length, :mash_efficiency
   validates_inclusion_of :mash_type, :in => ['extract', 'grain', 'partial']
+  validates_numericality_of :mash_efficiency, greater_than: 0.0, less_than_or_equal_to: 1.0
+  validates_inclusion_of :boil_length, :in => 1..300
 
   def add_fermentable( params, callbacks={} )
     add_ingredient :fermentable, params, callbacks
@@ -29,16 +32,6 @@ class Recipe < ActiveRecord::Base
       fermentable_additions: :fermentable,
       yeast_additions: :yeast
     ).find( id )
-  end
-
-  # TODO set mash efficiency from user input
-  def mash_efficiency
-    0.68
-  end
-
-  # TODO set boil length from user input
-  def boil_length
-    60
   end
 
   def malt_bill

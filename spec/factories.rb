@@ -14,9 +14,11 @@ FactoryGirl.define do
   factory :recipe do
     name 'Recipe'
     batch_size '1'
+    boil_length 60
     description 'A generic recipe for testing.'
     procedure 'A generic procedure for testing.'
     mash_type 'partial'
+    mash_efficiency 0.68
   end
 
   factory :yeast do

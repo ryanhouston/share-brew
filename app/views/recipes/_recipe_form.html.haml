@@ -30,6 +30,13 @@
       .field-group
         .field-label= f.label :final_gravity
         .field= f.text_field(:final_gravity, :size => 6) + ' SG'
+    .field-row
+      .field-group
+        .field-label= f.label :mash_efficiency
+        .field= f.text_field :mash_efficiency, size: 20
+      .field-group
+        .field-label= f.label :boil_length
+        .field= f.text_field :boil_length, size: 20
   %br
 
   %fieldset.field-row

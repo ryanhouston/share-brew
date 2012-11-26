@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
   create_table "beer_styles", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
     t.string   "category"
     t.boolean  "lager",                                         :default => false
     t.decimal  "min_orig_grav",   :precision => 5, :scale => 4
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
     t.float    "yield"
     t.float    "max_in_batch"
     t.text     "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
   create_table "hop_additions", :force => true do |t|
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
     t.string   "origin"
     t.string   "form"
     t.text     "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "recipes", :force => true do |t|
@@ -95,8 +95,8 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
     t.string   "final_gravity"
     t.text     "procedure"
     t.integer  "beer_style_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "user_id"
     t.integer  "boil_length",      :default => 60, :null => false
     t.decimal  "mash_efficiency"
@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                             :null => false
+    t.datetime "updated_at",                                             :null => false
     t.boolean  "admin",                               :default => false
   end
 
@@ -141,8 +141,8 @@ ActiveRecord::Schema.define(:version => 20121126061955) do
     t.string   "form"
     t.text     "description"
     t.float    "attenuation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "flocculation"
     t.string   "strain_type"
     t.float    "min_temp"

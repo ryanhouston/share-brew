@@ -20,13 +20,13 @@
       %span Actual
     .starting-gravity
       %strong SG
-      %span.value= @recipe.profile.calculated_starting_gravity.to_s
-      %span.value= @recipe.original_gravity.to_s
+      %span.value= format_gravity(@recipe.profile.calculated_starting_gravity)
+      %span.value= format_gravity(@recipe.original_gravity)
       SG
     .final-gravity
       %strong FG
-      %span.value= @recipe.profile.calculated_final_gravity.to_s
-      %span.value= @recipe.final_gravity.to_s
+      %span.value= format_gravity(@recipe.profile.calculated_final_gravity)
+      %span.value= format_gravity(@recipe.final_gravity)
       SG
     .abv
       %strong ABV

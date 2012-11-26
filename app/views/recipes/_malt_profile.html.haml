@@ -2,10 +2,10 @@
   %legend Malt Profile
   .starting-gravity
     %strong Estimated SG
-    %span= @recipe.profile.calculated_starting_gravity
+    %span= format_gravity(@recipe.profile.calculated_starting_gravity)
   .final-gravity
     %strong Estimated FG
-    %span= @recipe.profile.calculated_final_gravity
+    %span= format_gravity(@recipe.profile.calculated_final_gravity)
   .estimated-abv
     %strong Estimated ABV
     %span= @recipe.profile.estimated_ABV.round(2).to_s + '%'

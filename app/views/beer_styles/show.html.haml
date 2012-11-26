@@ -8,11 +8,11 @@
 .style-vitals
   %p.right
     %b Final Gravity Range
-    =h "#{@beer_style.min_final_grav} - #{@beer_style.max_final_grav}"
+    =h "#{format_gravity(@beer_style.min_final_grav)} - #{format_gravity(@beer_style.max_final_grav)}"
 
   %p
     %b Original Gravity Range
-    =h "#{@beer_style.min_orig_grav} - #{@beer_style.max_orig_grav}"
+    =h "#{format_gravity(@beer_style.min_orig_grav)} - #{format_gravity(@beer_style.max_orig_grav)}"
 
   %p.right
     %b Color Range (SRM)

@@ -6,14 +6,14 @@
 
 .orig_grav
   %strong SG
-  %span.min_orig_grav= beer_style.min_orig_grav || ''
+  %span.min_orig_grav= format_gravity(beer_style.min_orig_grav)
   \-
-  %span.max_orig_grav= beer_style.max_orig_grav || ''
+  %span.max_orig_grav= format_gravity(beer_style.max_orig_grav)
 .final_grav
   %strong FG
-  %span.min_final_grav= beer_style.min_final_grav || ''
+  %span.min_final_grav= format_gravity(beer_style.min_final_grav)
   \-
-  %span.max_final_grav= beer_style.max_final_grav || ''
+  %span.max_final_grav= format_gravity(beer_style.max_final_grav)
 .color
   %strong Color
   %span.min_color= beer_style.min_color

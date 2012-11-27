@@ -6,7 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-admin = User.create(email: 'admin@sharebrew.com', password: 'password')
+admin = User.create(email: 'admin@sharebrew.com', password: 'password', name: 'Admin')
 admin.update_attribute :admin, true
 
 beer_xml_seed_files = %w(

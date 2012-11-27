@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :name
 
   has_many :recipes
 
   validates :email, presence: true, uniqueness: true, email_format: true
+  validates :name, presence: true, length: { maximum: 255 }
 end

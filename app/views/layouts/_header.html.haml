@@ -1,0 +1,17 @@
+#header
+  .site-title
+    %h1= link_to "ShareBrew", root_path
+    %h2  open source brewering
+
+  #user-nav
+    - if user_signed_in?
+      = "Welcome #{current_user.name}"
+      %br
+      .action-panel
+        = link_to 'Edit Profile', edit_user_registration_path
+        = link_to 'Sign out', destroy_user_session_path, class: 'button'
+    - else
+      .action-panel
+        = link_to 'Sign up', new_user_registration_path, class: 'button'
+        or
+        = link_to 'Sign in', new_user_session_path, class: 'button'

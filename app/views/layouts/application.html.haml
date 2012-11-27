@@ -16,7 +16,7 @@
 
         #user-nav
           - if user_signed_in?
-            = "Welcome #{current_user.email}"
+            = "Welcome #{current_user.name}"
             %br
             .action-panel
               = link_to 'Sign out', destroy_user_session_path, class: 'button'

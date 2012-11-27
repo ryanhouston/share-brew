@@ -134,6 +134,9 @@ li ol, li ul {
   padding-top: 5px;
 }
 
+div {
+  padding-bottom: 5px;
+}
 
 #container {
   @include outer-container;

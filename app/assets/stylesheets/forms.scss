@@ -51,6 +51,44 @@ form {
   }
 }
 
+$error-border-color: #BB4545;
+form #error_explanation {
+  display: block;
+  margin: 10px;
+  border: 2px solid $error-border-color;
+  border-radius: 6px;
+  background-color: #f4f4f4;
+
+  h2 {
+    border-bottom: 2px solid $error-border-color;
+    padding: 10px;
+    font-size: 16px;
+    background: #F12C2C;
+  }
+
+  ul {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+form .field_with_errors {
+  margin: 10px 2px;
+
+  label {
+    padding: 4px;
+    border: 2px solid lighten($error-border-color, 10%);
+    border-radius: 6px;
+    background-color: lighten($error-border-color, 30%);
+    color: black;
+  }
+
+  input {
+    border: 2px solid lighten($error-border-color, 10%);
+    border-radius: 6px;
+  }
+}
+
 .field-row {
   margin: 6px 10px;
 

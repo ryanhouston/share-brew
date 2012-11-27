@@ -4,6 +4,9 @@
   = link_to 'Back to Recipes', recipes_path, class: 'button'
 
 %h2=  @recipe.name
+.brewer
+  %strong Brewer:
+  = @recipe.user.name
 
 = render "beer_profile"
 .clear

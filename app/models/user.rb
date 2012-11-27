@@ -1,3 +1,5 @@
+require 'validators/email_format_validator'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :lockable, :timeoutable and :activatable
@@ -8,4 +10,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
 
   has_many :recipes
+
+  validates :email, presence: true, uniqueness: true, email_format: true
 end

@@ -1,6 +1,17 @@
 $(function() {
+  var evaluate_mash_efficiency_relevancy = function(mash_type) {
+    if (mash_type == 'grain') {
+      $('.field-group.mash-efficiency').show();
+    } else {
+      $('.field-group.mash-efficiency').hide();
+    }
+  };
+
   // Initialize chosen plugin for beer style chooser
   $(".chzn-select").chosen();
+
+  // Show or hide mash efficiency as necessary
+  evaluate_mash_efficiency_relevancy($('#recipe_mash_type option:selected').val());
 
   $(document).on('change', '#hop_addition_hop_id', function(event) {
     $.ajax({
@@ -23,6 +34,10 @@ $(function() {
         });
       }
     });
+  });
+
+  $(document).on('change', '#recipe_mash_type', function(event) {
+    evaluate_mash_efficiency_relevancy($(this).val());
   });
 });
 

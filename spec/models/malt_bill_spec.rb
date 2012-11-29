@@ -19,12 +19,12 @@ describe MaltBill do
     MaltBill.new(
       fermentables: fermentables,
       batch_size: 5.5,
-      mash_efficiency: 0.68
+      mash_efficiency: 68
     )
   end
 
   its (:batch_size) { should eq 5.5 }
-  its (:mash_efficiency) { should eq 0.68 }
+  its (:mash_efficiency) { should eq 68 }
 
   describe "#fermentable_gravity_units" do
     before (:each) do

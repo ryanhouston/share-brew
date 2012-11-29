@@ -14,7 +14,7 @@ class Recipe < ActiveRecord::Base
   validates_inclusion_of :boil_length, :in => 1..300
   validates :mash_efficiency,
     presence:     { if: :all_grain? },
-    numericality: { greater_than: 0.0, less_than_or_equal_to: 1.0, allow_nil: true }
+    numericality: { greater_than: 0.0, less_than_or_equal_to: 100.0, allow_nil: true }
 
   def all_grain?
     mash_type == 'grain'

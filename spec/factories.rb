@@ -18,7 +18,7 @@ FactoryGirl.define do
     description 'A generic recipe for testing.'
     procedure 'A generic procedure for testing.'
     mash_type 'partial'
-    mash_efficiency 0.68
+    mash_efficiency 68
   end
 
   factory :yeast do

@@ -9,10 +9,16 @@ class Recipe < ActiveRecord::Base
   has_many   :yeast_additions
   has_many   :fermentable_additions
 
-  validates_presence_of :name, :batch_size, :boil_length, :mash_efficiency
+  validates_presence_of :name, :batch_size, :boil_length
   validates_inclusion_of :mash_type, :in => ['extract', 'grain', 'partial']
-  validates_numericality_of :mash_efficiency, greater_than: 0.0, less_than_or_equal_to: 1.0
   validates_inclusion_of :boil_length, :in => 1..300
+  validates :mash_efficiency,
+    presence:     { if: :all_grain? },
+    numericality: { greater_than: 0.0, less_than_or_equal_to: 1.0, allow_nil: true }
+
+  def all_grain?
+    mash_type == 'grain'
+  end
 
   def add_fermentable( params, callbacks={} )
     add_ingredient :fermentable, params, callbacks

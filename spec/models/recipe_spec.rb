@@ -10,9 +10,26 @@ describe Recipe do
   it { should validate_presence_of(:batch_size) }
   it { should ensure_inclusion_of(:mash_type).in_array(%w(extract grain partial)) }
   it { should validate_presence_of(:boil_length) }
-  it { should validate_presence_of(:mash_efficiency) }
   it { should validate_numericality_of(:mash_efficiency) }
   it { should ensure_inclusion_of(:boil_length).in_array(1..300) }
+
+  context "an all grain recipe" do
+    subject { FactoryGirl.create :recipe, mash_type: 'grain' }
+
+    it { should validate_presence_of(:mash_efficiency) }
+    it "detemines if the recipe is an all grain recipe" do
+      subject.all_grain?.should be_true
+    end
+  end
+
+  context "an extract recipe" do
+    subject { FactoryGirl.create :recipe, mash_type: 'extract' }
+
+    it { should_not validate_presence_of(:mash_efficiency) }
+    it "correctly assesses a extract recipe is not all grain" do
+      subject.all_grain?.should_not be_true
+    end
+  end
 
   context "when adding fermentable additions" do
     subject do
@@ -80,5 +97,6 @@ describe Recipe do
       subject.yeast_additions.first.yeast_id.should == yeast.id
     end
   end
+
 end
 

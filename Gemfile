@@ -9,7 +9,7 @@ gem 'thin'
 gem 'pg'
 
 gem 'nokogiri'
-gem 'devise'
+gem 'devise', '~> 2.1.2'
 gem 'cancan'
 
 group :assets do

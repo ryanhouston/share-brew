@@ -151,7 +151,7 @@ DEPENDENCIES
   cancan
   chosen-rails
   coffee-rails (~> 3.2.1)
-  devise
+  devise (~> 2.1.2)
   factory_girl
   haml (>= 3.0.18)
   jquery-rails

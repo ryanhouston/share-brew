@@ -14,20 +14,28 @@ describe Recipe do
   it { should ensure_inclusion_of(:boil_length).in_array(1..300) }
 
   context "an all grain recipe" do
-    subject { FactoryGirl.create :recipe, mash_type: 'grain' }
+    subject { FactoryGirl.build :recipe, mash_type: 'grain', mash_efficiency: 68 }
 
     it { should validate_presence_of(:mash_efficiency) }
     it "detemines if the recipe is an all grain recipe" do
       subject.all_grain?.should be_true
     end
+
+    it "uses the given mash efficiency value in the malt bill" do
+      subject.malt_bill.mash_efficiency.should == 68
+    end
   end
 
   context "an extract recipe" do
-    subject { FactoryGirl.create :recipe, mash_type: 'extract' }
+    subject { FactoryGirl.build :recipe, mash_type: 'extract' }
 
     it { should_not validate_presence_of(:mash_efficiency) }
     it "correctly assesses a extract recipe is not all grain" do
       subject.all_grain?.should_not be_true
+    end
+
+    it "uses an assumed mash efficiency value for the malt bill" do
+      subject.malt_bill.mash_efficiency.should == 75
     end
   end
 

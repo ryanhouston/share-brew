@@ -48,6 +48,10 @@ class Recipe < ActiveRecord::Base
     )
   end
 
+  def mash_efficiency
+    all_grain? ? super : 75
+  end
+
   def profile
     @profile ||= RecipeProfile.new(self)
   end

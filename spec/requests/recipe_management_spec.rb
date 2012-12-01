@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Recipe management' do
 
   before (:each) do
-    @user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user, confirmed_at: Time.now)
     post new_user_session_path,
       'user[email]' => @user.email, 'user[password]' => @user.password
   end

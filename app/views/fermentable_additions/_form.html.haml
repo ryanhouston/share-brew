@@ -10,5 +10,5 @@
       .field-label= f.label :weight
       .field= f.text_field(:weight, :size => 6) + ' lbs.'
 
-  .field-row
-    = f.submit
+    .field-group
+      = f.submit 'Add', class: 'button'

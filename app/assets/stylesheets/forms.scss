@@ -49,6 +49,19 @@ form {
     width: auto;
     overflow: visible;
   }
+
+  .field-row {
+    @include row;
+  }
+
+  .field-group {
+    display: inline-block;
+    padding: 0 5px;
+  }
+
+  input[type=submit].button {
+    @include button(simple, $main-color);
+  }
 }
 
 $error-border-color: #BB4545;

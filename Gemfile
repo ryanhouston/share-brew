@@ -29,4 +29,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl'
+  gem 'mailcatcher'
 end

@@ -8,7 +8,7 @@
       = "Welcome #{current_user.name}"
       %br
       .action-panel
-        = link_to 'Edit Profile', edit_user_registration_path
+        = link_to 'Profile', edit_user_registration_path
         = link_to 'Sign out', destroy_user_session_path, class: 'button'
     - else
       .action-panel

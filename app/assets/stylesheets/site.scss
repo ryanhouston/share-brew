@@ -154,6 +154,11 @@ div {
   border-top: none;
   @include box-shadow(0 0 6px #000);
 
+  a {
+    color: $body-color;
+    font-weight: normal;
+  }
+
   .site-title {
     h1 a {
       float: left;
@@ -191,7 +196,6 @@ div {
       float: right;
     }
   }
-
 }
 
 #nav {

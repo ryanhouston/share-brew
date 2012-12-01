@@ -35,7 +35,7 @@ describe Recipe do
     end
 
     it "uses an assumed mash efficiency value for the malt bill" do
-      subject.malt_bill.mash_efficiency.should == 75
+      subject.malt_bill.mash_efficiency.should == 100
     end
   end
 

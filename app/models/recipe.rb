@@ -49,7 +49,7 @@ class Recipe < ActiveRecord::Base
   end
 
   def mash_efficiency
-    all_grain? ? super : 75
+    all_grain? ? super : 100
   end
 
   def profile

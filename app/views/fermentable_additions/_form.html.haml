@@ -1,14 +1,15 @@
 = form_for([@fermentable_addition.recipe, @fermentable_addition], :remote => @remote) do |f|
   = render 'shared/form_errors', :target => @fermentable_addition
 
-  .field-row
-    .field-group
-      .field-label= f.label :fermentable_id
-      .field= f.collection_select(:fermentable_id, Fermentable.all, :id, :name,
-        { :include_blank => true }, { :'data-placeholder' => "Choose a fermentable...", :class => 'chzn-select' })
-    .field-group
-      .field-label= f.label :weight
-      .field= f.text_field(:weight, :size => 6) + ' lbs.'
+  .add-fermentable
+    .field-row
+      .field-group
+        .field-label= f.label :fermentable_id
+        .field= f.collection_select(:fermentable_id, Fermentable.all, :id, :name,
+          { :include_blank => true }, { :'data-placeholder' => "Choose a fermentable...", :class => 'chzn-select' })
+      .field-group
+        .field-label= f.label :weight
+        .field= f.text_field(:weight, :size => 6) + ' lbs.'
 
-    .field-group
-      = f.submit 'Add', class: 'button'
+      .field-group
+        = f.submit 'Add', class: 'button'

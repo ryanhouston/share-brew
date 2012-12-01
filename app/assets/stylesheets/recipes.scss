@@ -2,19 +2,19 @@
   float: right;
 }
 
-.add-hop {
+.add-fermentable, .add-hop, .add-yeast {
   background-color: #eee;
   border: 1px solid #CCC;
   border-radius: 6px;
   margin: 10px 0;
-  padding: 10px;
+  padding: 5px 10px 0 10px;
 }
 
 .gravity-block {
   margin-right: 80px;
 }
 
-#fermentables, #hops, .edit_recipe, .new_recipe {
+#fermentables, #hops, #yeasts, .edit_recipe, .new_recipe {
   @include span-columns(9);
   margin-bottom: 10px;
 }

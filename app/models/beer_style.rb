@@ -28,9 +28,10 @@ class BeerStyle < ActiveRecord::Base
     :color_min => :min_color, :color_max => :max_color,
     :carb_min => :min_carbonation, :carb_max => :max_carbonation,
     :abv_min => :min_abv, :abv_max => :max_abv,
+    :type => :style_type
   }).using({
     :description => :compose_description,
-    :category => :combine_category_parts
+    :style_id => :compose_style_id
   })
 
 
@@ -43,10 +44,8 @@ class BeerStyle < ActiveRecord::Base
     write_attribute :description, desc
   end
 
-  def combine_category_parts beer_attrs
-    category = beer_attrs["CATEGORY"] + " - " +
-      beer_attrs["CATEGORY_NUMBER"] + beer_attrs["STYLE_LETTER"]
-    write_attribute :category, category
+  def compose_style_id beer_attrs
+    write_attribute :style_id, beer_attrs["CATEGORY_NUMBER"] + beer_attrs["STYLE_LETTER"]
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201010617) do
+ActiveRecord::Schema.define(:version => 20121203152313) do
 
   create_table "beer_styles", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20121201010617) do
     t.float    "max_carbonation"
     t.float    "min_abv"
     t.float    "max_abv"
+    t.string   "style_id"
+    t.string   "style_type"
   end
 
   create_table "fermentable_additions", :force => true do |t|

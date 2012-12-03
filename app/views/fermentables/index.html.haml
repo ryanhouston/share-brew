@@ -1,15 +1,28 @@
 %h1 Fermentables
 
-%ul
-  - @fermentables.each do |fermentable|
-    %li
-      = link_to fermentable.name, fermentable
-      = fermentable.vendor if fermentable.vendor
-      = "#{fermentable.color} SRM"
-
-      = link_to 'Edit', edit_fermentable_path(fermentable) if can? :update, fermentable
-      - if can? :destroy, fermentable
-        = link_to 'Destroy', fermentable, :confirm => 'Are you sure?', :method => :delete
+%table
+  %thead
+    %tr
+      %th Grain/Extract
+      %th Vendor
+      %th Type
+      %th Color
+      %th Potential SG
+      - if can?(:update, Fermentable) or can?(:destroy, Fermentable)
+        %th controls
+  %tbody
+    - @fermentables.each do |fermentable|
+      %tr
+        %td= link_to fermentable.name, fermentable
+        %td= fermentable.vendor
+        %td= fermentable.form
+        %td= "#{fermentable.color} SRM"
+        %td= format_gravity(fermentable.potential)
+        - if can?(:update, Fermentable) or can?(:destroy, Fermentable)
+          %td
+            = link_to 'Edit', edit_fermentable_path(fermentable) if can? :update, fermentable
+            - if can? :destroy, fermentable
+              = link_to('Destroy', fermentable, confirm: 'Are you sure?', method: :delete)
 
 
 - if can? :create, Fermentable

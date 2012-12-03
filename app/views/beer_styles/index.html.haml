@@ -1,12 +1,20 @@
 %h1 BJCP 2008 Beer Styles
 
-%ul.beer-styles
-  - @beer_styles.each do |style|
-    %li.beer-style
-      = link_to style.name, beer_style_path(style)
+%table.beer-styles
+  %thead
+    %tr
+      %th Name
+      %th Category
+      - if can? :destroy, BeerStyle
+        %th delete
+  %tbody
+    - @beer_styles.each do |style|
+      %tr.beer-style
+        %td= link_to style.name, style
+        %td= style.category
 
-      - if can? :destroy, style
-        %span.actions
-          = link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
+        - if can? :destroy, style
+          %td.actions
+            = link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New beer_style', new_beer_style_path if can? :create, BeerStyle
+= link_to('New beer style', new_beer_style_path, class: 'button') if can? :create, BeerStyle

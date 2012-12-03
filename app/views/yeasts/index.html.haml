@@ -1,15 +1,27 @@
 %h1 Yeasts
 
-%ul.yeast-list
-  - @yeasts.each do |yeast|
-    %li
-      = link_to yeast.strain, yeast
-      = "#{yeast.vendor} (#{yeast.catalog_id})"
-      %em= yeast.form
-      %td= link_to 'Edit', edit_yeast_path(yeast) if can? :update, yeast
-      - if can? :destroy, yeast
-        %td= link_to 'Destroy', yeast, confirm: 'Are you sure?', method: :delete
+%table.yeast-list
+  %thead
+    %tr
+      %th Strain
+      %th Vendor
+      %th Catalog ID
+      %th Form
+      - if can?(:destroy, Yeast) or can?(:update, Yeast)
+        %th controls
+  %tbody
+    - @yeasts.each do |yeast|
+      %tr
+        %td= link_to yeast.strain, yeast
+        %td= yeast.vendor
+        %td= yeast.catalog_id
+        %td= yeast.form
+        - if can?(:destroy, Yeast) or can?(:update, Yeast)
+          %td
+            = link_to 'Edit', edit_yeast_path(yeast) if can? :update, yeast
+            - if can? :destroy, yeast
+              = link_to 'Destroy', yeast, confirm: 'Are you sure?', method: :delete
 
 - if can? :create, Yeast
   .actions
-    = link_to 'New Yeast', new_yeast_path
+    = link_to 'New Yeast', new_yeast_path, class: 'button'

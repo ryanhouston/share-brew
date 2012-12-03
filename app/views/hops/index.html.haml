@@ -23,4 +23,4 @@
 
 %br.clear
 
-= link_to 'New Hop', new_hop_path if can? :create, Hop
+= link_to('New Hop', new_hop_path, class: 'button') if can? :create, Hop

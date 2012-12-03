@@ -33,10 +33,10 @@
     .field-row
       .field-group
         .field-label= f.label :boil_length
-        .field= f.text_field :boil_length, size: 20
+        .field= f.text_field(:boil_length, size: 2) + ' min.'
       .field-group.mash-efficiency
         .field-label= f.label :mash_efficiency
-        .field= f.text_field(:mash_efficiency, size: 4) + '%'
+        .field= f.text_field(:mash_efficiency, size: 4) + ' %'
   %br
 
   %fieldset.field-row

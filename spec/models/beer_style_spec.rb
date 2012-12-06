@@ -28,7 +28,8 @@ describe BeerStyle do
       styles.first.should be_kind_of(BeerStyle)
       styles.first.min_abv.should eq 4.5
       styles.first.max_abv.should eq 6.0
-      styles.first.category.should eq "American Ale - 10B"
+      styles.first.category.should eq "American Ale"
+      styles.first.style_id.should eq '10B'
       styles.first.name.should eq "American Amber Ale"
     end
   end

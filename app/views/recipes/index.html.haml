@@ -9,8 +9,6 @@
       %th Color
       %th IBUs
       %th % ABV
-      - if can? :destroy, Recipe
-        %th Delete?
   %tbody
     - @recipes.each do |recipe|
       %tr
@@ -21,8 +19,6 @@
         %td= recipe.profile.color
         %td= recipe.profile.IBUs.round
         %td= recipe.profile.estimated_ABV.round(1)
-        - if can? :destroy, recipe
-          %td= link_to 'Destroy', recipe, confirm: 'Are you sure?', method: :delete
 
 - if can? :create, Recipe
   = link_to 'New recipe', new_recipe_path, class: 'button'

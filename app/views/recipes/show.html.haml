@@ -1,7 +1,8 @@
 .button-panel
   - if can? :update, @recipe
     = link_to('Edit', edit_recipe_path(@recipe), class: 'button')
-  = link_to 'Back to Recipes', recipes_path, class: 'button'
+  - if can? :destroy, @recipe
+    = link_to 'Delete', @recipe, confirm: 'Are you sure?', method: :delete, class: 'button'
 
 %h2=  @recipe.name
 .brewer

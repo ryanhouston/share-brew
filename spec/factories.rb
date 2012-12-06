@@ -19,6 +19,7 @@ FactoryGirl.define do
     procedure 'A generic procedure for testing.'
     mash_type 'partial'
     mash_efficiency 68
+    beer_style
   end
 
   factory :yeast do

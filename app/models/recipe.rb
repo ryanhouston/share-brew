@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :beer_style, :beer_style_id, :mash_type, :name, :batch_size,
+  attr_accessible :beer_style_id, :mash_type, :name, :batch_size,
     :description, :original_gravity, :final_gravity, :procedure, :boil_length,
     :mash_efficiency
 
@@ -9,7 +9,8 @@ class Recipe < ActiveRecord::Base
   has_many   :yeast_additions
   has_many   :fermentable_additions
 
-  validates_presence_of :name, :batch_size, :boil_length
+  validates_presence_of :name, :batch_size, :boil_length, :beer_style
+  validates_associated :beer_style
   validates_inclusion_of :mash_type, :in => ['extract', 'grain', 'partial']
   validates_inclusion_of :boil_length, :in => 1..300
   validates :mash_efficiency,

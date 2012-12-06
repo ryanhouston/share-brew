@@ -1,12 +1,32 @@
 %h1 All Recipes
-
-%ul.recipes
-  - @recipes.each do |recipe|
-    %li= render :partial => 'recipes/recipe', :locals => { :recipe => recipe }
+%table.recipes
+  %thead
+    %tr
+      %th Name
+      %th Style
+      %th Type
+      %th Brewer
+      %th Color
+      %th IBUs
+      %th % ABV
+      - if can? :destroy, Recipe
+        %th Delete?
+  %tbody
+    - @recipes.each do |recipe|
+      %tr
+        %td= link_to recipe.name, recipe
+        %td= recipe.beer_style.name
+        %td= recipe.mash_type
+        %td= recipe.user.name
+        %td= recipe.profile.color
+        %td= recipe.profile.IBUs.round
+        %td= recipe.profile.estimated_ABV.round(1)
+        - if can? :destroy, recipe
+          %td= link_to 'Destroy', recipe, confirm: 'Are you sure?', method: :delete
 
 - if can? :create, Recipe
-  = link_to 'New recipe', new_recipe_path
+  = link_to 'New recipe', new_recipe_path, class: 'button'
 - else
   %p
-    = link_to('Log in', new_user_session_path)
+    = link_to 'Log in', new_user_session_path
     to create your own recipes

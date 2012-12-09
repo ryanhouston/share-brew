@@ -5,12 +5,12 @@ class RecipesController < ApplicationController
   before_filter :require_authentication,
     :only => [:edit, :update, :create, :new]
 
-  private
-    def find_recipe
-      @recipe = Recipe.find_with_ingredients params[:id]
-    end
+private
+  def find_recipe
+    @recipe = Recipe.find_with_ingredients params[:id]
+  end
 
-  public
+public
 
   # GET /recipes
   def index
@@ -33,14 +33,17 @@ class RecipesController < ApplicationController
 
   # POST /recipes
   def create
-    @recipe = Recipe.new(params[:recipe])
-    @recipe.user_id = current_user.id
+    creator = RecipeCreator.new(self)
+    creator.create_for(current_user, params[:recipe])
+  end
 
-    if @recipe.save
-      redirect_to(edit_recipe_path(@recipe), :notice => 'Recipe was successfully created.')
-    else
-      render :action => "new"
-    end
+  def create_recipe_succeeded( recipe )
+    redirect_to(edit_recipe_path(recipe), :notice => 'Recipe was successfully created.')
+  end
+
+  def create_recipe_failed( recipe )
+    @recipe = recipe
+    render :action => "new"
   end
 
   # PUT /recipes/1

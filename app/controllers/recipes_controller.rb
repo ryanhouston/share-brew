@@ -33,8 +33,8 @@ public
 
   # POST /recipes
   def create
-    creator = RecipeCreator.new(self)
-    creator.create_for(current_user, params[:recipe])
+    cataloger = RecipeCataloger.new(self)
+    cataloger.create_for(current_user, params[:recipe])
   end
 
   def create_recipe_succeeded( recipe )
@@ -49,12 +49,17 @@ public
   # PUT /recipes/1
   def update
     authorize! :update, @recipe
+    cataloger = RecipeCataloger.new(self)
+    cataloger.update_with(@recipe, params[:recipe])
+  end
 
-    if @recipe.update_attributes(params[:recipe])
-      redirect_to(@recipe, :notice => 'Recipe was successfully updated.')
-    else
-      render :action => "edit"
-    end
+  def update_recipe_succeeded( recipe )
+    redirect_to(recipe, :notice => 'Recipe was successfully updated.')
+  end
+
+  def update_recipe_failed( recipe )
+    @recipe = recipe
+    render :action => "edit"
   end
 
   # DELETE /recipes/1

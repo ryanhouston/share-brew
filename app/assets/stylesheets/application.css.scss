@@ -1,10 +1,12 @@
 /*
  *= require_self
- *= require jquery-ui
- *= require chosen
  */
+
+@import "chosen";
+@import "jquery-ui";
 @import "bourbon";
 @import "neat";
+
 @import "site";
 @import "forms";
 @import "recipes";

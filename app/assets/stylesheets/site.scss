@@ -5,6 +5,12 @@ $container-border: 2px solid #444;
 $base-text-color: #000;
 $header-color: #FF7918;
 
+/* START jQuery UI overrides */
+.ui-widget-content {
+  a { color: $main-color; }
+}
+/* END jQuery UI overrides */
+
 body {
   background: $canvas-color;
   margin:0;

@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rake'
 gem 'rails', '3.2.8'
 gem 'haml',  '>= 3.0.18'
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.4'
 
 gem 'thin'
 gem 'pg'

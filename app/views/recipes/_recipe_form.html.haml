@@ -1,10 +1,13 @@
 #recipe.tabbed-content
   %ul
     %li
-      %a{ :href => "#tab-overview" } Overview
+      %a{ href: "#tab-overview" } Overview
     - unless @recipe.new_record?
       %li
-        %a{ :href => "#tab-ingredients" } Ingredients
+        %a{ href: "#tab-ingredients" } Ingredients
+      - if @recipe.all_grain?
+        %li
+          %a{ href: '#tab-mash' } Mash Profile
 
   #tab-overview
     = form_for(@recipe) do |f|
@@ -81,4 +84,9 @@
       %h2 Yeast
       #yeast_additions_edit
         = render 'recipes/yeast_additions_edit'
+
+    - if @recipe.all_grain?
+      #tab-mash
+      %h2 Mash Profile
+      %em to do
 

@@ -7,6 +7,7 @@ $(function() {
     }
   };
 
+  $("#recipe.tabbed-content").tabs();
   // Initialize chosen plugin for beer style chooser
   $(".chzn-select").chosen();
 
@@ -39,5 +40,6 @@ $(function() {
   $(document).on('change', '#recipe_mash_type', function(event) {
     evaluate_mash_efficiency_relevancy($(this).val());
   });
+
 });
 

@@ -1,74 +1,84 @@
-= form_for(@recipe) do |f|
-  = render 'shared/form_errors', :target => @recipe
+#recipe.tabbed-content
+  %ul
+    %li
+      %a{ :href => "#tab-overview" } Overview
+    - unless @recipe.new_record?
+      %li
+        %a{ :href => "#tab-ingredients" } Ingredients
 
-  = hidden_field_tag(:user_id, @recipe.user_id)
+  #tab-overview
+    = form_for(@recipe) do |f|
+      = render 'shared/form_errors', :target => @recipe
 
-  %fieldset.field-row.beer-basics
-    %legend Basics
-    .field-row
-      .field-group
-        .field-label= f.label :name
-        .field= f.text_field :name, size: 20
-      .field-group
-        .field-label= f.label :beer_style
-        .field= f.collection_select(:beer_style_id, BeerStyle.all, :id, :name,
-          {:include_blank => true},
-          {:class => 'chzn-select', :'data-placeholder' => "Choose a Beer Style..."})
-      .field-group
-        .field-label= f.label :batch_size
-        .field=f.text_field(:batch_size, :size => 3) + ' gallons'
+      = hidden_field_tag(:user_id, @recipe.user_id)
 
-    .field-row
-      .field-group
-        .field-label= f.label :mash_type
-        .field= f.select(:mash_type,
-          [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
+      %fieldset.field-row.beer-basics
+        %legend Basics
+        .field-row
+          .field-group
+            .field-label= f.label :name
+            .field= f.text_field :name, size: 20
+          .field-group
+            .field-label= f.label :beer_style
+            .field= f.collection_select(:beer_style_id, BeerStyle.all, :id, :name,
+              {:include_blank => true},
+              {:class => 'chzn-select', :'data-placeholder' => "Choose a Beer Style..."})
+          .field-group
+            .field-label= f.label :batch_size
+            .field=f.text_field(:batch_size, :size => 3) + ' gallons'
 
-      .field-group
-        .field-label= f.label :original_gravity
-        .field= f.text_field(:original_gravity, :size => 6) + ' SG'
-      .field-group
-        .field-label= f.label :final_gravity
-        .field= f.text_field(:final_gravity, :size => 6) + ' SG'
-    .field-row
-      .field-group
-        .field-label= f.label :boil_length
-        .field= f.text_field(:boil_length, size: 2) + ' min.'
-      .field-group.mash-efficiency
-        .field-label= f.label :mash_efficiency
-        .field= f.text_field(:mash_efficiency, size: 2) + ' %'
-  %br
+        .field-row
+          .field-group
+            .field-label= f.label :mash_type
+            .field= f.select(:mash_type,
+              [['All Extract', :extract], ['All Grain', :grain], ['Partial Mash', :partial]])
 
-  %fieldset.field-row
-    %legend.field-label= f.label :description
-    .field= f.text_area :description, :size => "60x4"
+          .field-group
+            .field-label= f.label :original_gravity
+            .field= f.text_field(:original_gravity, :size => 6) + ' SG'
+          .field-group
+            .field-label= f.label :final_gravity
+            .field= f.text_field(:final_gravity, :size => 6) + ' SG'
+        .field-row
+          .field-group
+            .field-label= f.label :boil_length
+            .field= f.text_field(:boil_length, size: 2) + ' min.'
+          .field-group.mash-efficiency
+            .field-label= f.label :mash_efficiency
+            .field= f.text_field(:mash_efficiency, size: 2) + ' %'
+      %br
 
-  %fieldset.field-row
-    %legend.field-label= f.label :procedure
-    .field= f.text_area :procedure, :size => "60x4"
+      %fieldset.field-row
+        %legend.field-label= f.label :description
+        .field= f.text_area :description, :size => "60x4"
 
-  .field-row.controls
-    .right= f.submit(@recipe.new_record? ? 'Next' : 'Save')
-    .right= link_to 'Cancel', @recipe, class: 'button cancel'
+      %fieldset.field-row
+        %legend.field-label= f.label :procedure
+        .field= f.text_area :procedure, :size => "60x4"
+
+      .field-row.controls
+        .right= f.submit(@recipe.new_record? ? 'Next' : 'Save')
+        .right= link_to 'Cancel', @recipe, class: 'button cancel'
 
 
-  %br.clear
+      %br.clear
 
-.style-guide
-  %h3 Beer Style Guide
-  = render partial: 'recipes/beer_style_guide', locals: { beer_style: @recipe.beer_style, show_name: true }
-%br.clear
+    .style-guide
+      %h3 Beer Style Guide
+      = render partial: 'recipes/beer_style_guide', locals: { beer_style: @recipe.beer_style, show_name: true }
+    %br.clear
 
-- unless @recipe.new_record?
-  %h2 Fermentables
-  #fermentable_additions_edit
-    = render 'recipes/fermentable_additions_edit'
+  - unless @recipe.new_record?
+    #tab-ingredients
+      %h2 Fermentables
+      #fermentable_additions_edit
+        = render 'recipes/fermentable_additions_edit'
 
-  %h2 Hops
-  #hop_additions_edit
-    = render 'recipes/hop_additions_edit'
+      %h2 Hops
+      #hop_additions_edit
+        = render 'recipes/hop_additions_edit'
 
-  %h2 Yeast
-  #yeast_additions_edit
-    = render 'recipes/yeast_additions_edit'
+      %h2 Yeast
+      #yeast_additions_edit
+        = render 'recipes/yeast_additions_edit'
 

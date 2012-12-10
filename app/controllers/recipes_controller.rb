@@ -38,7 +38,10 @@ public
   end
 
   def create_recipe_succeeded( recipe )
-    redirect_to(edit_recipe_path(recipe), :notice => 'Recipe was successfully created.')
+    # After create start the user on the Ingredients tab as the next step
+    redirect_to(
+      edit_recipe_path(recipe) + '#tab-ingredients',
+      notice: 'Recipe was successfully created.')
   end
 
   def create_recipe_failed( recipe )

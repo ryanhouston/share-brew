@@ -1,0 +1,20 @@
+#recipe.tabbed-content
+  %ul
+    %li
+      %a{ href: "#tab-overview" } Overview
+    - unless @recipe.new_record?
+      %li
+        %a{ href: "#tab-ingredients" } Ingredients
+      - if @recipe.all_grain?
+        %li
+          %a{ href: '#tab-mash' } Mash Profile
+
+  #tab-overview
+    =render 'recipe_form'
+
+  - unless @recipe.new_record?
+    =render 'form_ingredients_tab'
+
+    - if @recipe.all_grain?
+      =render 'form_mash_tab'
+

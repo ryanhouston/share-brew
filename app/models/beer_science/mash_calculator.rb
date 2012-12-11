@@ -1,9 +1,15 @@
 class MashCalculator
   WATER_RETENTION_COEFFICIENT = 0.5
 
+  attr_accessor :mash_ratio
+
   def initialize( total_grain_weight, batch_size )
     @total_grain_weight = total_grain_weight
     @batch_size = batch_size
+  end
+
+  def mash_ratio
+    @mash_ratio ||= suggested_mash_ratio
   end
 
   # Provides a suggested mash ratio based on the total amount of grain and the

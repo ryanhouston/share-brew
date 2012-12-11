@@ -109,6 +109,22 @@ ShareBrew will use this second, more accurate formula.
 ### References
 [BrewersFriend](http://www.brewersfriend.com/2011/06/16/alcohol-by-volume-calculator-updated/)
 
+Mash Calculations
+-----------------
+Volume of mash water to use is a ratio of quarts of water per pound of grain in your grain bill. Generally 1.5 - 2 quarts of mash water are used per every pound of grain. This will vary to a degree from brewer to brewer and should be configurable.
+
+Palmer states in "How to Brew" that you want your first runnings from the mash to come out to half of your boil volume. Then you can sparge with the same volume you've collected from your first runnings to come up to your total boil volume which includes extra volume to account for boil-off. An average boil off is generally 1 to 1.5 gallons per hour.
+
+Sparge Calculations
+-------------------
+
+## Batch Sparge
+Grain will retain about 0.5 quarts of water per pound of grain
+
+### Reference
+Palmer, John. How to Brew. 2006. Brewers Publications [p. 183-184]
+
+
 References
 ----------
 Palmer, John. How To Brew. 2006. Brewers Publications

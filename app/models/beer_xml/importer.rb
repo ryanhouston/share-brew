@@ -9,23 +9,31 @@ module BeerXml
       @current_file = filename
     end
 
+    def self.logger
+      Rails.logger
+    end
+
     def self.import_and_save!( filename )
       importer = BeerXml::Importer.new
       importer.import(filename)
 
       importer.styles(BeerStyle).each do |style|
+        logger.info "Importing BeerStyle: #{style.name}"
         style.save!
       end
 
       importer.hops(Hop).each do |hop|
+        logger.info "Importing Hop: #{hop.name}"
         hop.save!
       end
 
       importer.fermentables(Fermentable).each do |fermentable|
+        logger.info "Importing Fermentable: #{fermentable.name}"
         fermentable.save!
       end
 
       importer.yeasts(Yeast).each do |yeast|
+        logger.info "Importing Yeast: #{yeast.strain}"
         yeast.save!
       end
     end

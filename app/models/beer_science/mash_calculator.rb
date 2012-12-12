@@ -36,8 +36,16 @@ class MashCalculator
     boil_off_gallons + @batch_size_gallons
   end
 
+  # Boil off rate is relatively constant based on the diameter of the boil
+  # kettle. Environmental factors and boil vigor can contribute as well.
   def boil_off_gallons
-    (@boil_minutes.to_f / 60.to_f) * 1.to_f
+    (@boil_minutes.to_f / 60.to_f) * boil_off_gallons_per_hour.to_f
+  end
+
+  # TODO this should be specified by brewer inputs specific to their brew rig.
+  #   Currently this is hard-coded to a rate of 1 gallon per hour
+  def boil_off_gallons_per_hour
+    1.0
   end
 
   def sparge_water_volume_gallons

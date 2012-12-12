@@ -18,6 +18,7 @@ module BeerScience
     end
 
     its(:boil_off_gallons) { should == 1.50 }
+    its(:boil_off_gallons_per_hour) { should == 1.0 }
     its(:preboil_volume_gallons) { should == 7.00 }
 
     context "with no mash ratio specified" do

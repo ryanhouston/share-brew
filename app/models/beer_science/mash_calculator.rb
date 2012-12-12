@@ -21,7 +21,7 @@ class MashCalculator
   end
 
   def required_mash_water_volume_in_quarts
-    suggested_mash_ratio * @total_grain_weight_lbs
+    mash_ratio * @total_grain_weight_lbs
   end
 
   def required_mash_water_volume_in_gallons
@@ -38,6 +38,10 @@ class MashCalculator
 
   def boil_off_gallons
     (@boil_minutes.to_f / 60.to_f) * 1.to_f
+  end
+
+  def sparge_water_volume_gallons
+    preboil_volume_gallons - required_mash_water_volume_in_gallons
   end
 end
 

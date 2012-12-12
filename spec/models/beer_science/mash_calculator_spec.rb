@@ -28,15 +28,17 @@ module BeerScience
     end
 
     context "with a specified mash ratio" do
+      let (:specified_mash_ratio_quarts_per_pound) { 1.25 }
+      let (:mash_water_volume) { specified_mash_ratio_quarts_per_pound * total_grain_weight }
       subject do
         calc = MashCalculator.new(total_grain_weight, batch_size, boil_length)
-        calc.mash_ratio = 1.25
+        calc.mash_ratio = specified_mash_ratio_quarts_per_pound
         calc
       end
 
-      it "uses the specified mash ratio instead of suggested" do
-        subject.mash_ratio.should == 1.25
-      end
+      its (:mash_ratio) { should == specified_mash_ratio_quarts_per_pound }
+      its (:required_mash_water_volume_in_quarts) { should == mash_water_volume }
+      its (:sparge_water_volume_gallons) { should == 3.5625 }
     end
   end
 end

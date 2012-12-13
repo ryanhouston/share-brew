@@ -7,7 +7,12 @@ $(function() {
     }
   };
 
+  // Recipe form tabs
   $("#recipe.tabbed-content").tabs();
+  $("#recipe.tabbed-content").on('click', '.ui-tabs-anchor', function() {
+    window.location.hash = $(this).attr('href');
+  });
+
   // Initialize chosen plugin for beer style chooser
   $(".chzn-select").chosen();
 

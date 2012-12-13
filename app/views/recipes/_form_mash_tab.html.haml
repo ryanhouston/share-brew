@@ -1,3 +1,44 @@
 #tab-mash
-  %h2 Mash Profile
-  %em to do
+  =form_tag('#') do |f|
+    .field-group
+      = label_tag :mash_efficiency
+      = text_field_tag :mash_efficiency, @recipe.mash_efficiency, size: 4
+    %fieldset
+      %legend Mash Profile
+      .field-group
+        = label_tag :mash_ratio
+        = text_field_tag(:mash_ratio,
+                         mash_calculator.mash_ratio.round(2),
+                         size: 4) + ' qts/lb'
+      .field-group
+        = label_tag :mash_temperature
+        = text_field_tag(:mash_temperature, nil, size: 4)
+        &deg;F
+
+      .field-row
+        .field-group
+          Total Mash Water:
+          = mash_calculator.required_mash_water_volume_in_gallons.round(2)
+          gallons
+
+    %fieldset
+      %legend Sparge
+      .info
+        %em Only batch sparging is currently supported
+
+      .field-row
+        .field-group
+          = label_tag :boil_off_rate
+          = text_field_tag(:boil_off_rate,
+                           mash_calculator.boil_off_gallons_per_hour,
+                           size: 4) + ' gallons/hour'
+      .field-row
+        .field-group
+          Total Sparge Water:
+          = mash_calculator.sparge_water_volume_gallons.round(2)
+          gallons
+      .field-row
+        .field-group
+          Pre-boil volume:
+          = mash_calculator.preboil_volume_gallons.round(2)
+          gallons

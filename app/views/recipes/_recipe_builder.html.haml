@@ -16,5 +16,5 @@
     =render 'form_ingredients_tab'
 
     - if @recipe.all_grain?
-      =render 'form_mash_tab'
+      =render partial: 'form_mash_tab', locals: { mash_calculator: @recipe.mash_calculator }
 

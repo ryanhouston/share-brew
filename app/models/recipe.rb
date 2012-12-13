@@ -53,6 +53,10 @@ class Recipe < ActiveRecord::Base
     all_grain? ? super : 100
   end
 
+  def mash_calculator
+    BeerScience::MashCalculator.new malt_bill.total_weight, batch_size, boil_length
+  end
+
   def profile
     @profile ||= RecipeProfile.new(self)
   end

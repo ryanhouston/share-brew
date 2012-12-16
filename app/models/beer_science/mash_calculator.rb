@@ -16,6 +16,8 @@ module BeerScience
 
     # Provides a suggested mash ratio based on the total amount of grain and the
     # preboil volume of wort required to reach the desired finishing batch size
+    #
+    # Formula lifted from John Palmer's "How to Brew"
     def suggested_mash_ratio
       (preboil_volume_gallons + (preboil_volume_gallons*2 + 2*WATER_RETENTION_COEFFICIENT *
         preboil_volume_gallons * @total_grain_weight_lbs)**0.5) / @total_grain_weight_lbs

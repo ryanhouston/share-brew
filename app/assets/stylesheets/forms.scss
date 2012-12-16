@@ -52,11 +52,19 @@ form {
 
   .field-row {
     @include row;
+    margin-bottom: 8px;
   }
 
   .field-group {
     display: inline-block;
     padding: 0 5px;
+
+    &.stacked {
+      label, span.label {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
   }
 
   input[type=submit].button {

@@ -112,3 +112,10 @@ form.edit_recipe, form.new_recipe {
   }
 }
 
+#tab-mash {
+  .field-group {
+    @include span-columns(1 of 3);
+    margin-right: 30px;
+  }
+}
+

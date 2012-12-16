@@ -1,23 +1,34 @@
 #tab-mash
   =form_tag('#') do |f|
-    .field-group
-      = label_tag :mash_efficiency
-      = text_field_tag :mash_efficiency, @recipe.mash_efficiency, size: 4
+    .field-row
+      .field-group
+        = label_tag :mash_efficiency
+        = text_field_tag :mash_efficiency, @recipe.mash_efficiency, size: 4
     %fieldset
       %legend Mash Profile
-      .field-group
-        = label_tag :mash_ratio
-        = text_field_tag(:mash_ratio,
-                         mash_calculator.mash_ratio.round(2),
-                         size: 4) + ' qts/lb'
-      .field-group
-        = label_tag :mash_temperature
-        = text_field_tag(:mash_temperature, nil, size: 4)
-        &deg;F
+      .field-row
+        .field-group.stacked
+          = label_tag "Mash Temperature (target)"
+          = text_field_tag(:mash_temperature_target, nil, size: 4)
+          &deg;F
+        .field-group.stacked
+          = label_tag "Mash Temperature (actual)"
+          = text_field_tag(:mash_temperature_actual, nil, size: 4)
+          &deg;F
 
       .field-row
-        .field-group
-          Total Mash Water:
+        .field-group.stacked
+          = label_tag :mash_duration
+          = text_field_tag(:mash_duration, nil, size: 4) + ' minutes'
+        .field-group.stacked
+          = label_tag :mash_ratio
+          = text_field_tag(:mash_ratio,
+                           mash_calculator.mash_ratio.round(2),
+                           size: 4) + ' qts/lb'
+      %br
+      .field-row
+        .field-group.stacked
+          %span.label Total Mash Water:
           = mash_calculator.required_mash_water_volume_in_gallons.round(2)
           gallons
 
@@ -27,18 +38,18 @@
         %em Only batch sparging is currently supported
 
       .field-row
-        .field-group
+        .field-group.stacked
           = label_tag :boil_off_rate
           = text_field_tag(:boil_off_rate,
                            mash_calculator.boil_off_gallons_per_hour,
                            size: 4) + ' gallons/hour'
       .field-row
-        .field-group
-          Total Sparge Water:
+        .field-group.stacked
+          %span.label Total Sparge Water:
           = mash_calculator.sparge_water_volume_gallons.round(2)
           gallons
       .field-row
-        .field-group
-          Pre-boil volume:
+        .field-group.stacked
+          %span.label Pre-boil volume:
           = mash_calculator.preboil_volume_gallons.round(2)
           gallons

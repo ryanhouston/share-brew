@@ -40,7 +40,7 @@ public
   def create_recipe_succeeded( recipe )
     # After create start the user on the Ingredients tab as the next step
     redirect_to(
-      edit_recipe_path(recipe) + '#tab-ingredients',
+      edit_recipe_path(recipe),
       notice: 'Recipe was successfully created.')
   end
 

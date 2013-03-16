@@ -1,5 +1,5 @@
 #recipe.tabbed-content
-  %ul
+  %ul{ data: { :'active-tab' => recipe_builder_active_tab_index } }
     %li
       %a{ href: "#tab-overview" } Overview
     - unless @recipe.new_record?

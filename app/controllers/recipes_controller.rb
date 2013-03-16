@@ -29,6 +29,7 @@ public
   # GET /recipes/1/edit
   def edit
     authorize! :update, @recipe
+    @tab_active = params[:tab].to_sym if params[:tab]
   end
 
   # POST /recipes
@@ -38,9 +39,10 @@ public
   end
 
   def create_recipe_succeeded( recipe )
-    # After create start the user on the Ingredients tab as the next step
+    @tab_active = :ingredients
+
     redirect_to(
-      edit_recipe_path(recipe),
+      edit_recipe_path(recipe, tab: @tab_active),
       notice: 'Recipe was successfully created.')
   end
 

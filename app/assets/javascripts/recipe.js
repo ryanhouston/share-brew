@@ -8,7 +8,8 @@ $(function() {
   };
 
   // Recipe form tabs
-  $("#recipe.tabbed-content").tabs();
+  var active_recipe_tab = $("#recipe.tabbed-content ul").data("active-tab");
+  $("#recipe.tabbed-content").tabs({ active: active_recipe_tab });
 
   // Initialize chosen plugin for beer style chooser
   $(".chzn-select").chosen();

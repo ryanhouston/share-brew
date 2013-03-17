@@ -75,3 +75,4 @@ public
     redirect_to(recipes_url)
   end
 end
+

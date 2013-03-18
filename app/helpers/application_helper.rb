@@ -7,3 +7,4 @@ module ApplicationHelper
     @javascript_application
   end
 end
+

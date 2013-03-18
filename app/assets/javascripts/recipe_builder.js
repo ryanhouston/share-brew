@@ -1,12 +1,11 @@
-($(function() {
-  var initialize_recipe_builder = function() {
-    var evaluate_mash_efficiency_relevancy = function(mash_type) {
-      if (mash_type == 'grain') {
-        $('.field-group.mash-efficiency').show();
-      } else {
-        $('.field-group.mash-efficiency').hide();
-      }
-    };
+(function(BREWERING) {
+
+  var RecipeBuilder = function(){
+    //
+  };
+
+  RecipeBuilder.prototype.init = function() {
+    var self = this;
 
     // Recipe form tabs
     var active_recipe_tab = $("#recipe.tabbed-content ul").data("active-tab");
@@ -16,7 +15,7 @@
     $(".chzn-select").chosen();
 
     // Show or hide mash efficiency as necessary
-    evaluate_mash_efficiency_relevancy($('#recipe_mash_type option:selected').val());
+    self.evaluate_mash_efficiency_relevancy($('#recipe_mash_type option:selected').val());
 
     $(document).on('change', '#hop_addition_hop_id', function(event) {
       $.ajax({
@@ -42,14 +41,28 @@
     });
 
     $(document).on('change', '#recipe_mash_type', function(event) {
-      evaluate_mash_efficiency_relevancy($(this).val());
+      self.evaluate_mash_efficiency_relevancy($(this).val());
     });
   };
 
-  if ($("body.recipe_builder").length) {
-    console.log("Initializing recipe_builder");
-    initialize_recipe_builder();
-  }
+  RecipeBuilder.prototype.evaluate_mash_efficiency_relevancy = function(mash_type) {
+    if (mash_type == 'grain') {
+      $('.field-group.mash-efficiency').show();
+    } else {
+      $('.field-group.mash-efficiency').hide();
+    }
+  };
 
-}));
+
+  BREWERING.recipeBuilder = new RecipeBuilder();
+
+  return BREWERING;
+}(BREWERING || {}));
+
+$(document).ready(function() {
+  if ($("body.recipe_builder").length) {
+    console.log("Initializing RecipeBuilder");
+    BREWERING.recipeBuilder.init();
+  }
+});
 

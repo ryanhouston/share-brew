@@ -22,7 +22,10 @@ module BeerScience
     its(:preboil_volume_gallons) { should == 7.00 }
 
     context "with no mash ratio specified" do
-      its (:mash_ratio) { subject.round(4).should == 1.5036 }
+      it "provides the mash ratio" do
+        subject.mash_ratio.round(4).should == 1.5036
+      end
+
       it "provides the suggested mash ratio if none is provided" do
         subject.mash_ratio.should == subject.suggested_mash_ratio
       end

@@ -30,4 +30,6 @@ RSpec.configure do |config|
 
   # Load helpers for dealing with user sessions through devise
   config.include Devise::TestHelpers, :type => [:controller]
+
+  config.infer_spec_type_from_file_location!
 end

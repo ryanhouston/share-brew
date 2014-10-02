@@ -18,7 +18,7 @@ describe Recipe do
 
     it { should validate_presence_of(:mash_efficiency) }
     it "detemines if the recipe is an all grain recipe" do
-      subject.all_grain?.should be_true
+      subject.all_grain?.should be_truthy
     end
 
     it "uses the given mash efficiency value in the malt bill" do
@@ -31,7 +31,7 @@ describe Recipe do
 
     it { should_not validate_presence_of(:mash_efficiency) }
     it "correctly assesses a extract recipe is not all grain" do
-      subject.all_grain?.should_not be_true
+      subject.all_grain?.should be_falsey
     end
 
     it "uses an assumed mash efficiency value for the malt bill" do
@@ -83,7 +83,7 @@ describe Recipe do
         failure: method(:failed_creation))
 
       @failure_called.should be_kind_of FermentableAddition
-      @failure_called.valid?.should be_false
+      @failure_called.valid?.should be_falsey
     end
   end
 

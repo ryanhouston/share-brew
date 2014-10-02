@@ -1,13 +1,5 @@
 class HopsController < ApplicationController
-  before_filter :find_hop,
-    only: [:show, :edit, :update, :destroy]
-
-private
-  def find_hop
-    @hop = Hop.find params[:id]
-  end
-
-public
+  before_filter :find_hop, only: [:show, :edit, :update, :destroy]
 
   def index
     @hops = Hop.order :name
@@ -34,13 +26,13 @@ public
 
   def create
     authorize! :create, Hop
-    @hop = Hop.new(params[:hop])
+    @hop = Hop.new hop_params
 
     if @hop.save
       flash[:notice] = 'Hop was successfully created.'
       redirect_to(@hop)
     else
-      render :action => "new"
+      render :new
     end
   end
 
@@ -48,11 +40,11 @@ public
   def update
     authorize! :update, @hop
 
-    if @hop.update_attributes(params[:hop])
+    if @hop.update hop_params
       flash[:notice] = 'Hop was successfully updated.'
       redirect_to(@hop)
     else
-      render :action => "edit"
+      render :edit
     end
   end
 
@@ -63,4 +55,17 @@ public
     redirect_to(hops_url)
   end
 
+private
+
+  def find_hop
+    @hop = Hop.find params.require(:id)
+  end
+
+  def hop_params
+    params.require(:hop).permit(
+      :name, :alpha_acid, :beta_acid, :form,
+      :typical_use, :notes, :origin)
+  end
+
 end
+

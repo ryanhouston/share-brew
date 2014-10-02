@@ -2,14 +2,6 @@ class BeerStylesController < ApplicationController
   before_filter :find_beer_style,
     :only => [:show, :edit, :update, :destroy]
 
-  private
-
-    def find_beer_style
-        @beer_style = BeerStyle.find(params[:id])
-    end
-
-  public
-
   # GET /beer_styles
   def index
     @beer_styles = BeerStyle.order :name
@@ -37,13 +29,13 @@ class BeerStylesController < ApplicationController
   # POST /beer_styles
   def create
     authorize! :create, BeerStyle
-    @beer_style = BeerStyle.new(params[:beer_style])
+    @beer_style = BeerStyle.new beer_style_params
 
     if @beer_style.save
       flash[:notice] = 'BeerStyle was successfully created.'
-      redirect_to(@beer_style)
+      redirect_to @beer_style
     else
-      render :action => "new"
+      render :new
     end
   end
 
@@ -51,11 +43,11 @@ class BeerStylesController < ApplicationController
   def update
     authorize! :update, @beer_style
 
-    if @beer_style.update_attributes(params[:beer_style])
+    if @beer_style.update beer_style_params
       flash[:notice] = 'BeerStyle was successfully updated.'
-      redirect_to(@beer_style)
+      redirect_to @beer_style
     else
-      render :action => "edit"
+      render :edit
     end
   end
 
@@ -64,6 +56,22 @@ class BeerStylesController < ApplicationController
     authorize! :destroy, @beer_style
 
     @beer_style.destroy
-    redirect_to(beer_styles_url)
+    redirect_to beer_styles_path
   end
+
+  private
+
+  def find_beer_style
+      @beer_style = BeerStyle.find(params[:id])
+  end
+
+  def beer_style_params
+    @beer_style_params ||= params.require(:beer_style).permit(
+      :name, :category, :lager, :description,
+      :min_orig_grav, :max_orig_grav, :min_final_grav, :max_final_grav,
+      :min_IBUs, :max_IBUs, :min_color, :max_color,
+      :min_carbonation, :max_carbonation, :min_abv, :max_abv)
+  end
+
 end
+

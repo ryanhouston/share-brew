@@ -1,8 +1,4 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :beer_style_id, :mash_type, :name, :batch_size,
-    :description, :original_gravity, :final_gravity, :procedure, :boil_length,
-    :mash_efficiency
-
   belongs_to :beer_style
   belongs_to :user
   has_many   :hop_additions

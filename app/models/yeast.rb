@@ -4,8 +4,6 @@ class Yeast < ActiveRecord::Base
   FORMS = ['dry', 'liquid']
   STRAIN_TYPES = ['ale', 'lager', 'wheat', 'champagne', 'wine', 'cider']
 
-  attr_accessible :strain, :strain_type, :vendor, :form, :description, :min_temp, :max_temp, :catalog_id, :attenuation
-
   validates_presence_of :strain, :catalog_id, :vendor, :form
   validates_inclusion_of :form, :in => FORMS,
     :message => "%{value} is not a valid form of yeast"

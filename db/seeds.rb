@@ -1,9 +1,9 @@
-admin = User.create({ email: 'admin@sharebrew.com',
-                      password: 'password',
-                      name: 'Admin',
-                      admin: true,
-                      confirmed_at: Time.now
-                    }, without_protection: true)
+admin = User.create!(
+  email: 'admin@sharebrew.com',
+  password: 'password',
+  name: 'Admin',
+  admin: true,
+  confirmed_at: Time.now)
 
 beer_xml_seed_files = %w(
   spec/fixtures/bjcp-2008-styles.xml

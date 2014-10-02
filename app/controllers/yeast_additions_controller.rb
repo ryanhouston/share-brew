@@ -1,26 +1,26 @@
 class YeastAdditionsController < ApplicationController
 
   def index
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params.require(:recipe_id))
   end
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params.require(:recipe_id))
     @yeast_addition = @recipe.yeast_additions.build
     @remote = request.xhr?
   end
 
   def create
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params.require(:recipe_id))
     @recipe.add_yeast(
-      params[:yeast_addition],
+      yeast_addition_params,
       success: method(:created_successfully),
       failure: method(:creation_failed))
   end
 
   def edit
-    @recipe = Recipe.find(params[:recipe_id])
-    @yeast_addition = YeastAddition.find(params[:id])
+    @recipe = Recipe.find(params.require(:recipe_id))
+    @yeast_addition = YeastAddition.find(params.require(:id))
 
     respond_to do |format|
       format.js { @remote = true }
@@ -30,18 +30,18 @@ class YeastAdditionsController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:recipe_id])
-    @yeast_addition = YeastAddition.find(params[:id])
+    @recipe = Recipe.find(params.require(:recipe_id))
+    @yeast_addition = YeastAddition.find(params.require(:id))
     @yeast_addition.update_with_callbacks(
-      params[:yeast_addition],
+      yeast_addition_params,
       success: method(:successfully_updated),
       failure: method(:failed_update))
   end
 
   def destroy
-    @yeast_addition = YeastAddition.find(params[:id])
+    @yeast_addition = YeastAddition.find(params.require(:id))
     @yeast_addition.destroy
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params.require(:recipe_id))
 
     respond_to do |format|
       format.html do
@@ -52,11 +52,17 @@ class YeastAdditionsController < ApplicationController
     end
   end
 
-  private
+private
+
+  def yeast_addition_params
+    @yeast_addition_params ||= params.require(:yeast_addition).permit(
+      :recipe_id, :yeast_id, :starter_size, :use_starter)
+  end
+
   def created_successfully( yeast_addition )
     respond_to do |format|
       format.html do
-        redirect_to edit_recipe_path(@recipe), :notice => "Yeast addition added"
+        redirect_to edit_recipe_path(@recipe), notice: "Yeast addition added"
       end
       format.js { render :update_list }
     end

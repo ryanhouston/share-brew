@@ -3,9 +3,6 @@ source 'http://rubygems.org'
 gem 'rake'
 gem 'rails', '~> 4.0.0'
 
-# Rails 4 Upgrade requirements
-gem 'protected_attributes'
-
 gem 'haml'
 gem 'jquery-rails'
 

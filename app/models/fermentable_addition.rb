@@ -1,5 +1,4 @@
 class FermentableAddition < ActiveRecord::Base
-  attr_accessible :fermentable_id, :recipe_id, :weight
   belongs_to :recipe
   belongs_to :fermentable
 

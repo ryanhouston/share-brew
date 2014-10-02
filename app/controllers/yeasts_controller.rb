@@ -1,11 +1,5 @@
 class YeastsController < ApplicationController
   before_filter :find_yeast, only: [:edit, :update, :destroy, :show]
-private
-  def find_yeast
-    @yeast = Yeast.find(params[:id])
-  end
-
-public
 
   # GET /yeasts
   def index
@@ -30,7 +24,7 @@ public
   # POST /yeasts
   def create
     authorize! :create, Yeast
-    @yeast = Yeast.new(params[:yeast])
+    @yeast = Yeast.new(yeast_params)
 
     if @yeast.save
       redirect_to(@yeast, :notice => 'Yeast was successfully created.')
@@ -43,7 +37,7 @@ public
   def update
     authorize! :update, @yeast
 
-    if @yeast.update_attributes(params[:yeast])
+    if @yeast.update_attributes(yeast_params)
       redirect_to(@yeast, :notice => 'Yeast was successfully updated.')
     else
       render :action => "edit"
@@ -57,4 +51,17 @@ public
 
     redirect_to(yeasts_url)
   end
+
+private
+
+  def find_yeast
+    @yeast = Yeast.find(params.require(:id))
+  end
+
+  def yeast_params
+    @yeast_params ||= params.require(:yeast).permit(
+      :strain, :strain_type, :vendor, :form, :description,
+      :min_temp, :max_temp, :catalog_id, :attenuation)
+  end
+
 end

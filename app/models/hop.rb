@@ -9,8 +9,6 @@ class Hop < ActiveRecord::Base
   PLUG = 'Plug'
   LEAF = 'Leaf'
 
-  attr_accessible :name, :alpha_acid, :beta_acid, :form, :typical_use, :notes, :origin
-
   validates_presence_of :name
   validates_presence_of :alpha_acid
   validates_presence_of :form

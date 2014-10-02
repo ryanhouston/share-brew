@@ -9,8 +9,6 @@ class Fermentable < ActiveRecord::Base
   SUGAR = 'Sugar'
   ADJUNCT = 'Adjunct'
 
-  attr_accessible :name, :origin, :vendor, :form, :color, :potential, :yield, :max_in_batch, :notes
-
   acts_as_beer_importer_of(:fermentables).translated_as({
    :supplier => :vendor,
   }).using({

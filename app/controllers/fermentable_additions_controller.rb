@@ -1,27 +1,27 @@
 class FermentableAdditionsController < ApplicationController
 
   def index
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params.require(:recipe_id))
   end
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params.require(:recipe_id))
     @fermentable_addition = @recipe.fermentable_additions.build
     @remote = request.xhr?
   end
 
   def create
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params.require(:recipe_id))
     @recipe.add_fermentable(
-      params[:fermentable_addition],
+      fermentable_addition_params,
       success: method(:created_successfully),
       failure: method(:creation_failed)
     )
   end
 
   def edit
-    @recipe = Recipe.find(params[:recipe_id])
-    @fermentable_addition = FermentableAddition.find(params[:id])
+    @recipe = Recipe.find(params.require(:recipe_id))
+    @fermentable_addition = FermentableAddition.find(params.require(:id))
 
     respond_to do |format|
       format.html { render :edit }
@@ -33,17 +33,17 @@ class FermentableAdditionsController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:recipe_id])
-    @fermentable_addition = FermentableAddition.find(params[:id])
+    @recipe = Recipe.find(params.require(:recipe_id))
+    @fermentable_addition = FermentableAddition.find(params.require(:id))
 
     @fermentable_addition.update_with_callbacks(
-      params[:fermentable_addition],
+      fermentable_addition_params,
       success: method(:successfully_updated),
       failure: method(:failed_update))
   end
 
   def destroy
-    @fermentable_addition = FermentableAddition.find(params[:id])
+    @fermentable_addition = FermentableAddition.find(params.require(:id))
     @fermentable_addition.destroy
     @recipe = @fermentable_addition.recipe
 
@@ -54,6 +54,11 @@ class FermentableAdditionsController < ApplicationController
   end
 
   private
+
+  def fermentable_addition_params
+    params.require(:fermentable_addition).permit(:fermentable_id, :recipe_id, :weight)
+  end
+
   def created_successfully( fermentable_addition )
     respond_to do |format|
       format.html do

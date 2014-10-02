@@ -1,16 +1,9 @@
 class RecipesController < ApplicationController
   before_filter :find_recipe,
-    :only => [:show, :edit, :update, :destroy]
+    only: [:show, :edit, :update, :destroy]
 
   before_filter :require_authentication,
-    :only => [:edit, :update, :create, :new]
-
-private
-  def find_recipe
-    @recipe = Recipe.find_with_ingredients params[:id]
-  end
-
-public
+    only: [:edit, :update, :create, :new]
 
   # GET /recipes
   def index
@@ -35,7 +28,7 @@ public
   # POST /recipes
   def create
     cataloger = RecipeCataloger.new(self)
-    cataloger.create_for(current_user, params[:recipe])
+    cataloger.create_for(current_user, recipe_params)
   end
 
   def create_recipe_succeeded( recipe )
@@ -55,7 +48,7 @@ public
   def update
     authorize! :update, @recipe
     cataloger = RecipeCataloger.new(self)
-    cataloger.update_with(@recipe, params[:recipe])
+    cataloger.update_with(@recipe, recipe_params)
   end
 
   def update_recipe_succeeded( recipe )
@@ -74,5 +67,19 @@ public
 
     redirect_to(recipes_url)
   end
+
+private
+
+  def find_recipe
+    @recipe = Recipe.find_with_ingredients params.require(:id)
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(
+      :beer_style_id, :mash_type, :name, :batch_size,
+      :description, :original_gravity, :final_gravity, :procedure,
+      :boil_length, :mash_efficiency)
+  end
+
 end
 

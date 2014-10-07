@@ -2,7 +2,7 @@
   - if can? :update, @recipe
     = link_to('Edit', edit_recipe_path(@recipe), class: 'button')
   - if can? :destroy, @recipe
-    = link_to 'Delete', @recipe, confirm: 'Are you sure?', method: :delete, class: 'button'
+    = link_to 'Delete', @recipe, method: :delete, class: 'button', data: { confirm: 'Are you sure?' }
 
 %h2=  @recipe.name
 .brewer

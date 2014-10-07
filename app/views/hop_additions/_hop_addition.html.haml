@@ -15,6 +15,6 @@
       = link_to 'Delete',
         [hop_addition.recipe, hop_addition],
         method: :delete,
-        confirm: "Are you sure you want to delete the hop addition?",
-        remote: true
+        remote: true,
+        data: { confirm: "Are you sure you want to delete the hop addition?" }
 

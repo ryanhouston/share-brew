@@ -12,6 +12,7 @@
         remote: true
       = link_to 'Delete',
         [yeast_addition.recipe, yeast_addition],
-        :method => :delete,
-        :confirm => "Are you sure you want to delete the yeast addition?",
-        :remote => true
+        method: :delete,
+        remote: true,
+        data: { confirm: "Are you sure you want to delete the yeast addition?" }
+

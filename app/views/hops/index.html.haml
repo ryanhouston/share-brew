@@ -19,7 +19,7 @@
         %td
           =link_to 'Edit', edit_hop_path(hop) if can? :update, hop
           - if can? :destroy, hop
-            = link_to 'Destroy', hop, confirm: 'Are you sure?', method: :delete
+            = link_to 'Destroy', hop, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br.clear
 

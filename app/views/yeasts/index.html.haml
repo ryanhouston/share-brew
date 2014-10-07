@@ -20,7 +20,7 @@
           %td
             = link_to 'Edit', edit_yeast_path(yeast) if can? :update, yeast
             - if can? :destroy, yeast
-              = link_to 'Destroy', yeast, confirm: 'Are you sure?', method: :delete
+              = link_to 'Destroy', yeast, method: :delete, data: { confirm: 'Are you sure?' }
 
 - if can? :create, Yeast
   .actions

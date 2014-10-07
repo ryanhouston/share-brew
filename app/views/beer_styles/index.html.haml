@@ -15,6 +15,6 @@
 
         - if can? :destroy, style
           %td.actions
-            = link_to '[X]', style, :confirm => 'Are you sure?', :method => :delete
+            = link_to '[X]', style, method: :delete, data: { confirm: 'Are you sure?' }
 
 = link_to('New beer style', new_beer_style_path, class: 'button') if can? :create, BeerStyle

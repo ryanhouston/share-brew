@@ -22,7 +22,7 @@
           %td
             = link_to 'Edit', edit_fermentable_path(fermentable) if can? :update, fermentable
             - if can? :destroy, fermentable
-              = link_to('Destroy', fermentable, confirm: 'Are you sure?', method: :delete)
+              = link_to('Destroy', fermentable, method: :delete, data: { confirm: 'Are you sure?' } )
 
 
 - if can? :create, Fermentable

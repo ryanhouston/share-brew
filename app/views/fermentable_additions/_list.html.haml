@@ -24,6 +24,6 @@
               = link_to 'Delete',
                 [addition.recipe, addition],
                 method: :delete,
-                confirm: "Are you sure you want to delete the fermentable addition?",
-                remote: true
+                remote: true,
+                data: { confirm: "Are you sure you want to delete the fermentable addition?" }
 

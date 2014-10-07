@@ -12,7 +12,7 @@
     %tbody
       - @recipe.hop_additions.order("duration DESC", "weight DESC").each do |addition|
         %tr
-          %td= link_to addition.hop.name, addition.hop, :class => 'hop-type'
+          %td= link_to addition.hop.name, addition.hop, class: 'hop-type'
           %td= addition.weight.to_s + ' oz.'
           %td= addition.duration.to_s + ' min.'
           %td= addition.IBUs.round
@@ -24,6 +24,6 @@
               = link_to 'Delete',
                 [addition.recipe, addition],
                 method: :delete,
-                confirm: "Are you sure you want to delete the hop addition?",
-                remote: true
+                remote: true,
+                data: { confirm: "Are you sure you want to delete the hop addition?" }
 

@@ -10,10 +10,10 @@ describe BeerStyle do
   it { should validate_presence_of :name }
   it { should validate_presence_of :description }
   it { should validate_presence_of :category }
-  it { should ensure_inclusion_of(:min_orig_grav).in_range(0.0001..4.0001) }
-  it { should ensure_inclusion_of(:max_orig_grav).in_range(0.0001..4.0001) }
-  it { should ensure_inclusion_of(:min_final_grav).in_range(0.0001..4.0001) }
-  it { should ensure_inclusion_of(:max_final_grav).in_range(0.0001..4.0001) }
+  it { should validate_inclusion_of(:min_orig_grav).in_range(0.0001..4.0001) }
+  it { should validate_inclusion_of(:max_orig_grav).in_range(0.0001..4.0001) }
+  it { should validate_inclusion_of(:min_final_grav).in_range(0.0001..4.0001) }
+  it { should validate_inclusion_of(:max_final_grav).in_range(0.0001..4.0001) }
   it { should have_many(:recipes) }
 
   context "The BeerSTyle class" do

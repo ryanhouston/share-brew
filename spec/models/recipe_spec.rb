@@ -8,10 +8,10 @@ describe Recipe do
   it { should have_many(:yeast_additions) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:batch_size) }
-  it { should ensure_inclusion_of(:mash_type).in_array(%w(extract grain partial)) }
+  it { should validate_inclusion_of(:mash_type).in_array(%w(extract grain partial)) }
   it { should validate_presence_of(:boil_length) }
   it { should validate_numericality_of(:mash_efficiency) }
-  it { should ensure_inclusion_of(:boil_length).in_array(1..300) }
+  it { should validate_inclusion_of(:boil_length).in_array((1..300).to_a) }
 
   context "an all grain recipe" do
     subject { FactoryGirl.build :recipe, mash_type: 'grain', mash_efficiency: 68 }

@@ -6,8 +6,8 @@ describe Yeast do
   it { should validate_presence_of( :vendor ) }
   it { should validate_presence_of( :form ) }
 
-  it { should ensure_inclusion_of( :form ).in_array( Yeast::FORMS ) }
-  it { should ensure_inclusion_of(:strain_type).in_array( Yeast::STRAIN_TYPES ) }
+  it { should validate_inclusion_of( :form ).in_array( Yeast::FORMS ) }
+  it { should validate_inclusion_of(:strain_type).in_array( Yeast::STRAIN_TYPES ) }
 
   it "acts as a beer xml importer" do
     Yeast.should respond_to(:acts_as_beer_importer_of)

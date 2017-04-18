@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rake'
-gem 'rails', '~> 4.1.0'
+gem 'rails', '~> 4.2.0'
 
 gem 'haml'
 gem 'jquery-rails'
@@ -11,7 +11,7 @@ gem 'thin'
 gem 'pg'
 
 gem 'nokogiri'
-gem 'devise', '~> 3.1.0'
+gem 'devise'
 gem 'cancan'
 
 # Assets
@@ -26,7 +26,7 @@ group :development, :test do
   gem 'sqlite3'
 
   gem 'minitest'
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails'
   gem 'rspec-its'
   gem 'shoulda-matchers'
   gem 'factory_girl'

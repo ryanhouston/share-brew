@@ -10,7 +10,9 @@ describe Recipe do
   it { should validate_presence_of(:batch_size) }
   it { should validate_inclusion_of(:mash_type).in_array(%w(extract grain partial)) }
   it { should validate_presence_of(:boil_length) }
-  it { should validate_numericality_of(:mash_efficiency) }
+  # The following fails with Ruby 2.4
+  # Known issue: https://github.com/thoughtbot/shoulda-matchers/issues/986
+  # it { should validate_numericality_of(:mash_efficiency) }
   it { should validate_inclusion_of(:boil_length).in_array((1..300).to_a) }
 
   context "an all grain recipe" do

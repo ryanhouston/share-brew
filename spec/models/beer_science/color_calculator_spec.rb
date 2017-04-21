@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'beer_science/color_calculator'
 
 module BeerScience

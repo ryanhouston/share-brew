@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe BeerStyle do
   context "with appropriate attributes" do

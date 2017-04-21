@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe BeerXml::Reader do
   context "Given a valid BeerXml file of beer style data, the Reader" do

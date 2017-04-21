@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'validators/email_format_validator'
 require 'active_model'
 

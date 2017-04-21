@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Recipe do
   it { should belong_to(:beer_style) }

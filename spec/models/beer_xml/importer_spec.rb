@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe BeerXml::Importer do
   context "Without providing XML, A BeerXml Importer" do

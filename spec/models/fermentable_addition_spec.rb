@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe FermentableAddition do
   it { should belong_to :recipe }

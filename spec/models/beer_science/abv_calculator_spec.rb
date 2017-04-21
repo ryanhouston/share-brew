@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'beer_science/abv_calculator'
 
 module BeerScience

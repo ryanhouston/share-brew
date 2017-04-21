@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'beer_science/ibu_calculator'
 
 module BeerScience

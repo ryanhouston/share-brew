@@ -10,11 +10,11 @@ module BeerScience
     subject { MashCalculator.new(total_grain_weight, batch_size, boil_length) }
 
     it "provides the volume of water required for the mash in quarts" do
-      subject.required_mash_water_volume_in_quarts.round(2).should == 16.54
+      expect(subject.required_mash_water_volume_in_quarts.round(2)).to eq(16.54)
     end
 
     it "provides the volume of water required for the mash in gallons" do
-      subject.required_mash_water_volume_in_gallons.round(2).should == 4.13
+      expect(subject.required_mash_water_volume_in_gallons.round(2)).to eq(4.13)
     end
 
     its(:boil_off_gallons) { should == 1.50 }
@@ -23,11 +23,11 @@ module BeerScience
 
     context "with no mash ratio specified" do
       it "provides the mash ratio" do
-        subject.mash_ratio.round(4).should == 1.5036
+        expect(subject.mash_ratio.round(4)).to eq(1.5036)
       end
 
       it "provides the suggested mash ratio if none is provided" do
-        subject.mash_ratio.should == subject.suggested_mash_ratio
+        expect(subject.mash_ratio).to eq(subject.suggested_mash_ratio)
       end
     end
 

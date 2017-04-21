@@ -14,12 +14,12 @@ describe EmailFormatValidator do
 
   context "object with a valid email address" do
     before(:each) { subject.email = 'valid@email.com' }
-    it { should be_valid }
+    it { is_expected.to be_valid }
   end
 
   context "object with an invalid email address" do
     before(:each) { subject.email = 'not_valid_email' }
-    it { should_not be_valid }
+    it { is_expected.not_to be_valid }
   end
 end
 

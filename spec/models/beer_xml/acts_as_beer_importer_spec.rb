@@ -9,7 +9,7 @@ describe BeerXml do
 
   context "a collection of MockBeerStyles imported from a beer xml file" do
     subject { @styles = MockBeerStyle.import_beer_xml(load_file) }
-    it { should be_kind_of Array }
+    it { is_expected.to be_kind_of Array }
     its( :first ) { should be_kind_of MockBeerStyle }
   end
 

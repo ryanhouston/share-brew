@@ -1,43 +1,43 @@
 require 'rails_helper'
 
 describe Recipe do
-  it { should belong_to(:beer_style) }
-  it { should belong_to(:user) }
-  it { should have_many(:fermentable_additions) }
-  it { should have_many(:hop_additions) }
-  it { should have_many(:yeast_additions) }
-  it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:batch_size) }
-  it { should validate_inclusion_of(:mash_type).in_array(%w(extract grain partial)) }
-  it { should validate_presence_of(:boil_length) }
+  it { is_expected.to belong_to(:beer_style) }
+  it { is_expected.to belong_to(:user) }
+  it { is_expected.to have_many(:fermentable_additions) }
+  it { is_expected.to have_many(:hop_additions) }
+  it { is_expected.to have_many(:yeast_additions) }
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_presence_of(:batch_size) }
+  it { is_expected.to validate_inclusion_of(:mash_type).in_array(%w(extract grain partial)) }
+  it { is_expected.to validate_presence_of(:boil_length) }
   # The following fails with Ruby 2.4
   # Known issue: https://github.com/thoughtbot/shoulda-matchers/issues/986
   # it { should validate_numericality_of(:mash_efficiency) }
-  it { should validate_inclusion_of(:boil_length).in_array((1..300).to_a) }
+  it { is_expected.to validate_inclusion_of(:boil_length).in_array((1..300).to_a) }
 
   context "an all grain recipe" do
     subject { FactoryGirl.build :recipe, mash_type: 'grain', mash_efficiency: 68 }
 
-    it { should validate_presence_of(:mash_efficiency) }
+    it { is_expected.to validate_presence_of(:mash_efficiency) }
     it "detemines if the recipe is an all grain recipe" do
-      subject.all_grain?.should be_truthy
+      expect(subject.all_grain?).to be_truthy
     end
 
     it "uses the given mash efficiency value in the malt bill" do
-      subject.malt_bill.mash_efficiency.should == 68
+      expect(subject.malt_bill.mash_efficiency).to eq(68)
     end
   end
 
   context "an extract recipe" do
     subject { FactoryGirl.build :recipe, mash_type: 'extract' }
 
-    it { should_not validate_presence_of(:mash_efficiency) }
+    it { is_expected.not_to validate_presence_of(:mash_efficiency) }
     it "correctly assesses a extract recipe is not all grain" do
-      subject.all_grain?.should be_falsey
+      expect(subject.all_grain?).to be_falsey
     end
 
     it "uses an assumed mash efficiency value for the malt bill" do
-      subject.malt_bill.mash_efficiency.should == 100
+      expect(subject.malt_bill.mash_efficiency).to eq(100)
     end
   end
 
@@ -75,7 +75,7 @@ describe Recipe do
         success: method(:successfully_created),
         failure: method(:failed_creation))
 
-      @success_called.should be_kind_of FermentableAddition
+      expect(@success_called).to be_kind_of FermentableAddition
     end
 
     it "calls failure callback if invalid new fermentable addition" do
@@ -84,8 +84,8 @@ describe Recipe do
         success: method(:successfully_created),
         failure: method(:failed_creation))
 
-      @failure_called.should be_kind_of FermentableAddition
-      @failure_called.valid?.should be_falsey
+      expect(@failure_called).to be_kind_of FermentableAddition
+      expect(@failure_called.valid?).to be_falsey
     end
   end
 
@@ -97,14 +97,14 @@ describe Recipe do
         hop_id: hop.id, weight: 1.0, alpha_acid: 4.5,
         form: 'pellet', duration: 60, use: 'bittering'})
 
-      subject.hop_additions.first.hop_id.should == hop.id
+      expect(subject.hop_additions.first.hop_id).to eq(hop.id)
     end
 
     it "adds new yeasts" do
       yeast = FactoryGirl.create :yeast
       subject.add_yeast({ yeast_id: yeast.id })
 
-      subject.yeast_additions.first.yeast_id.should == yeast.id
+      expect(subject.yeast_additions.first.yeast_id).to eq(yeast.id)
     end
   end
 

@@ -20,8 +20,8 @@ describe BeerXml::Importer do
 
     it "should be able to import (ShareBrew)BeerStyle objects" do
       beer_styles = subject.styles(BeerStyle)
-      beer_styles.should be_kind_of(Array)
-      beer_styles.first.should be_kind_of(BeerStyle)
+      expect(beer_styles).to be_kind_of(Array)
+      expect(beer_styles.first).to be_kind_of(BeerStyle)
     end
 
     it "can reset its values to a clean state" do

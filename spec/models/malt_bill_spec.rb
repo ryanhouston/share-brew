@@ -37,17 +37,17 @@ describe MaltBill do
     # 10 lbs * 38 GUs * 0.68 mash efficiency
     it "calculates gravity units in relation to the recipe" do
       gravity_units = subject.fermentable_gravity_units(@fermentable_addition)
-      gravity_units.round(2).should == 258.40
+      expect(gravity_units.round(2)).to eq(258.40)
     end
   end
 
   describe "calculating gravity units" do
     it "calculates the total gravity units of the malt bill" do
-      subject.total_gravity_units.round(2).should == 293.76
+      expect(subject.total_gravity_units.round(2)).to eq(293.76)
     end
 
     it "calculates the starting gravity of the total malt bill" do
-      subject.starting_gravity.round(3).should == 1.053
+      expect(subject.starting_gravity.round(3)).to eq(1.053)
     end
   end
 end

@@ -3,10 +3,10 @@ require 'rails_helper'
 describe BeerXml::Reader do
   context "Given a valid BeerXml file of beer style data, the Reader" do
     subject { BeerXml::Reader.new(load_file).styles }
-    it { should be_kind_of(Array) }
+    it { is_expected.to be_kind_of(Array) }
 
     it "returns style data as a hash map" do
-      subject.first.should be_kind_of(Hash)
+      expect(subject.first).to be_kind_of(Hash)
     end
   end
 
@@ -14,7 +14,7 @@ describe BeerXml::Reader do
     subject { BeerXml::Reader.new(load_file).styles.first }
 
     it "has a Name attribute" do
-      subject['NAME'].should == 'American Amber Ale'
+      expect(subject['NAME']).to eq('American Amber Ale')
     end
   end
 

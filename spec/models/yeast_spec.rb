@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 describe Yeast do
-  it { should validate_presence_of( :strain ) }
-  it { should validate_presence_of( :catalog_id ) }
-  it { should validate_presence_of( :vendor ) }
-  it { should validate_presence_of( :form ) }
+  it { is_expected.to validate_presence_of( :strain ) }
+  it { is_expected.to validate_presence_of( :catalog_id ) }
+  it { is_expected.to validate_presence_of( :vendor ) }
+  it { is_expected.to validate_presence_of( :form ) }
 
-  it { should validate_inclusion_of( :form ).in_array( Yeast::FORMS ) }
-  it { should validate_inclusion_of(:strain_type).in_array( Yeast::STRAIN_TYPES ) }
+  it { is_expected.to validate_inclusion_of( :form ).in_array( Yeast::FORMS ) }
+  it { is_expected.to validate_inclusion_of(:strain_type).in_array( Yeast::STRAIN_TYPES ) }
 
   it "acts as a beer xml importer" do
-    Yeast.should respond_to(:acts_as_beer_importer_of)
-    Yeast.should respond_to(:import_beer_xml)
+    expect(Yeast).to respond_to(:acts_as_beer_importer_of)
+    expect(Yeast).to respond_to(:import_beer_xml)
   end
 
   context "A collection of Yeasts imported from beer xml" do
@@ -20,7 +20,7 @@ describe Yeast do
       @yeast = yeasts.first
     end
 
-    it { should be_kind_of(Yeast) }
+    it { is_expected.to be_kind_of(Yeast) }
     its( :strain ) { should eq "Cooper Ale" }
     its( :vendor ) { should eq "Coopers" }
     its( :catalog_id ) { should eq "-" }

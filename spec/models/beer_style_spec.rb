@@ -3,34 +3,34 @@ require 'rails_helper'
 describe BeerStyle do
   context "with appropriate attributes" do
     subject { FactoryGirl.build(:beer_style) }
-    it { should be_valid }
+    it { is_expected.to be_valid }
   end
 
-  it { should validate_uniqueness_of :name }
-  it { should validate_presence_of :name }
-  it { should validate_presence_of :description }
-  it { should validate_presence_of :category }
-  it { should validate_inclusion_of(:min_orig_grav).in_range(0.0001..4.0001) }
-  it { should validate_inclusion_of(:max_orig_grav).in_range(0.0001..4.0001) }
-  it { should validate_inclusion_of(:min_final_grav).in_range(0.0001..4.0001) }
-  it { should validate_inclusion_of(:max_final_grav).in_range(0.0001..4.0001) }
-  it { should have_many(:recipes) }
+  it { is_expected.to validate_uniqueness_of :name }
+  it { is_expected.to validate_presence_of :name }
+  it { is_expected.to validate_presence_of :description }
+  it { is_expected.to validate_presence_of :category }
+  it { is_expected.to validate_inclusion_of(:min_orig_grav).in_range(0.0001..4.0001) }
+  it { is_expected.to validate_inclusion_of(:max_orig_grav).in_range(0.0001..4.0001) }
+  it { is_expected.to validate_inclusion_of(:min_final_grav).in_range(0.0001..4.0001) }
+  it { is_expected.to validate_inclusion_of(:max_final_grav).in_range(0.0001..4.0001) }
+  it { is_expected.to have_many(:recipes) }
 
   context "The BeerSTyle class" do
     it "acts as a BeerXml importer" do
-      BeerStyle.should respond_to(:acts_as_beer_importer_of)
-      BeerStyle.should respond_to(:import_beer_xml)
+      expect(BeerStyle).to respond_to(:acts_as_beer_importer_of)
+      expect(BeerStyle).to respond_to(:import_beer_xml)
     end
 
     it "can import a list of BeerXML style" do
       styles = BeerStyle.import_beer_xml( load_styles_xml )
-      styles.should be_kind_of(Array)
-      styles.first.should be_kind_of(BeerStyle)
-      styles.first.min_abv.should eq 4.5
-      styles.first.max_abv.should eq 6.0
-      styles.first.category.should eq "American Ale"
-      styles.first.style_id.should eq '10B'
-      styles.first.name.should eq "American Amber Ale"
+      expect(styles).to be_kind_of(Array)
+      expect(styles.first).to be_kind_of(BeerStyle)
+      expect(styles.first.min_abv).to eq 4.5
+      expect(styles.first.max_abv).to eq 6.0
+      expect(styles.first.category).to eq "American Ale"
+      expect(styles.first.style_id).to eq '10B'
+      expect(styles.first.name).to eq "American Amber Ale"
     end
   end
 

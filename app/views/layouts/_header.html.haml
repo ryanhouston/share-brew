@@ -9,7 +9,7 @@
       %br
       .action-panel
         = link_to 'Profile', edit_user_registration_path
-        = link_to 'Sign out', destroy_user_session_path, class: 'button'
+        = link_to 'Sign out', destroy_user_session_path, class: 'button', method: 'delete'
     - else
       .action-panel
         = link_to 'Sign up', new_user_registration_path, class: 'button'

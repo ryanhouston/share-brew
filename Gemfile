@@ -16,7 +16,6 @@ gem 'cancan'
 
 # Assets
 gem 'sass-rails', '~> 4.0'
-gem 'coffee-rails'
 gem 'uglifier'
 gem 'bourbon'
 gem 'neat'

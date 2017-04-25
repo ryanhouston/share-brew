@@ -1,7 +1,7 @@
 language: ruby
 rvm:
-  - 1.9.3
-  - 2.0.0
+  - 2.3
+  - 2.4
 script:
   - RAILS_ENV=test bundle exec rake db:setup
   - RAILS_ENV=test bundle exec rake spec

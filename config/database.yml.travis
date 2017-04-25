@@ -1,0 +1,8 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: sharebrew_test
+  timeout: 5000
+  pool: 5
+  username: postgres
+  password:

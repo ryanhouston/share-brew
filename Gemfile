@@ -7,7 +7,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'thin'
+gem 'puma'
 gem 'pg'
 
 gem 'nokogiri'
